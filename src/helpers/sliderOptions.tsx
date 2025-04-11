@@ -1,4 +1,4 @@
-import { CustomArrow } from '@/components/CustomArrow/CustomArrow'
+import { CustomArrow } from '@/old-components/CustomArrow/CustomArrow'
 
 const sliderOptions =
 {

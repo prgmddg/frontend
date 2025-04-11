@@ -1,11 +1,11 @@
-import { Contenido, Header, ComponentWhats, ComponentTestimonios, ComponentVacante, HeaderFound } from '@/components/ServiciosName'
+import { Contenido, Header, ComponentWhats, ComponentTestimonios, ComponentVacante, HeaderFound } from '@/old-components/ServiciosName'
 import getRequest from '@/helpers/getRequest'
 import getMetadata from '@/helpers/getMetadata'
 import { Metadata } from 'next'
 import { ProgramContext } from '@/context/ProgramContext'
 import diplomas from '@/interfaces/diplomas'
-import WhatssAppLink from '@/components/WhatssAppLink/WhatssAppLink'
-import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/components/ProgramLanding'
+import WhatssAppLink from '@/old-components/WhatssAppLink/WhatssAppLink'
+import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/old-components/ProgramLanding'
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata ({ params }: any): Promise<Metadata> {

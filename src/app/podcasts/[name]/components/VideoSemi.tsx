@@ -1,4 +1,4 @@
-import { Video } from '@/components/Video/Video'
+import { Video } from '@/old-components/Video/Video'
 import { faCalendar, faUser, faVideoCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { AnchorHTMLAttributes, ReactNode } from 'react'

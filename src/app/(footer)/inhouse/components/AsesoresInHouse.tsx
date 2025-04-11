@@ -1,4 +1,4 @@
-import { MyBlock } from '@/components/MyBlock/MyBlock'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'

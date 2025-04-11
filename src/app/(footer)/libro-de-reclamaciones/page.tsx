@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import { useState } from 'react'
 
 export default function Page () {

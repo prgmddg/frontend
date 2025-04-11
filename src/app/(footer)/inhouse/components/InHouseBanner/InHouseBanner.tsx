@@ -1,7 +1,7 @@
 'use client'
 
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
-import { SolicitaloAqui } from '@/components/SolicitaloAqui/SolicitaloAqui'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
+import { SolicitaloAqui } from '@/old-components/SolicitaloAqui/SolicitaloAqui'
 import postRequest from '@/helpers/postRequest'
 import { useState } from 'react'
 import Swal from 'sweetalert2'

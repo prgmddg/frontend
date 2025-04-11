@@ -1,12 +1,12 @@
-import MyBlock2 from '@/components/MyBlock2/MyBlock2'
+import MyBlock2 from '@/old-components/MyBlock2/MyBlock2'
 import React from 'react'
 import HeaderLeftBox from '../components/HeaderLeftBox/HeaderLeftBox'
 import HeaderRiteBox from '../components/HeaderRiteBox/HeaderRiteBox'
 import getRequest from '@/helpers/getRequest'
 import { profesor } from '@/interfaces/profesor'
-import { CardsGlo } from '@/components/Cards'
+import { CardsGlo } from '@/old-components/Cards'
 import { notFound } from 'next/navigation'
-import { Video } from '@/components/Video/Video'
+import { Video } from '@/old-components/Video/Video'
 
 async function gettinPic (pic: string): Promise<string> {
   try {

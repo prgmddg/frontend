@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useContext } from 'react'
-import { ClassicButton } from '@/components/ClassicButton/ClassicButton'
+import { ClassicButton } from '@/old-components/ClassicButton/ClassicButton'
 import Image from 'next/image'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
-import { SolicitaloAqui } from '@/components/SolicitaloAqui/SolicitaloAqui'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
+import { SolicitaloAqui } from '@/old-components/SolicitaloAqui/SolicitaloAqui'
 import { globalContext } from '@/context/GlobalContext'
 
 export const MyButtons = ({ styles }:{styles?:string}) => {

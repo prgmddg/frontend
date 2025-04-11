@@ -1,5 +1,5 @@
-import { MyBannerContainer } from '@/components/MyBannerContainer/MyBannerContainer'
-import { MostrarCards } from '@/components/Servicios'
+import { MyBannerContainer } from '@/old-components/MyBannerContainer/MyBannerContainer'
+import { MostrarCards } from '@/old-components/Servicios'
 import { InHouseContext } from '@/context/InHouseContext'
 import getRequest from '@/helpers/getRequest'
 import inHouse from '@/interfaces/inHouse'

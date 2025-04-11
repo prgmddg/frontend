@@ -8,7 +8,7 @@ import Izi from './Izi'
 import PayTypes from './PayTypes'
 import DepositoForm from './DepositoForm'
 import LoadFormMsg from './LoadFormMsg'
-import Spinner from '@/components/Spinner/Spinner'
+import Spinner from '@/old-components/Spinner/Spinner'
 import { globalContext } from '@/context/GlobalContext'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {

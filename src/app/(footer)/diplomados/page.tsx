@@ -1,4 +1,4 @@
-import { Banner, MostrarCards, Stripe } from '@/components/Servicios'
+import { Banner, MostrarCards, Stripe } from '@/old-components/Servicios'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Metadata } from 'next'

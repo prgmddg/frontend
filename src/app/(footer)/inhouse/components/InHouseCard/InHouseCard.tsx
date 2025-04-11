@@ -1,7 +1,7 @@
 'use client'
 
-import InHousePopUp from '@/components/InHousePopup/InHousePopUp'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import InHousePopUp from '@/old-components/InHousePopup/InHousePopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import inHouse from '@/interfaces/inHouse'
 import Link from 'next/link'
 import { useState } from 'react'

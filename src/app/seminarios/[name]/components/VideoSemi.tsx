@@ -1,4 +1,4 @@
-import { Video } from '@/components/Video/Video'
+import { Video } from '@/old-components/Video/Video'
 import parsearFecha from '@/helpers/parsearFecha'
 import twentyfourToTwelve from '@/helpers/twentyfourToTwelve'
 import seminarios from '@/interfaces/seminarios'

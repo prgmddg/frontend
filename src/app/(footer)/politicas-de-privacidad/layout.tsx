@@ -1,4 +1,4 @@
-import { LinkItems } from '@/components/LinkItems/LinkItems'
+import { LinkItems } from '@/old-components/LinkItems/LinkItems'
 import React, { ReactNode } from 'react'
 
 export default function layaout ({ children }:{children:ReactNode}) {

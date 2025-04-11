@@ -1,4 +1,4 @@
-import { MyBlock } from '@/components/MyBlock/MyBlock'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
 import Image from 'next/image'
 import React from 'react'
 

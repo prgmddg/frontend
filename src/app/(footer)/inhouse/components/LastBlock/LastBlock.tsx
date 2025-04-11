@@ -1,6 +1,6 @@
-import { MyBlock } from '@/components/MyBlock/MyBlock'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
 import React from 'react'
-import { EntidadesQueConfiarion } from '@/components/EntidadesQueConfiarion/EntidadesQueConfiarion'
+import { EntidadesQueConfiarion } from '@/old-components/EntidadesQueConfiarion/EntidadesQueConfiarion'
 
 export const LastBlock = () => {
   return (

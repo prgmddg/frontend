@@ -1,7 +1,7 @@
 
-import { Header, Contenido, ComponentWhats, ComponentTestimonios, ComponentVacante } from '@/components/ServiciosName'
-import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/components/ProgramLanding'
-import WhatssAppLink from '@/components/WhatssAppLink/WhatssAppLink'
+import { Header, Contenido, ComponentWhats, ComponentTestimonios, ComponentVacante } from '@/old-components/ServiciosName'
+import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/old-components/ProgramLanding'
+import WhatssAppLink from '@/old-components/WhatssAppLink/WhatssAppLink'
 import { ProgramContext } from '@/context/ProgramContext'
 import getRequest from '@/helpers/getRequest'
 import cursos from '@/interfaces/cursos'

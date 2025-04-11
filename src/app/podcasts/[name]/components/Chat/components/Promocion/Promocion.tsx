@@ -1,6 +1,6 @@
 'use client'
 
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import { seminarioContext } from '../../../../context/SeminarioContext'
 import { globalContext } from '@/context/GlobalContext'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'

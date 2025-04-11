@@ -3,7 +3,7 @@
 import { globalContext } from '@/context/GlobalContext'
 import React, { useState, useContext, useEffect, useCallback } from 'react'
 import axios from 'axios'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Image from 'next/image'
 
 interface row {

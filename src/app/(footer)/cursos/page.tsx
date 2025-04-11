@@ -1,4 +1,4 @@
-import { Banner, MostrarCards, Stripe } from '@/components/Servicios'
+import { Banner, MostrarCards, Stripe } from '@/old-components/Servicios'
 import { Metadata } from 'next'
 
 export async function generateMetadata (): Promise<Metadata> {

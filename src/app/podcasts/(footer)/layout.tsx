@@ -1,4 +1,4 @@
-import { Footer } from '@/components/Footer/Footer'
+import { Footer } from '@/old-components/Footer/Footer'
 import React from 'react'
 
 export default function layout ({ children }: { children: React.ReactNode }) {

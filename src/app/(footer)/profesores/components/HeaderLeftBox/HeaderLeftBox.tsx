@@ -4,7 +4,7 @@ import { profesor } from '@/interfaces/profesor'
 import React, { useEffect, useRef, useState, ReactNode } from 'react'
 import Box from './components/Box'
 import ProfPic from '../ProfPic'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Social from '../Social'
 import { faFacebook, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 

@@ -1,9 +1,9 @@
-import { Contenido, Header, ComponentWhats, ComponentTestimonios, ComponentVacante } from '@/components/ServiciosName'
-import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/components/ProgramLanding'
+import { Contenido, Header, ComponentWhats, ComponentTestimonios, ComponentVacante } from '@/old-components/ServiciosName'
+import { InversionYFormasDePago, Certificado, Teachers, NuestraPropuesta } from '@/old-components/ProgramLanding'
 import getRequest from '@/helpers/getRequest'
 import diplomas from '@/interfaces/diplomas'
 import { ProgramContext } from '@/context/ProgramContext'
-import WhatssAppLink from '@/components/WhatssAppLink/WhatssAppLink'
+import WhatssAppLink from '@/old-components/WhatssAppLink/WhatssAppLink'
 
 export default async function DriplomasName ({ params }: any) {
   const { name } = params

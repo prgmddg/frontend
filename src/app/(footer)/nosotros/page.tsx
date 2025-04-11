@@ -7,8 +7,8 @@ import {
   DondeEstamos,
   CentroDeCapacitacion
 } from '.'
-import { MyBlock } from '@/components/MyBlock/MyBlock'
-import { EntidadesQueConfiarion } from '@/components/EntidadesQueConfiarion/EntidadesQueConfiarion'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
+import { EntidadesQueConfiarion } from '@/old-components/EntidadesQueConfiarion/EntidadesQueConfiarion'
 
 export default function page () {
   return (

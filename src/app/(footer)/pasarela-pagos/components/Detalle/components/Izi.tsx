@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import MyIziInput from './MyIziInput'
 import Cvv from './Cvv'
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Link from 'next/link'
 
 export default function Izi ({ payType, load }:any) {

@@ -1,4 +1,4 @@
-import { Video } from '@/components/Video/Video'
+import { Video } from '@/old-components/Video/Video'
 import { faTelegram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 

@@ -1,6 +1,6 @@
 
-import { FormError } from '@/components/NoFound/FormError'
-import { InformacionError } from '@/components/NoFound/InformacionError'
+import { FormError } from '@/old-components/NoFound/FormError'
+import { InformacionError } from '@/old-components/NoFound/InformacionError'
 
 export default function NotFound () {
   return (

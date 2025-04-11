@@ -1,5 +1,5 @@
-import { MyBlock } from '@/components/MyBlock/MyBlock'
-import { Video } from '@/components/Video/Video'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
+import { Video } from '@/old-components/Video/Video'
 import Image from 'next/image'
 import React from 'react'
 

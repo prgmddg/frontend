@@ -1,6 +1,6 @@
 'use client'
 
-import { MyPopUp } from '@/components/MyPopUp/MyPopUp'
+import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Link from 'next/link'
 import { useState } from 'react'
 

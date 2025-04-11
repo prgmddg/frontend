@@ -1,4 +1,4 @@
-import LoginSignup from '@/components/LoginSignup/LoginSignup'
+import LoginSignup from '@/old-components/LoginSignup/LoginSignup'
 import React from 'react'
 
 import Image from 'next/image'

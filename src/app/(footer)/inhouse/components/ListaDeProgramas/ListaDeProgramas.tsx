@@ -1,4 +1,4 @@
-import { MyBlock } from '@/components/MyBlock/MyBlock'
+import { MyBlock } from '@/old-components/MyBlock/MyBlock'
 import { faCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContentBrochure from '../ContentBroshure'

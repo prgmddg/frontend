@@ -1,9 +1,7 @@
-'use client'
-
-import {MostrarCards, Stripe} from '@/components/Servicios'
+import {MostrarCards, Stripe} from '@/old-components/Servicios'
 import {Carosuel, BeneficiosDeNuestrosProgramas, CentroDeCapacitacion, CertificiacionIso} from '..'
-import BannerStripe from '../components/BannerStripe/BannerStripe'
-import WhatsAppIcon from '@/app/components/WhatsAppIcon'
+import BannerStripe from '../old-components/BannerStripe/BannerStripe'
+import WhatsAppIcon from '@/app/old-components/WhatsAppIcon'
 
 export default function Home() {
   return (
