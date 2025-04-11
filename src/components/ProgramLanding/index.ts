@@ -1,0 +1,5 @@
+export { InversionYFormasDePago } from './InversionYFormasDePago/InversionYFormasDePago'
+export { Header } from './Header/Header'
+export { Certificado } from './Certificado/Certificado'
+export { Teachers } from './Teachers/Teachers'
+export { NuestraPropuesta } from './NuestraPropuesta/NuestraPropuesta'

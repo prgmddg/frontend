@@ -1,0 +1,200 @@
+[
+    {
+        "_id": 1,
+        "img": "/DISENO-GRAFICO.webp",
+        "title": "Diseño Grafico Web",
+        "tag": "diseno-grafico-web",
+        "area": "Diseño",
+        "city": "Lima, Lince",
+        "type": "Presencial",
+        "date": "2024-08-28T00:00:00.000",
+        "active": true,
+        "requisitos": [
+            {
+                "text": [
+                    "Egresado de diseño gráfico o web",
+                    "Con experiencia de 2 años en puestos similares",
+                    "Manejo de programas de diseño",
+                    "Manejo Photoshop, Fireworks, Illustrator"
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ],
+        "horarios": [
+            {
+                "text": "Lunes a Viernes - 08:55 a.m a 6:30 p.m",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Sábado - 08:55 a.m a 01:30 p.m",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Refrigerio - 01:00 a.m a 02:00 p.m",
+                "type": "n",
+                "format": "n"
+            }
+        ],
+        "funciones": [
+            {
+                "text": [
+                    "Creación de Landing page (photoshop, illustrator, fireworks)",
+                    "Creación de banners para Facebook, Wordpress",
+                    "Diseño web - experiencia usuario (UX UI)",
+                    "Creación de Gráfica (no códigos HTML, JS, CSS)",
+                    "Responsable, Proactivo y Comprometido y dispuesto a aprender",
+                    "Elaboración de diseños publicitarios",
+                    "Colaboración en otras áreas y proyectos",
+                    "Realizar el diseño de las diapositivas del curso",
+                    "Crear y mejorar las firmas digitalizadas del personal que tiene contacto con clientes",
+                    "Darle identificación con logo a todo documento que se presentará a los participantes"
+                ],
+                "type": "a",
+                "format": "n"
+            },
+            {
+                "text": "Ejemplo de conocimientos:",
+                "type": "n",
+                "format": "b"
+            },
+            {
+                "text": [
+                    "https://s-media-cache-ak0.pinimg.com/564x/a0/f9/16/a0f916c7d16205afdeee2aa2327939fa.jpg",
+                    "https://s-media-cache-ak0.pinimg.com/564x/69/08/97/6908972600aa84413895dd85f3692965.jpg"
+                ],
+                "type": "a",
+                "format": "l"
+            }
+        ],
+        "requerimientos": [
+            {
+                "text": [
+                    "Trabajo en equipo",
+                    "Buena capacidad para conceptualizar",
+                    "Residencia cercana al Distrito de Lince"
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ],
+        "aprendizaje": [
+            {
+                "text": "Realizar piezas gráficas para nuestras promociones, brochures,  flyer, portadas, etc",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Manejo de herramientas de Adobe Illustrator y Photoshop",
+                "type": "n",
+                "format": "n"
+            }
+        ],
+        "beneficios": [
+            {
+                "text": "Sueldo acorde al mercado",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Seguro Essalud",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Planilla Remype + 15 días de vacaciones.",
+                "type": "n",
+                "format": "n"
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "img": "/ASESORIA.webp",
+        "title": "Asesor/a Comercial - Sin Experiencia",
+        "tag": "asesor-a-comercial",
+        "area": "Asesoría",
+        "city": "Lima, Lince",
+        "type": "Presencial",
+        "date": "2024-08-28T00:00:00.000",
+        "active": true,
+        "requisitos": [
+            {
+                "text": [
+                    "Con experiencia mínima en ventas en Call Center por 03 meses (no excluyente).",
+                    "Estudios secundarios culminados, técnicos o universitarios truncos o en curso.",
+                    "Conocimiento de Microsoft Office nivel usuario.",
+                    "Buena comunicación, seguridad y ambición por comisionar."
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ],
+        "horarios": [
+            {
+                "text": "Lunes a Viernes - 09:00 a.m a 06:30 p.m",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Sábado - 09:00 a.m a 01:30 p.m",
+                "type": "n",
+                "format": "n"
+            },
+            {
+                "text": "Refrigerio - 01:00 a.m a 02:00 p.m",
+                "type": "n",
+                "format": "n"
+            }
+        ],
+        "funciones": [
+            {
+                "text": [
+                    "Ofrecer cursos especializados para profesionales de la gestión pública",
+                    "Gestión de atención y asesoría por teléfono a colaboradores del estado",
+                    "Atender Whatsapp de Celular asignado",
+                    "Manejo y actualización de base de datos de cliente",
+                    "Realizar seguimiento de clientes potenciales",
+                    "Realizar cierre de ventas",
+                    "Realizar inscripciones y cobranzas.",
+                    "Emisión y envío de Cartas de presentación",
+                    "Elaboración de cotizaciones para cursos institucionales",
+                    "Atender inbox de redes sociales (Facebook, Youtube, Instagram)",
+                    "Aportar mejoras para sus funciones",
+                    "Encargarse del Chat de visitantes web"
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ],
+        "requerimientos": [
+            {
+                "text": [
+                    "Comprometida y con disposición a aprender.",
+                    "Responsable y disciplinado.",
+                    "Ganas de obtener ventas altas.",
+                    "Facilidad de palabra, comunicación fluida, buena dicción y actitud positiva",
+                    "Organizada, proactiva con orientación a ayudar",
+                    "Empatía con clientes",
+                    "Tolerancia al trabajo bajo presión"
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ],
+        "beneficios": [
+            {
+                "text": [
+                    "Excelente ambiente de trabajo",
+                    "15 días de vacaciones.",
+                    "Beneficios de ley Remype",
+                    "SUELDO FIJO S/ 1,025 + COMISIONES + BONO POR METAS"
+                ],
+                "type": "a",
+                "format": "n"
+            }
+        ]
+    }
+]

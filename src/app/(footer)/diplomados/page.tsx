@@ -1,0 +1,22 @@
+import { Banner, MostrarCards, Stripe } from '@/components/Servicios'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import { Metadata } from 'next'
+
+export async function generateMetadata (): Promise<Metadata> {
+  return {
+    alternates: {
+      canonical: 'https://desarrolloglobal.pe/diplomados'
+    }
+  }
+}
+
+export default function Diplomados () {
+  return (
+    <>
+      <Banner tipo='Diplomados' />
+      <Stripe />
+      <MostrarCards program='diplomados' />
+    </>
+  )
+}

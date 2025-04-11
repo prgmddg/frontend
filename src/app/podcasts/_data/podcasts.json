@@ -1,0 +1,117 @@
+[{
+    "id": 1,
+    "video": "3TZzeqjAPJI",
+    "titulo": "¿Por qué las Entidades Públicas no logran ejecutar su Presupuesto?💰",
+    "fecha": "01 de Abril",
+    "hora": "07:00 PM",
+    "etiqueta": "por-que-las-entidas-publicas-no-logran-ejecutar-su-presupuesto",
+    "profesor": {
+        "imagen": "https://s3.us-west-2.amazonaws.com/uploads-desarrolloglobal.pe/images/users/SALOME_ESCOBEDO.webp",
+        "nombre": "Salome Escobedo",
+        "descripcion": "Contadora pública Colegiada especialista en Planeamiento y Presupuesto Público. Cuenta con mas de 10 años de experiencia en la gestión pública nacional; ha laborado en diversas Instituciones como el Gobierno Regional de Loreto, Fitel (ahora PRONATEL - MTC), MINSA, DGOS, MINEDU, UNI-DIGA, MIMDEF-DGPP y actualmente labora en el Programa Nacional Aurora del MIMP. Cuenta con Estudios de Maestría en Planeamiento Estratégico y Maestría en Gestión Empresarial, con Diplomado en Presupuesto Público y PPR, Diplomado en Contrataciones del Estado, Diplomado en Proyectos de Inversión y Diplomado en RRHH en el marco de la ley SERVIR."
+    }
+},
+{
+    "id": 2,
+    "video": "aUxBmW6gyEo",
+    "titulo": "Implementación del Servicio Civil en Entidades Públicas",
+    "fecha": "08 de Abril",
+    "hora": "07:00 PM",
+    "etiqueta": "implementacion-del-servicio-civil-en-entidades-publicas",
+    "profesor": {
+        "imagen": "https://s3.amazonaws.com/archivos-comunes/2018/profesores/Yuri_Rengifo_Rivas.png",
+        "nombre": "Yuri Rengifo",
+        "descripcion": "Psicólogo, con Maestría en Psicología Organizacional - URP, especialista en Gestión de Recursos Humanos por Competencias y en Derecho Laboral."
+    }
+},
+{
+    "id": 3,
+    "video": "L2FOsHuRRU8",
+    "titulo": "Contrataciones menores o iguales a 8 UIT (Procedimientos y Responsabilidades)",
+    "fecha": "15 de Abril",
+    "hora": "07:00 PM",
+    "etiqueta": "contrataciones-menores-o-iguales-a-8-uit",
+    "profesor": {
+        "imagen": "https://s3.amazonaws.com/archivos-comunes/2019/profesores/marco_montoya.jpg",
+        "nombre": "Marco Aurelio Montoya",
+        "descripcion": "Abogado de la PUCP. Máster en Contratación Pública de la UCLM. Mas de 20 años de experiencia en contratación publica en diversas entidades del Estado (CONSULCOP, CONSUCODE, PCM, ESSALUD, CONTRALORIA, DIGERE).  Director de Logística del MTC y del MININTER. Premio de Buenas Prácticas Gubernamentales. Actualmente es abogado del Estudio MCHM Abogados, arbitro y consultor de diferentes entidades públicas y privadas en materia de contratación y gestión pública."
+    }
+},
+{
+    "id": 4,
+    "video": "xEPzbUu9i2s",
+    "titulo": "¿Cómo Gestionar Reclamos a Empresas y Entidades Públicas?",
+    "fecha": "22 de Abril",
+    "hora": "07:00 PM",
+    "etiqueta": "como-gestionar-reclamos-a-empresas-y-entidades-publicas",
+    "profesor": {
+        "imagen": "https://archivos-comunes.s3.amazonaws.com/2019/profesores/marlon_prieto.jpg",
+        "nombre": "Armando Prieto",
+        "descripcion": "Doctor en Contabilidad por la Universidad San Martín de Porres, Magister en Gerencia Pública por la EUCIM BUSINESS SCHOOL - España, Docente en la Universidad Continental, Universidad Nacional del Centro del Perú, Universidad Ricardo Palma, Universidad de la Costa - Colombia, Autor de los Libros: Manual Practico del SIAF y Fundamentos Teóricos de la Contabilidad Gubernamental. Trabajó como Consultor del SIAF, Especialista de la Dirección General de Contabilidad Pública, Contador de la Dirección General de Infraestructura - MININTER, Contador del Consejo Fiscal - MEF."
+    }
+},
+{
+    "id": 5,
+    "video": "9hu6ZOaH1NI",
+    "titulo": "¿Cómo Certificarme Ante OSCE?",
+    "fecha": "29 de Abril",
+    "hora": "07:00 PM",
+    "etiqueta": "como-certificarme-ante-osce",
+    "profesor": {
+        "imagen": "https://s3-us-west-2.amazonaws.com/uploads-desarrolloglobal.pe/2019/09/MICHELE-ALVAREZ.jpg",
+        "nombre": "Michele Alvares",
+        "descripcion": "Profesional titulado en Ingeniería de Sistemas, con sólida experiencia en la Administración Pública en materia de Contrataciones – más de 13 años – así como docencia en el tema. Servidor Certificado por OSCE a nivel avanzado. Manejo de los Sistemas Integrados del Estado, con estudios complementarios en Gerencia de Proyectos bajo el enfoque PMI, y Marketing Digital."
+    }
+},
+{
+    "id": 6,
+    "video": "dmapLaN8Hzw",
+    "titulo": "Estrategias de Inversión ante Desastres Recurrentes",
+    "fecha": "06 de Mayo",
+    "hora": "07:00 PM",
+    "etiqueta": "estrategias-de-inversion-ante-desastres-recurrentes",
+    "profesor": {
+        "imagen": "https://s3-us-west-2.amazonaws.com/uploads-desarrolloglobal.pe/2019/09/CESAR-NEGRETE%20%282%29.jpg",
+        "nombre": "Cesar Negrete Venegas",
+        "descripcion": "Asesor Administrativo de la Unidad Gerencial de Estudios y Obras - UGEO Programa Nacional de Infraestructura Educativa - PRONIED. Ejecutivo Adjunto I de la Oficina de Planeamiento y Presupuesto Instituto de Gestión de Servicios de Salud – IGSS. Jefe de la Oficina de Planeamiento y Presupuesto Superintendencia de Educación Superior Universitaria – SUNEDU."
+    }
+},
+{
+    "id": 7,
+    "video": "VPODSI7Aslw",
+    "titulo": "Transformación Digital en el Perú",
+    "fecha": "13 de Mayo",
+    "hora": "07:00 PM",
+    "etiqueta": "transformacion-digital-en-el-peru",
+    "profesor": {
+        "imagen": "https://s3.us-west-2.amazonaws.com/uploads-desarrolloglobal.pe/images/users/DEFAULT.webp",
+        "nombre": "Gerardo Salazar Lara",
+        "descripcion": ""
+    }
+},
+{
+    "id": 8,
+    "video": "m5wN4aUoDWw",
+    "titulo": "¿Qué es El SIGA?",
+    "fecha": "20 de Mayo",
+    "hora": "07:00 PM",
+    "etiqueta": "que-es-el-siga",
+    "profesor": {
+        "imagen": "https://aula.desarrolloglobal.pe/public/files/MicrosoftTeams-image (7).png",
+        "nombre": "Cristian Solís Valverde",
+        "descripcion": "Licenciado en Administración con Master en Gestión Pública, con experiencia en gestión pública,Consultor en SIGA-MEF, especializado en Contrataciones Públicas, Certificado de Interpretación ISO 37001:2016, con dominio en Programación y Presupuesto Logístico y en la aplicación de la Ley de Contratación y Adquisición del Estado y Sistemas Logísticos, y sistemas administrativos del estado, con más de 15 años experiencia en Gestión Pública, con amplia experiencia en la implementación del SIGA MEF y dominio de base de datos."
+    }
+},
+{
+    "id": 9,
+    "video": "RVPElbHNelA",
+    "titulo": "GESTIÓN PÚBLICA MODERNA",
+    "fecha": "14 de Junio",
+    "hora": "07:00 PM",
+    "etiqueta": "gestion-publica-moderna",
+    "profesor": {
+        "imagen": "https://s3.amazonaws.com/archivos-comunes/2018/profesores/vlado_castaneda.png",
+        "nombre": "Mg. Vlado Castañeda Gonzales",
+        "descripcion": "Secretario de Coordinación de la PCM. Ingeniero Civil. Máster en Estudios Políticos Aplicados en España (FIIAPP). Especialista en Políticas Públicas, Proyectos de Inversión Pública y Descentralización, con amplia experiencia en el proceso peruano. Miembro del Cuerpo de Gerentes Públicos de SERVIR."
+    }
+}]

@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   overflow-x: hidden;
+   scroll-behavior: smooth !important;
+}
+
+.container-for-real
+{
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 3rem 4rem;
+}
+
+.my-shadow
+{
+   filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.16 ));
+}
+.my-shadow2
+{
+   filter: drop-shadow(2px 3px 2.5px rgba(0,0,0,0.16 ));
+}
+
+.my-padding
+{
+   padding-left: 1rem;
+   padding-right: 1rem;
+}
+
+.hover-animation
+{
+   transition: all ease-in-out 200ms;
+}
+
+.header-container
+{
+   width: 1312px;
+   margin: 0 auto;
+   max-width: 100%;
+}
+
+.listing-container li
+{
+   margin: 0 0 3px 0;
+   display: block;
+}
+.listing-container li::before
+{
+  content: "✔️ ";
+}
+.listing-container p
+{
+   display: block;
+   margin: 0 0 28px 0;
+}
+
+.my-container {
+   max-width: 100%;
+   margin: 0 auto;
+   width: 1920px;
+}
+
+.my-hover {
+   transition: all ease-in-out 200ms;
+   opacity: .8;
+}
+
+.my-hover:hover {
+   opacity: 1;
+}
+
+.container
+{
+   max-width: 100%;
+   width: 1320px;
+   margin: 0 auto;
+}
+
+.just-stuff
+{
+   margin: 0 auto;
+   max-width: 100%;
+}
+
+.slick-prev:before, .slick-next:before
+{
+  color: #0d6efd;
+}
+
+.slick-my-dots
+{
+   position: absolute;
+   bottom: 1rem;
+   display: flex !important;
+   gap: .5rem;
+   transform: translateX(-50%);
+   left: 50%;
+}
+
+.slick-my-dots .slick-active span
+{
+  background-color: #fff;
+} 
+
+h1,h2,h3
+{
+   font-weight:800;
+   color: #212529;
+}
+
+
+.swing:hover {
+   animation-name: swing;
+   -webkit-animation-name: swing;
+   -moz-animation-name: swing;
+   animation-duration: 1s;
+   -webkit-animation-duration: 1s;
+   -moz-animation-duration: 1s;
+}
+
+.kr-installment-number,.kr-first-installment-delay
+{
+  display: none;
+}
+.kr-payment-button
+{
+  margin: 3rem 0 0 0;
+  width: 100% !important;
+  color: #b2b9c2 !important;
+  font-weight:bold !important;
+  padding: .8rem 0;
+  border-radius: .5rem;
+  background-color: #e7e9ec !important;
+}
+.kr-spinner
+{
+  display: none;
+}
+.kr-bounce2::after
+{
+  content: "Procesando...";
+}
+.alertSwag
+{
+  background-color: #192677;
+}
+.chatMedi{
+   width: 100% !important;
+   overflow-y: auto !important;
+   overflow-x: hidden !important;
+}
+
+.chatMedi::-webkit-scrollbar{
+   background-color: #000A48;
+}
+.chatMedi::-webkit-scrollbar-thumb{
+   background: #192677;
+   border-radius: 20px;
+}
+
+@keyframes swing {
+   20% {
+      transform: rotate3d(0, 0, 1, 15deg);
+   }
+
+   40% {
+      transform: rotate3d(0, 0, 1, -10deg);
+   }
+
+   60% {
+      transform: rotate3d(0, 0, 1, 5deg);
+   }
+
+   80% {
+      transform: rotate3d(0, 0, 1, -5deg);
+   }
+
+   to {
+      transform: rotate3d(0, 0, 1, 0deg);
+   }
+}
+
+.slick-arrow{
+   display: none !important;
+}
+
+.whatAnimation
+{
+  animation: what 800ms ease-in-out infinite;
+}
+
+@keyframes what 
+{
+   0%
+   {
+      transform: scale(75%);
+   }
+   50%
+   {
+      transform: scale(100%);
+   }  
+   100%
+   {
+      transform:scale(75%);
+   }
+}
+ .pageNoFound{
+   background-image: url("/img/fondonofound.webp");
+   background-size: cover;
+   background-position: center;
+ }
