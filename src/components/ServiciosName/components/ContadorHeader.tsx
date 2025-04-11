@@ -37,7 +37,7 @@ export const ContadorHeader = () => {
           </div>
           <div className='text-[#FAFAFA] flex flex-col items-center'>
             <span className='text-[16px] font-bold mb-[5px] block'>Contacta con un asesor</span>
-            <a target='_blank' href={whatLinkText({ asesor: asesores[0], subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`, email: user?.correo, program: titulo, phone: asesores[0].telefono, url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}` })} className='flex text-[18px] bg-[#25A217] rounded-[9px] py-[10px] w-[220px] max-w-[100%] justify-center gap-[6px] items-center' rel='noreferrer'>
+            <a target='_blank' href={whatLinkText({ asesor: asesores[0], subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`, email: user?.correo, program: titulo, phone: asesores[0]?.telefono, url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}` })} className='flex text-[18px] bg-[#25A217] rounded-[9px] py-[10px] w-[220px] max-w-[100%] justify-center gap-[6px] items-center' rel='noreferrer'>
               <FontAwesomeIcon size='xl' icon={faWhatsapp} />
               <span className='font-bold'>WhatsApp</span>
             </a>
@@ -59,7 +59,7 @@ export const ContadorHeader = () => {
 
 function Option ({ section, label }:{section:string, label:string}) {
   return (
-    <a href={section} className='text-black font-bold text-center hover:text-primary'>
+    <a href={section} className='font-bold text-center text-black hover:text-primary'>
       {
         label
       }

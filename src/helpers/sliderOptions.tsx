@@ -3,7 +3,7 @@ import { CustomArrow } from '@/components/CustomArrow/CustomArrow'
 const sliderOptions =
 {
   dots: true,
-  infinite: false,
+  infinite: true,
   speed: 500,
   autoplay: true,
   autoplaySpeed: 3000,

@@ -33,13 +33,13 @@ export const ComponentVacante = () => {
             <p className='text-[#003399] text-center font-bold text-4xl'>
               ¡Separa tu vacante ahora!
             </p>
-            <p className='text-center text-xl mt-3'>
+            <p className='mt-3 text-xl text-center'>
               ¡Inscríbete hoy y aprovecha los siguientes beneficios increíbles:
             </p>
             <div className='border-2 border-[#003399] rounded-lg grid grid-cols-1 lg:grid-cols-2 p-5 lg:px-10 lg:py-5 mt-5 items-center gap-5'>
               <div>
-                <p className='font-bold text-2xl'>Este {tipo === 'curso' ? 'curso' : 'diploma'} Incluye:</p>
-                <ul className='space-y-3 mt-3'>
+                <p className='text-2xl font-bold'>Este {tipo === 'curso' ? 'curso' : 'diploma'} Incluye:</p>
+                <ul className='mt-3 space-y-3'>
                   <li>
                     <FontAwesomeIcon
                       className='text-[#25D366] mr-3'
@@ -89,16 +89,16 @@ export const ComponentVacante = () => {
                       <p className='text-[#003399] text-center text-xl w-full lg:w-[75%] mx-auto'>
                         También puedes pagar con tarjeta de manera segura.
                       </p>
-                      <p className='font-bold text-center text-lg'>
+                      <p className='text-lg font-bold text-center'>
                         Precio Normal: S/. {!isConvenio ? precio.normal : precio.normal_convenio}.00
                       </p>
-                      <p className='bg-yellow-400 rounded-full text-center mt-3 py-1'>
+                      <p className='py-1 mt-3 text-center bg-yellow-400 rounded-full'>
                         Descuento Especial de 25%
                       </p>
                     </>
                   )
                 }
-                <p className='font-bold text-red-500 text-3xl text-center'>
+                <p className='text-3xl font-bold text-center text-red-500'>
                   S/. {!isConvenio ? precio.final : precio.final_convenio}.00
                 </p>
                 <button
@@ -139,7 +139,7 @@ export const ComponentVacante = () => {
               asesor: asesores[0],
               subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`,
               program: titulo,
-              phone: asesores[0].telefono,
+              phone: asesores[0]?.telefono,
               url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}`
             })}
             className='bg-green-500 rounded-lg text-white w-full lg:w-[70%] flex items-center justify-center text-base font-bold lg:text-xl mt-5 py-3 gap-5 flex-wrap'

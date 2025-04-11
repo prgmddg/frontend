@@ -8,14 +8,11 @@ import Slider from 'react-slick'
 import { CustomArrow } from '@/components/CustomArrow/CustomArrow'
 import Image from 'next/image'
 
-export const Carosuel = () => {
-  const { infinite, autoplay, ...others } = sliderOptions
-  
+export const Carosuel = () => {  
   return (
     <Slider
-      {...others}
-      infinite={infinite}
-      autoplay={autoplay}
+      {...sliderOptions}
+      infinite={true}
       prevArrow={<CustomArrow direction='left' inside big />}
       nextArrow={<CustomArrow direction='rite' inside big />}
       dotsClass='slick-my-dots'

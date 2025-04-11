@@ -99,7 +99,7 @@ export default function RiteBox () {
           asesor: asesores[0],
           subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`,
           program: titulo,
-          phone: asesores[0].telefono,
+          phone: asesores[0]?.telefono,
           url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}`
         })}
         className='rounded-[.5rem] mt-[6.8rem] bg-[#25A217] text-[18px] text-[#fff] flex gap-[14px] px-[1rem] w-[100%] py-[14px] justify-center items-center' rel='noreferrer'
