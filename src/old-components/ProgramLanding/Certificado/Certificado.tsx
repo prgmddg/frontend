@@ -12,7 +12,7 @@ export function Certificado () {
 
   const { values } = context
   const { program } = values
-  const { tipo, certificados, tipo_clase } = values.program as programData
+  const { tipo, certificados } = values.program as programData
 
   const type = tipo.split('')
 
@@ -29,17 +29,17 @@ export function Certificado () {
 
           <div className='grid gap-4'>
             <div className='border shadow-lg rounded-xl px-8 py-8 flex items-center gap-2 relative border-myBlue3 bg-[#8BD8FF]/[0.15]'>
-              <div className='-top-4 right-0 left-0 absolute'>
-                <p className='max-w-max mx-auto md:ml-auto md:mr-20 bg-myRed1 text-white rounded-xl px-10 py-1 font-semibold'>Mas Solicitado</p>
+              <div className='absolute left-0 right-0 -top-4'>
+                <p className='px-10 py-1 mx-auto font-semibold text-white max-w-max md:ml-auto md:mr-20 bg-myRed1 rounded-xl'>Mas Solicitado</p>
               </div>
-              <div className='flex-1 grid gap-4'>
+              <div className='grid flex-1 gap-4'>
                 <div>
                   <p className='text-3xl font-bold text-myBlue3'>{type[0].toUpperCase() + type.splice(1).join('').toLowerCase()} Especilizado</p>
                   <p className='text-lg font-semibold text-myBlue3'>Otorgado por: Escuela Desarrollo Global</p>
                 </div>
 
                 <div>
-                  <p className='font-semibold'>Derecho de trámite:&nbsp;<span className='text-myRed1 font-bold line-through decoration-2'>S/. 77.00</span></p>
+                  <p className='font-semibold'>Derecho de trámite:&nbsp;<span className='font-bold line-through text-myRed1 decoration-2'>S/. 77.00</span></p>
                   <p className='text-myBlue3'>Precio incluido en la inversion del programa</p>
                 </div>
 
@@ -82,9 +82,11 @@ export function Certificado () {
               />
             </div>
 
-            {tipo_clase !== 'GRABADO' && (
-              <div className='border shadow-lg rounded-xl px-8 py-8 flex items-center gap-2'>
-                <div className='flex-1 grid gap-4'>
+            {
+            /*
+            tipo_clase !== 'GRABADO' && (
+              <div className='flex items-center gap-2 px-8 py-8 border shadow-lg rounded-xl'>
+                <div className='grid flex-1 gap-4'>
                   <div>
                     <p className='text-3xl font-bold text-myBlue3'>Certificación Opcional</p>
                     <p className='text-lg font-semibold text-myBlue3'>otorgado por: (UNMSM) - CERSEU - FCE</p>
@@ -92,7 +94,7 @@ export function Certificado () {
 
                   <div>
                     <p className='font-semibold'>Derecho de trámite:
-                      &nbsp;<span className='text-myRed1 font-bold'>S/. {(tipo === 'curso') ? 75 : Number(certificados) > 240 ? 200 : 100}.00</span>
+                      &nbsp;<span className='font-bold text-myRed1'>S/. {(tipo === 'curso') ? 75 : Number(certificados) > 240 ? 200 : 100}.00</span>
                     </p>
                   </div>
 
@@ -134,9 +136,11 @@ export function Certificado () {
                   className='mx-auto hidden w-[260px] h-[160px] md:block lg:w-[260px] lg:h-[160px]'
                 />
               </div>
-            )}
+            )
+            */
+            }
 
-            <p className='text-myRed1 font-semibold'>(*) Nota: {tipo_clase !== 'GRABADO' ? 'En ambos casos, ' : ''} el envío no esta incluido</p>
+            <p className='font-semibold text-myRed1'>(*) Nota: el envío no esta incluido</p>
           </div>
         </section>
       </article>
