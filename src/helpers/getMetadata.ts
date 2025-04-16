@@ -4,7 +4,7 @@ import apiurl from '@/types/apiUrl'
 import { Metadata } from 'next'
 
 export default async function getMetadata (params: any, type: apiurl): Promise<Metadata> {
-  const { name } = params
+  const { name } = await params
   const { res: data } = await getRequest(type, name)
   const { titulo, descripcion, tags } = data.nuevo_seos || { titulo: 'Centro de Capacitación y Desarrollo Global', descripcion: `${13} años mejorando las competencias y capacidades de los servidores públicos y privados. Contamos con la Certificación de calidad ISO 9001-2015.`, tags: '' }
 

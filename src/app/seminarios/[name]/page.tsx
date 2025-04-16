@@ -11,8 +11,9 @@ export async function generateMetadata ({ params }: any): Promise<Metadata> {
   return await getMetadata(params, 'seminarios')
 }
 
-export default async function page ({ params }:any) {
-  const { res: seminarios, err } = await getRequest('seminarios', params.name)
+export default async function page ({ params }: any) {
+  const { name } = await params
+  const { res: seminarios, err } = await getRequest('seminarios', name)
 
   if (err) return <div className='text-center text-red-500 w-[100%]'>an error was occurred</div>
   if (seminarios === 'ERROR 02: $Id de Seminario no existe') return notFound()

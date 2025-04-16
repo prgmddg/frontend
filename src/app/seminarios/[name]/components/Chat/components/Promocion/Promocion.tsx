@@ -29,11 +29,11 @@ export default function Promocion () {
         </p>
         <a
           target='_blank'
-          href={`https://api.whatsapp.com/send?phone=${asesor && asesor[0].telefono}&text=Hola,%20solicito%20información%20del%20%20${tipo_programa}: ${titulo},%20mi%20correo%20es: ${user?.correo}`}
+          href={`https://api.whatsapp.com/send?phone=${asesor && asesor[0]?.telefono}&text=Hola,%20solicito%20información%20del%20%20${tipo_programa}: ${titulo},%20mi%20correo%20es: ${user?.correo}`}
           className='bg-green-500 text-white font-bold text-[1.7rem] w-[100%] px-[1rem] py-[.5rem] flex gap-[1rem] rounded-[.5rem] justify-center items-center mb-[1rem]' rel='noreferrer'
         >
           <FontAwesomeIcon icon={faWhatsapp} />
-          {asesor && asesor[0].telefono}
+          {asesor && asesor[0]?.telefono}
         </a>
         <button
           className='rounded-[.5rem] bg-[#fff] text-black w-[100%] px-[1rem] h-[58.48px] flex items-center justify-center'
