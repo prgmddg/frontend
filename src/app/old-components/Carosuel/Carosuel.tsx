@@ -26,18 +26,14 @@ export const Carosuel = () => {
     >
       <div>
         <picture>
-          <img src='/web/banner-carousel-1.webp' className='w-full h-full max-h-[700px] !hidden lg:!block' alt='Banner 1' />
-        </picture>
-        <picture>
-          <img src='/web/banner-carousel-1-mob.webp' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 2' />
+          <source media='(max-width: 1024px)' srcSet='/web/banner-carousel-1-mob.webp' />
+          <img src='/web/banner-carousel-1.webp' className='w-full h-full max-h-[700px]' alt='Banner 1' loading='eager' />
         </picture>
       </div>
       <div>
         <picture>
-          <img src='/web/banner-carousel-2.webp' className='w-full h-full max-h-[700px] lg:!block !hidden' alt='Banner 2' />
-        </picture>
-        <picture>
-          <img src='/web/banner-carousel-2-mob.webp' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 1' />
+          <source media='(max-width: 1024px)' srcSet='/web/banner-carousel-2-mob.webp' />
+          <img src='/web/banner-carousel-2.webp' className='w-full h-full max-h-[700px]' alt='Banner 2' loading='lazy' />
         </picture>
       </div>
       <div>
@@ -58,10 +54,10 @@ export const Carosuel = () => {
                 className='mx-auto w-[100%] mob:mb-[27px] 560px:h-[69px] 560px:w-[100%] 1200px:w-fit bg-white rounded-[.5rem] h-[98px] flex items-center justify-between gap-[33px] 560px:gap-0 mb-[31px] px-[1rem] 560px:justify-between'
               >
                 <picture>
-                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo.webp' width={0} height={0} alt='logo' />
+                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo.webp' width={0} height={0} alt='logo' loading='lazy'  />
                 </picture>
                 <picture>
-                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo-iso.webp' width={0} height={0} alt='logo' />
+                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo-iso.webp' width={0} height={0} alt='logo' loading='lazy' />
                 </picture>
               </div>
               <h1 className='text-2xl lg:text-5xl font-bold text-white mb-[33px] w-fit'>
@@ -87,6 +83,7 @@ export const Carosuel = () => {
                   src='/web/group-people.webp'
                   height={0}
                   width={0}
+                  loading='lazy'
                   alt='grupo de ejecutivos sonriendo hacia al frente' />
               </picture>
             </section>

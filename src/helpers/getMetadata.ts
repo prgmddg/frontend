@@ -6,16 +6,15 @@ import { Metadata } from 'next'
 export default async function getMetadata (params: any, type: apiurl): Promise<Metadata> {
   const { name } = await params
   const { res: data } = await getRequest(type, name)
-  const { titulo, descripcion, tags } = data.nuevo_seos
 
   const seo: OpenGraph = {
-    title: type === 'seminarios' ? data.titulo : titulo,
-    description: descripcion.length === 0 ? data.descripcion : descripcion,
+    title: type === 'seminarios' ? data.titulo : data.nuevo_seos.titulo,
+    description: data.nuevo_seos.descripcion.length === 0 ? data.descripcion : data.nuevo_seos.descripcion,
   }
 
   return {
     ...seo,
-    keywords: type === 'seminarios' ? ['seminarios', 'cursos', 'diplomas'] : tags.length === 0 ? [] : tags,
+    keywords: type === 'seminarios' ? ['seminarios', 'cursos', 'diplomas'] : data.nuevo_seos.tags.length === 0 ? [] : data.nuevo_seos.tags,
     openGraph: { ...seo, images: data.imagen || '', url: `https://desarrolloglobal.pe/${type}/${name}`, type: 'website' },
     authors: [{ name: 'Desarrollo Global', url: 'https://desarrolloglobal.pe' }],
     creator: 'Desarrollo Global',
