@@ -26,6 +26,7 @@ export function Teachers () {
     >
       <Slider
         {...sliderOptions}
+        infinite={false}
         prevArrow={<CustomArrow direction='left' />}
         nextArrow={<CustomArrow direction='rite' />}
         slidesToShow={profesores?.length < 3 ? profesores.length : 3}
