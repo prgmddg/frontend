@@ -26,12 +26,7 @@ export const Navbar = () => {
       <div className='flex'>
         <div className='flex items-center gap-[10px] relative w-fit'>
           <DropdownButton
-            img={{
-              src: '/img/shoppingCart.webp',
-              width: 23,
-              height: 24,
-              alt: 'icono de carrito'
-            }}
+            icon='shopping-cart'
             arr={cart}
             desktop={
               <DropdownMenu
@@ -56,12 +51,7 @@ export const Navbar = () => {
             }
           />
           <DropdownButton
-            img={{
-              src: '/img/iconoBell.webp',
-              width: 22,
-              height: 24,
-              alt: 'icono de campana'
-            }}
+            icon='bell'
             arr={seminarios}
             desktop={
               <DropdownMenu

@@ -5,17 +5,19 @@ import { Menu } from '@headlessui/react'
 import MyTransition from '../MyTransition/MyTransition'
 import Image, { ImageProps } from 'next/image'
 import { MyPopUp } from '../MyPopUp/MyPopUp'
+import Icon from '@/components/Icon'
 
 interface props
 {
-  img:ImageProps
+  img?:ImageProps
+  icon?: string
   arr:Array<any>
   desktop:ReactNode
   mobile:ReactNode
 }
 
 export const DropdownButton = (props:props) => {
-  const { desktop, img, arr, mobile } = props
+  const { desktop, img, icon, arr, mobile } = props
 
   const [show, setShow] = useState<boolean>(false)
 
@@ -26,7 +28,17 @@ export const DropdownButton = (props:props) => {
           <Menu.Button
             className='w-[43px] h-[43px] flex justify-center items-center relative bg-[#F5F5F5] rounded-[100%]'
           >
-            <Image {...img} alt={img.alt} />
+            {
+              icon && (
+                <Icon name={icon} className='w-7 h-7 text-[#2A50E8]' /> 
+              )
+            }
+
+            {
+              img && (
+                <Image {...img} alt={img.alt} />
+              )
+            }
             {arr.length > 0 && (
               <span className='bg-red-500 text-[#fff] absolute top-[-.5rem] right-[-.5rem] w-[1.5rem] h-[1.5rem] flex justify-center items-center rounded-[100%] text-[.9rem] font-bold'>
                 {arr.length}
@@ -42,7 +54,7 @@ export const DropdownButton = (props:props) => {
         onClick={() => setShow(true)}
         className='w-[43px] h-[43px] justify-center items-center relative bg-[#F5F5F5] rounded-[100%] hidden 800px:flex'
       >
-        <Image {...img} alt={img.alt} />
+        { img && (<Image {...img} alt={img.alt} />) }
         {arr.length > 0 && (
           <span className='bg-red-500 text-[#fff] absolute top-[-.5rem] right-[-.5rem] w-[1.5rem] h-[1.5rem] flex justify-center items-center rounded-[100%] text-[.9rem] font-bold'>
             {arr.length}
