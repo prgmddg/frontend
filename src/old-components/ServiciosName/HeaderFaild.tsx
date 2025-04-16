@@ -4,6 +4,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import ProgramData from '@/types/programData'
 
 export const HeaderFound = ({ curso }: { curso: ProgramData }) => {
+  const { asesores, titulo } = curso
   return (
     <section className='bg-myBlue2'>
       <article className='container grid grid-cols-1 md:grid-cols-2 mx-auto p-10 900px:px-[20px] 900px:pt-[27px] relative flex-wrap pb-[5rem] 900px:pb-[8rem]'>
@@ -26,17 +27,12 @@ export const HeaderFound = ({ curso }: { curso: ProgramData }) => {
           <div className='bg-white rounded-md w-full lg:w-[65%] mx-auto'>
             <div className='bg-[#f2f4ff] px-5 py-10 rounded-t-lg shadow-lg'>
               <p className='text-6xl text-center'>☹️</p>
-              <p className='font-bold text-blue-500 text-2xl text-center mt-5'>¡El Curso ya ha comenzado!</p>
-              <p className='text-center font-semibold mt-3 '>Si estas interesado en formar parte de el, dejanos tus datos para unirte en el proximo inicio.</p>
+              <p className='mt-5 text-2xl font-bold text-center text-blue-500'>¡El Curso ya ha comenzado!</p>
+              <p className='mt-3 font-semibold text-center '>Si estas interesado en formar parte de el, dejanos tus datos para unirte en el proximo inicio.</p>
             </div>
             <div className='px-5 py-10 space-y-5'>
-              <p className='font-bold text-center'>Para incorporarte, comunicate con uno de nuestros asesores via WhatsApp</p>
-              <a href='' className='bg-[#00bc39] w-full p-2 text-white flex items-center justify-center rounded-md font-bold gap-5'>
-                <FontAwesomeIcon icon={faWhatsapp} className='text-3xl' />
-                <p>Incorporarme al curso</p>
-              </a>
-              <p className='font-bold text-center'>Si deseas registrarte para el proximo inicio ¡hazlo por este boton de WhatsAppp!</p>
-              <a href='' className='border border-[#00bc39] w-full p-2 text-[#00bc39] flex items-center justify-center rounded-md font-bold gap-5'>
+              <p className='font-bold text-center'>Para incorporarte o registrarte en el proximo inicio, comunicate con uno de nuestros asesores via WhatsApp</p>
+              <a href={`https://wa.me/51${asesores[0].telefono ?? asesores[0].telefono_2}?text=Hola%2C%20deseo%20incorporarme%20o%20registrarme%20en%20el%20curso. ${titulo.toUpperCase()}%20Mi%20correo%20es%3A`} className='bg-[#00bc39] w-full p-2 text-white flex items-center justify-center rounded-md font-bold gap-5'>
                 <FontAwesomeIcon icon={faWhatsapp} className='text-3xl' />
                 <p>Incorporarme al curso</p>
               </a>
