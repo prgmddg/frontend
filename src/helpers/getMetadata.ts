@@ -6,16 +6,16 @@ import { Metadata } from 'next'
 export default async function getMetadata (params: any, type: apiurl): Promise<Metadata> {
   const { name } = await params
   const { res: data } = await getRequest(type, name)
-  const { titulo, descripcion, tags } = data.nuevo_seos || { titulo: 'Centro de Capacitación y Desarrollo Global', descripcion: `${13} años mejorando las competencias y capacidades de los servidores públicos y privados. Contamos con la Certificación de calidad ISO 9001-2015.`, tags: '' }
+  const { titulo, descripcion, tags } = data.nuevo_seos
 
   const seo: OpenGraph = {
     title: type === 'seminarios' ? data.titulo : titulo,
-    description: descripcion
+    description: descripcion.length === 0 ? data.descripcion : descripcion,
   }
 
   return {
     ...seo,
-    keywords: type === 'seminarios' ? ['seminarios', 'cursos', 'diplomas'] : tags,
+    keywords: type === 'seminarios' ? ['seminarios', 'cursos', 'diplomas'] : tags.length === 0 ? [] : tags,
     openGraph: { ...seo, images: data.imagen || '', url: `https://desarrolloglobal.pe/${type}/${name}`, type: 'website' },
     authors: [{ name: 'Desarrollo Global', url: 'https://desarrolloglobal.pe' }],
     creator: 'Desarrollo Global',

@@ -156,7 +156,7 @@ export const ComponentVacante = () => {
           <section
             className='w-[923px] max-w-[100%] mob:py-[1rem] flex items-end gap-[1rem] rounded-[.4rem]'
             style={{
-              backgroundImage: 'url(/img/myRealBanner.webp)',
+              backgroundImage: 'url(/web/bg-banner-carousel-3.webp)',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
               backgroundPosition: 'center'

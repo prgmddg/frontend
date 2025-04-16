@@ -9,22 +9,22 @@ export const Banner = ({ tipo } : {tipo: string}) => {
   return (
     <section /* className={`bg-gradient-to-b ${tipo === "Cursos" ? 'from-[#2600f1] via-[#6886ff] to-[#6886ff]' : tipo === "Diplomas" ? 'from-[#002877] via-[#106fff] to-[#106fff]' : 'from-[#31003f] via-[#62007e] to-[#7c3590]'}`} */
       style={{
-        backgroundImage: 'url(/img/myRealBanner.webp)',
+        backgroundImage: 'url(/web/bg-banner-carousel-3.webp)',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
     >
       <article className='container mx-auto flex items-center justify-center !pb-0'>
-        <div className='lg:w-1/2 w-full flex justify-center'>
-          <div className='p-5 lg:p-10 py-10 lg:py-0'>
+        <div className='flex justify-center w-full lg:w-1/2'>
+          <div className='p-5 py-10 lg:p-10 lg:py-0'>
             <h1 className='text-white font-bold text-5xl w-1/4 1000px:w-[100%] 1028px:text-center 1028px:text-[2.2rem] block mb-[1rem]'>
               {tipo} Especializados
             </h1>
             <p className='text-curDi font-bold text-2xl 1028px:text-[1.3rem] 1028px:text-center block mb-[1.5rem]'>
               Porque aprender con nosotros
             </p>
-            <div className='text-white text-xl space-y-1'>
+            <div className='space-y-1 text-xl text-white'>
               <p className='flex items-center gap-2 1028px:text-[1rem]'>
                 <Image
                   src='/img/icons/VistoBuenoCursos.webp'

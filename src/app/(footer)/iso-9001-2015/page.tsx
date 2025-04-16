@@ -13,7 +13,7 @@ export default function page () {
       <div
         className='h-[1000px] px-[30px] flex justify-center items-center 1321px:h-[initial] 1321px:py-[3rem]'
         style={{
-          backgroundImage: 'url(/img/myRealBanner.webp)',
+          backgroundImage: 'url(/web/bg-banner-carousel-3.webp)',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center'

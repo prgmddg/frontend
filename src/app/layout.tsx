@@ -66,9 +66,8 @@ export default async function RootLayout ({
   return (
     <html lang='es'>
       <head>
-        <title>{title}</title>
         <Script src='//code.jivosite.com/widget/5kqbbZ9lmq' async />
-        <Script src='https://api.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js' />
+        <Script src='https://api.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js' /> 
       </head>
       <GlobalContext
         cursos={errC ? [] : cursos}
