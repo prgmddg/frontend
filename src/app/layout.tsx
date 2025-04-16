@@ -13,6 +13,7 @@ import diplomados from '@/interfaces/diplomados'
 import { Navbar } from '@/old-components/Navbar/Navbar'
 import { Open_Sans } from 'next/font/google'
 import { ProviderMyProgram } from './contextMyProgram'
+import BannerStripe from './old-components/BannerStripe/BannerStripe'
 const title = 'Desarrollo Global | Cursos y Diplomados en Gestión Pública en Línea'
 const description = '¡Bienvenido a Desarrollo Global, tu fuente confiable para Cursos, Diplomas y Diplomados en Gestión Pública en línea! Explora nuestras opciones de capacitación en SIAF, SIGA, SEACE, Invierte.pe, Contrataciones del Estado, OSCE, y Obras Públicas. Potencia tu carrera en gestión pública de manera conveniente y efectiva.'
 
@@ -65,6 +66,7 @@ export default async function RootLayout ({
           <body className={inter.className}>
             <TheMsg />
             <header className='z-[9999] relative bg-white my-shadow'>
+              <BannerStripe />
               <Navbar />
             </header>
             {children}

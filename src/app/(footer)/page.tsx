@@ -2,7 +2,6 @@
 
 import {MostrarCards, Stripe} from '@/old-components/Servicios'
 import {Carosuel, BeneficiosDeNuestrosProgramas, CentroDeCapacitacion, CertificiacionIso} from '..'
-import BannerStripe from '../old-components/BannerStripe/BannerStripe'
 import WhatsAppIcon from '@/app/old-components/WhatsAppIcon'
 import { useEffect, useState } from 'react'
 import getRequest from '@/helpers/getRequest'
@@ -29,7 +28,6 @@ export default function Home() {
         <InitialPopups initialPopups={popups} />
       )}
       <WhatsAppIcon/>
-      <BannerStripe/>
       <Carosuel/>
       <Stripe/>
       <MostrarCards program='proximos inicios' programSelector/>

@@ -6,14 +6,14 @@ import Link from 'next/link'
 
 export default function BannerStripe () {
   return (
-    <div className='mx-auto max-w-[100%]'>
-      <div className='1000px:hidden bg-[#8a5bfa]'>
-        <Link className='1000px:hidden' href='/inhouse'>
+    <div className='hidden mx-auto md:block'>
+      <div className='bg-[#8b52fe]'>
+        <Link href='/inhouse'>
           <Image
-            className='w-full aspect-auto max-w-[1000px] mx-auto'
+            className='w-full aspect-auto max-w-[800px] mx-auto'
             src='/img/BannerInHouse.gif'
-            width='0'
-            height='0'
+            width={0}
+            height={0}
             alt='banner'
           />
         </Link>
