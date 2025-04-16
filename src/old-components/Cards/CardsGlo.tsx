@@ -137,6 +137,8 @@ export const CardsGlo = (props: programData) => {
                     className={`border-[3px] ${isHover ? 'bg-primary text-white' : 'bg-white text-primary'
                     } border-primary duration-[400ms] ease-in-out text-[18px] font-bold px-[.5rem] w-[100%] block text-center rounded-[.5rem] py-[16px]`}
                     href={`/${tipo}s/${etiqueta}`}
+                    aria-label={`Más información sobre ${titulo}`}
+                    title={`Más información sobre ${titulo}`}
                   >
                     Más Información
                   </Link>
