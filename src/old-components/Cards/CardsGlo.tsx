@@ -35,13 +35,13 @@ export const CardsGlo = (props: programData) => {
         >
           <Image
             src={imagen}
-            alt='imagen de programa'
-            className='rounded-t-md w-full'
-            width='330'
-            height='220'
+            alt={`imagen de ${titulo}`}
+            className='w-full aspect-auto rounded-t-md'
+            width={0}
+            height={0}
           />
         </Link>
-        <div className='pt-5 px-0 flex-1 flex flex-col'>
+        <div className='flex flex-col flex-1 px-0 pt-5'>
           <div className='flex flex-col gap-[.3rem] text-[.8rem] mb-[8px]'>
             <div className='flex justify-between text-white h-[30px] 430px:h-[initial] 430px:!text-[.8rem] 430px:flex-col 430px:gap-[.2rem] 430px:text-center'>
 
