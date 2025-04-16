@@ -26,13 +26,17 @@ export const AcrodeonCursos = ({ data }:{data:any}) => {
           style={{ backgroundColor: color }}
         >
           <div className='flex items-center justify-between gap-3'>
-            <Image
-              src={tipo === 'curso' ? icono : data.icono}
-              width='50'
-              height='50'
-              alt='siaf'
-              className='hidden lg:block xl:block 2xl:block'
-            />
+            {
+              data.icono && (
+                <Image
+                  src={tipo === 'curso' ? icono : data.icono}
+                  width='50'
+                  height='50'
+                  alt='siaf'
+                  className='hidden lg:block xl:block 2xl:block'
+                />
+              )
+            }
             <p
               className='text-left mob:text-[.9rem] mob:leading-[1.1rem] capitalize text-[18px] line-clamp-2 leading-[22px]'
               title=''
