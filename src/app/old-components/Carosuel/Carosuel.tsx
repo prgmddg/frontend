@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import sliderOptions from '@/helpers/sliderOptions'
 import Slider from 'react-slick'
 import { CustomArrow } from '@/old-components/CustomArrow/CustomArrow'
-import Image from 'next/image'
+import Icon from '@/components/Icon'
 
 export const Carosuel = () => {  
   return (
@@ -26,25 +26,25 @@ export const Carosuel = () => {
     >
       <div>
         <picture>
-          <img src='/BANER-AGO1.png' className='w-full h-full max-h-[700px] !hidden lg:!block' alt='Banner 1' />
+          <img src='/web/banner-carousel-1.webp' className='w-full h-full max-h-[700px] !hidden lg:!block' alt='Banner 1' />
         </picture>
         <picture>
-          <img src='/BANER-AGO2-RES.png' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 2' />
+          <img src='/web/banner-carousel-1-mob.webp' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 2' />
         </picture>
       </div>
       <div>
         <picture>
-          <img src='/BANER-AGO2.png' className='w-full h-full max-h-[700px] lg:!block !hidden' alt='Banner 2' />
+          <img src='/web/banner-carousel-2.webp' className='w-full h-full max-h-[700px] lg:!block !hidden' alt='Banner 2' />
         </picture>
         <picture>
-          <img src='/BANER-AGO1-RES.png' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 1' />
+          <img src='/web/banner-carousel-2-mob.webp' className='w-full h-full max-h-[700px] lg:!hidden !block' alt='Banner 1' />
         </picture>
       </div>
       <div>
         <div
-          className='w-full aspect-[1009/745] lg:aspect-[1836/846] max-h-[700px] flex items-center justify-center'
+          className='w-full aspect-[1009/745] lg:aspect-[1836/846] max-h-[700px] flex items-end justify-center'
           style={{
-            backgroundImage: 'url(/img/myRealBanner.webp)',
+            backgroundImage: 'url(/web/bg-banner-carousel-3.webp)',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
@@ -55,37 +55,24 @@ export const Carosuel = () => {
           >
             <section className='max-w-[546px] flex-col justify-center flex w-full mx-auto p-4'>
               <div
-                className='mx-auto w-[100%] mob:mb-[27px] 560px:h-[69px] 560px:w-[100%] 1200px:w-fit bg-white rounded-[.5rem] h-[98px] flex items-center justify-center gap-[33px] 560px:gap-0 mb-[31px] px-[1rem] 560px:justify-between'
+                className='mx-auto w-[100%] mob:mb-[27px] 560px:h-[69px] 560px:w-[100%] 1200px:w-fit bg-white rounded-[.5rem] h-[98px] flex items-center justify-between gap-[33px] 560px:gap-0 mb-[31px] px-[1rem] 560px:justify-between'
               >
-                <Image
-                  src='/DG-Logotipo_Color.webp'
-                  className='560px:w-[187px] 560px:h-[46px] 400px:w-[150px] 400px:h-[initial]'
-                  height={66}
-                  width={266}
-                  alt='logo de desarrollo global'
-                />
-                <Image
-                  src='/ISO-2025.webp'
-                  height={0}
-                  width={0}
-                  alt='logo de certificacion iso'
-                  className='max-w-[185px] 560px:max-w-[130px] w-full h-auto aspect-auto'
-                />
+                <picture>
+                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo.webp' width={0} height={0} alt='logo' />
+                </picture>
+                <picture>
+                  <img className='w-full max-w-[200px] aspect-auto' src='/web/logo-iso.webp' width={0} height={0} alt='logo' />
+                </picture>
               </div>
               <h1 className='text-2xl lg:text-5xl font-bold text-white mb-[33px] w-fit'>
                 <span className='text-myYellow'>Capacitación</span>&nbsp; para
                 Funcionarios y Servidores Públicos
               </h1>
               <div className='rounded-[.5rem] h-[60px] 600px:w-[100%] 1200px:w-fit w-[100%] 600px:px-[16px] flex justify-between gap-[11px] items-center bg-white px-[1rem] mx-auto'>
-                <Image
-                  src='/img/banner3.webp'
-                  className='560px:w-[42px] 560px:h-[37px]'
-                  width={40}
-                  height={35}
-                  alt='icono de diploma'
-                />
+                <Icon className='w-10 h-10' name='certificate' />
+                
                 <p className='font-medium text-[18px] 600px:hidden'>
-                  Certifícate y mejora tus oportunidades laborales 🤝
+                  Certifícate y mejora tus oportunidades laborales
                 </p>
                 <span className='600px:block hidden leading-[18px] text-center'>
                   Certifícate y mejora tus oportunidades laborales
@@ -94,12 +81,14 @@ export const Carosuel = () => {
               </div>
             </section>
             <section className='flex items-end 1200px:hidden'>
-              <Image
-                src='/img/banner4.webp'
-                height={542}
-                width={727}
-                alt='grupo de ejecutivos sorriendo hacia al frente'
-              />
+              <picture>
+                <img
+                  className='w-full aspect-auto'
+                  src='/web/group-people.webp'
+                  height={0}
+                  width={0}
+                  alt='grupo de ejecutivos sonriendo hacia al frente' />
+              </picture>
             </section>
           </div>
           }

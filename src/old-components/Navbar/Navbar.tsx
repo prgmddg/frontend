@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useContext } from 'react'
-import Image from 'next/image'
 import { NavbarOptionList, UserMenu, NavMobMenu } from '.'
 import { options } from './helpers/options'
 import Link from 'next/link'
@@ -19,23 +18,9 @@ export const Navbar = () => {
     <nav className='justify-between px-[.8rem] flex items-center relative h-[80px] gap-4'>
       <Link href='/' className='block 800px:mr-[16px]'>
         <picture>
-          <img
-            className='block aspect-[801/208] h-auto w-[221px] 800px:hidden'
-            src='/logoweb.webp'
-            alt='logo'
-            sizes='100vw'
-            width='0'
-            height='0'
-            loading='eager'
-          />
+          <source media='(max-width: 768px)' srcSet='/web/logo-mobile.webp' />
+          <img src='/web/logo.webp' className='w-full max-w-[45px] md:max-w-[200px] mx-auto h-auto' alt='Logo Desarrollo Global' width={0} height={0} loading='eager'/>
         </picture>
-        <Image
-          src='/img/dgMob.webp'
-          width={52}
-          height={52}
-          className='hidden 800px:block'
-          alt='logo de desarrollo global'
-        />
       </Link>
       <NavbarOptionList options={options} />
       <div className='flex'>

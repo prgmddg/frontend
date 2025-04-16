@@ -23,6 +23,20 @@ export const metadata:Metadata =
 {
   title,
   description,
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/web/icon/light.ico',
+      media: '(prefers-color-scheme: light)'
+    },
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      url: '/web/icon/dark.ico',
+      media: '(prefers-color-scheme: dark)'
+    }
+  ],
   openGraph:
   {
     title,
