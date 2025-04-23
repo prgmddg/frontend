@@ -1,16 +1,15 @@
 'use client'
 
 import sliderOptions from '@/helpers/sliderOptions'
-import React from 'react'
 import Slider from 'react-slick'
+import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick.css'
 import { Entidad } from './components/Entidad'
 import entidades from './helpers/entidades'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 
 export const EntidadesQueConfiarion = () => {
   return (
-    <div className='w-[1364px] max-w-[100%] py-[60px] flex flex-col items-center my-shadow rounded-[1rem] px-[1rem] mb-[129px] 560px:mb-[80px]'>
+    <div className='w-[1364px] max-w-[100%] py-[60px] flex flex-col items-center rounded-[1rem] px-[1rem] mb-[129px] 560px:mb-[80px]'>
       <h2 className='text-[1.7rem] text-slate-900 text-center mob:leading-[1.5rem] mb-[15px]'>
         Entidades que confiaron en nosotros
       </h2>
@@ -20,8 +19,8 @@ export const EntidadesQueConfiarion = () => {
       <div className='w-[962px] max-w-[100%] px-[1rem]'>
         <Slider
           {...sliderOptions}
-          slidesToShow={4}
-          slidesToScroll={4}
+          slidesToShow={3}
+          slidesToScroll={3}
           responsive={[
             {
               breakpoint: 830,
