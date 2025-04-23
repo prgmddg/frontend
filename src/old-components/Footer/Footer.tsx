@@ -1,8 +1,7 @@
-import React from 'react'
 import Image from 'next/image'
-import footerBoxers from './helpers/footerBoxers/footerBoxes'
-import { FooterBox } from './components/FooterBox'
 import Link from 'next/link'
+import { FooterBox } from './components/FooterBox'
+import footerBoxers from './helpers/footerBoxers/footerBoxes'
 
 export const Footer = () => {
   const year = new Date().getFullYear()
@@ -33,7 +32,7 @@ export const Footer = () => {
         <section className='relative block py-[1rem] my-padding'>
           <span className='h-[2px] block w-[100%] bg-[#fff] absolute top-0 left-0' />
           <p className='block text-center'>
-            © Todos los derechos reservados © 2011 - {year} CENTRO DE
+            &copy; Todos los derechos reservados 2011 - {year} CENTRO DE
             CAPACITACIÓN Y DESARROLLO GLOBAL (DESARROLLO GLOBAL)
           </p>
         </section>

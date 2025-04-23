@@ -126,23 +126,23 @@ export const CardsGlo = (props: programData) => {
                 ? (
                   <Link
                     className={`border-[3px] ${isHover ? 'bg-primary text-white' : 'bg-white text-primary'
-                    } border-primary duration-[400ms] ease-in-out text-[18px] font-bold px-[.5rem] w-[100%] block text-center rounded-[.5rem] py-[16px]`}
+                    } border-primary duration-[400ms] ease-in-out text-[18px] font-bold p-2.5 w-[100%] block text-center rounded-lg`}
                     href={`/${tipo}s/grabados/${etiqueta}`}
-                    aria-label={`Más información sobre ${titulo}`}
-                    title={`Más información sobre ${titulo}`}
+                    aria-label={`detalles sobre el programa ${titulo}`}
+                    title={`detalles sobre el programa ${titulo}`}
                   >
-                    Más Información
+                    Ver Detalles
                   </Link>
                 )
                 : (
                   <Link
                     className={`border-[3px] ${isHover ? 'bg-primary text-white' : 'bg-white text-primary'
-                    } border-primary duration-[400ms] ease-in-out text-[18px] font-bold px-[.5rem] w-[100%] block text-center rounded-[.5rem] py-[16px]`}
+                    } border-primary duration-[400ms] ease-in-out text-[18px] font-bold p-2.5 w-full block text-center rounded-lg`}
                     href={`/${tipo}s/${etiqueta}`}
-                    aria-label={`Más información sobre ${titulo}`}
-                    title={`Más información sobre ${titulo}`}
+                    aria-label={`detalles sobre el programa ${titulo}`}
+                    title={`detalles sobre el programa ${titulo}`}
                   >
-                    Más Información
+                    Ver Detalles
                   </Link>
                 )
             }
