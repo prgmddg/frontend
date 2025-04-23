@@ -3,10 +3,13 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import { FormInHouse } from './components/FormInHouse'
+import { notFound } from 'next/navigation'
 
 export default async function InoHouseEtiqueta ({ params }: any) {
   const { etiqueta } = await params
   const { res: inhouse } = await getRequest('inhouse', etiqueta)
+
+  if (inhouse === 'ERROR 02: $Id de Curso InHouse no existe') return notFound()
 
   return (
     <section className='bg-myBlue2'>
