@@ -50,7 +50,7 @@ export const CardsGlo = (props: programData) => {
                 {tipo_clase === 'GRABADO' ? `${tipo} Asincrónico` : `${tipo} ${tipo === 'curso' ? 'Especializado' : 'De Alta Especialización'}`}
 
               </span>
-              <span className='bg-myRed font-bold text-[18px] pl-[.6rem] pr-[.4rem] rounded-[.5rem_0px_0px_.5rem] 430px:rounded-[.5rem]'>
+              <span className='bg-red-600 font-bold text-[18px] pl-[.6rem] pr-[.4rem] rounded-[.5rem_0px_0px_.5rem] 430px:rounded-[.5rem]'>
                 {tipo_clase === 'GRABADO' ? (<span>24/7</span>) : (<><span className='text-[1.1rem]'>{precio?.descuento}</span>% Dsct</>)}
               </span>
             </div>
