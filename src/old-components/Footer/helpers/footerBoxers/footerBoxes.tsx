@@ -1,7 +1,7 @@
-import footerBox from '../../interfaces/footerBox'
-import Link from 'next/link'
-import Image from 'next/image'
 import IconComplaintsBook from '@/old-components/IconComplaintsBook'
+import Image from 'next/image'
+import Link from 'next/link'
+import footerBox from '../../interfaces/footerBox'
 import { FooterList } from './components/FooterList'
 
 const footerBoxers: Array<footerBox> = [
@@ -26,8 +26,8 @@ const footerBoxers: Array<footerBox> = [
     content: (
       <>
         <FooterList />
-        <li className='list-none mt-4'>
-          <Link href='/libro-de-reclamaciones' rel='noreferrer'>
+        <li className='mt-4 list-none'>
+          <Link href='/libro-de-reclamaciones' rel='noreferrer' aria-label='Libro de reclamaciones' title='Libro de reclamaciones'>
             <IconComplaintsBook />
           </Link>
         </li>
@@ -42,7 +42,7 @@ const footerBoxers: Array<footerBox> = [
     <p>
       COD N°. CO18.00048/U
     </p>
-    <Image src='/ISO-2025-BLANCO.webp' className='w-full aspect-auto h-auto' width={0} height={0} alt='certifacion iso 9001' />
+    <Image src='/ISO-2025-BLANCO.webp' className='w-full h-auto aspect-auto' width={0} height={0} alt='certifacion iso 9001' />
   </>
   },
   {
