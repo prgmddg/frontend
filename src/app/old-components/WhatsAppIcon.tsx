@@ -7,7 +7,7 @@ export default function WhatsAppIcon () {
     <a
       target='_blank'
       href={`https://api.whatsapp.com/send?phone=51${tel}&text=Hola, vi tu página web, deseo información`}
-      className='fixed bottom-[2rem] left-[2rem] z-[9999] max-h-[5rem] flex items-center text-white bg-[#1EBE5D] rounded-full lg:rounded-xl px-3 py-2 animate-pulse' rel='noreferrer'
+      className='fixed bottom-[2rem] left-[2rem] z-[9999] max-h-[5rem] flex items-center text-white bg-green-600 rounded-full lg:rounded-xl px-3 py-2 animate-pulse' rel='noreferrer'
     >
       <svg className='w-10 h-10' role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='currentColor'>
         <path
