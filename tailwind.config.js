@@ -114,9 +114,9 @@ module.exports = {
       },
       keyframes: {
         pulse: {
-          '0%': { boxShadow: '0 0 0 2px #61e392' },
+          '0%': { boxShadow: '0 0 0 2px #25D366' },
           '50%': { boxShadow: '0 0 0 5px #12e661', opacity: '1' },
-          '100%': { boxShadow: '0 0 0 8px #08f05f' }
+          '100%': { boxShadow: '0 0 0 8px #44CB7B' }
         }
       }
     }

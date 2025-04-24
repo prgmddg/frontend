@@ -81,7 +81,7 @@ export const CardsGlo = (props: programData) => {
               />
               <Box
                 img={{ src: '/img/signal-stream.webp', width: 26, height: 19, alt: 'icono de señal' }}
-                className='text-myRed w-[117px]'
+                className='text-red-600 w-[117px]'
                 label={
                   <>
                     Modalidad
