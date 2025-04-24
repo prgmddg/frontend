@@ -16,7 +16,7 @@ export const EntidadesQueConfiarion = () => {
       <p className='text-neutral-700 mb-[2rem] text-center'>
         Únete a las de las 120 entidades que confiaron en nosotros
       </p>
-      <div className='w-[962px] max-w-[100%] px-[1rem]'>
+      <div className='w-full px-[1rem]'>
         <Slider
           {...sliderOptions}
           slidesToShow={3}

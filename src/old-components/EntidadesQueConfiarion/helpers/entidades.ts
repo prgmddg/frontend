@@ -3,35 +3,31 @@ import box from '../interfaces/box'
 const entidades:Array<box> =
 [
   {
-    img: '/img/marinaClien.webp',
-    alt: 'icono de la marina de la guerra del peru'
+    img: '/web/logo-minedu.webp',
+    alt: 'logo del ministerio de educación'
   },
   {
-    img: '/img/Minis2Clie.webp',
-    alt: 'logo ministerio de educacion'
+    img: '/web/logo-minefi.webp',
+    alt: 'logo del ministerio de economía y finanzas'
   },
   {
-    img: '/img/MinisClien.webp',
-    alt: 'logo ministerio de economio y finanzas'
-  },
-  {
-    img: '/img/onpClien.webp',
+    img: '/web/logo-onp.webp',
     alt: 'logo de la ONP'
   },
   {
-    img: '/img/OsiClien.webp',
+    img: '/web/logo-osinergmin.webp',
     alt: 'logo de Osinergmin'
   },
   {
-    img: '/img/sunarpClien.webp',
+    img: '/web/logo-sunarp.webp',
     alt: 'logo de sunarp'
   },
   {
-    img: '/img/agroClien.webp',
+    img: '/web/logo-agrorural.webp',
     alt: 'logo de agrorural'
   },
   {
-    img: '/img/EsClien.webp',
+    img: '/web/logo-essalud.webp',
     alt: 'logo de essalud'
   }
 ]
