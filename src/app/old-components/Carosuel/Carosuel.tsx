@@ -27,7 +27,7 @@ export const Carosuel = () => {
       <div>
         <picture>
           <source media='(max-width: 1024px)' srcSet='/web/banner-carousel-1-mob.webp' />
-          <img src='/web/banner-carousel-1.webp' className='w-full h-full max-h-[700px]' alt='Banner 1' loading='lazy' />
+          <img src='/web/banner-carousel-1.webp' className='w-full h-full max-h-[700px]' alt='Banner 1' loading='eager' />
         </picture>
       </div>
       <div>
