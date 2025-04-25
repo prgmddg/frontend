@@ -26,6 +26,7 @@ export const DropdownButton = (props:props) => {
       <div className='relative 800px:hidden'>
         <Menu>
           <Menu.Button
+            aria-label={icon === 'bell' ? 'botón de notificaciones' : 'botón de carrito de compras'}
             className='w-[43px] h-[43px] flex justify-center items-center relative bg-[#F5F5F5] rounded-[100%]'
           >
             {

@@ -26,11 +26,11 @@ const footerBoxers: Array<footerBox> = [
     content: (
       <>
         <FooterList />
-        <li className='mt-4 list-none'>
+        <div className='mt-4 list-none'>
           <Link href='/libro-de-reclamaciones' rel='noreferrer' aria-label='Libro de reclamaciones' title='Libro de reclamaciones'>
             <IconComplaintsBook />
           </Link>
-        </li>
+        </div>
               
       </>
     )
