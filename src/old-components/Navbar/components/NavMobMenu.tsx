@@ -22,6 +22,7 @@ export const NavMobMenu = () => {
   return (
     <>
       <button
+        aria-label='Menu de opciones'
         className='ml-[1rem] block xl:hidden'
         onClick={() => setShow(true)}
       >

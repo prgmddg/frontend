@@ -35,13 +35,15 @@ export const MobMenu = ({
           />
         ))}
 
-        <Link
-          className='relative text-white text-sm flex items-center capitalize font-bold bg-[#2A50E8] rounded-xl p-2 grid text-center w-full max-w-[150px]'
-          href='/buscar_certificado'
-        >
-          <span>Verificación de</span>
-          <span>Certificados</span>
-        </Link>
+        <li>
+          <Link
+            className='relative text-white text-sm items-center capitalize font-bold bg-[#2A50E8] rounded-xl p-2 grid text-center w-full max-w-[150px]'
+            href='/buscar_certificado'
+          >
+            <span>Verificación de</span>
+            <span>Certificados</span>
+          </Link>
+        </li>
       </ul>
     </nav>
   )

@@ -22,13 +22,15 @@ export const MobMenuOption = (props:props) => {
   }, [show])
 
   return (
-    <Link href={href} className='my-hover' onClick={() => setShow(false)}>
-      <Label label={label} />
-      <span className='hidden'>{myShow}</span>
-    </Link>
+    <li>
+      <Link href={href} className='my-hover' onClick={() => setShow(false)}>
+        <Label label={label} />
+        <span className='hidden'>{myShow}</span>
+      </Link>
+    </li>
   )
 }
 
 function Label ({ label }:{label:string}) {
-  return <span className='capitalize font-bold'>{label}</span>
+  return <span className='font-bold capitalize'>{label}</span>
 }
