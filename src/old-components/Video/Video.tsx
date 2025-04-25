@@ -19,6 +19,12 @@ export const Video = (props:props) => {
   } = props
 
   return (
-    <ReactPlayer url={src} width='100%' controls height='100%' />
+    <ReactPlayer url={src} width='100%' controls height='100%' config={{
+      vimeo: {
+        playerOptions: {
+          dnt: 1,
+        }
+      }
+    }} />
   )
 }

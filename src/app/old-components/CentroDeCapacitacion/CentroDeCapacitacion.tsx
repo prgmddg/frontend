@@ -14,7 +14,7 @@ export const CentroDeCapacitacion = () => {
         <span className='text-myYellow'>13 años</span>&nbsp;Capacitando en Gestión Pública
       </span>
       <div className='w-[880px] max-w-[100%] mx-auto h-[500px]'>
-        <Video src='http://player.vimeo.com/video/728721225?dnt=1' styles='w-full h-full' />
+        <Video src='http://player.vimeo.com/video/728721225' styles='w-full h-full' />
       </div>
     </MyBlock>
   )
