@@ -35,7 +35,7 @@ export const MyForm = (props:props) => {
 
   return (
     <form
-      className='flex-1 flex justify-between flex-col'
+      className='flex flex-col gap-4'
       onSubmit={async (e) => {
         e.preventDefault()
         if (!isOk) return

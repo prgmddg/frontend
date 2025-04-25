@@ -4,7 +4,6 @@ import { MyForm } from '@/old-components/MyForm/MyForm'
 import { MyInput } from '@/old-components/MyInput/MyInput'
 import React, { useContext, useState } from 'react'
 import { loginContext } from '../LoginSignup'
-import { CheckBoxTerminos } from '@/old-components/CheckBoxTerminos/CheckBoxTerminos'
 import postRequest from '@/helpers/postRequest'
 
 export const LoginForm = () => {
@@ -13,11 +12,9 @@ export const LoginForm = () => {
   const [values, setValues] = useState<{
     correoElectronico: string;
     contraseña: string;
-    terminos: boolean;
-  }>({ correoElectronico: '', contraseña: '', terminos: false })
+  }>({ correoElectronico: '', contraseña: '' })
 
   const isOk = Object.values(values).every(v => v !== '')
-  const isChecked = values.terminos
 
   const form = new FormData()
   form.append('correo', values.correoElectronico)
@@ -32,9 +29,9 @@ export const LoginForm = () => {
       </p>
       <MyForm
         label='Iniciar Sesión'
-        container='flex flex-col gap-[.5rem]'
+        container='grid gap-4'
         styles='bg-myLightBlue'
-        isOk={isOk && isChecked}
+        isOk={isOk}
         setIsOpen={setShow}
         user
         submit={() => postRequest('login', form)}
@@ -57,7 +54,6 @@ export const LoginForm = () => {
               return { ...prev, contraseña: e.target.value }
             })}
         />
-        <CheckBoxTerminos values={values} setValues={setValues} />
       </MyForm>
       <button onClick={() => setType('signup')} className='hover:underline text-myLightBlue mt-[.5rem] block'>
         No tengo cuenta, Quiero registrarme
