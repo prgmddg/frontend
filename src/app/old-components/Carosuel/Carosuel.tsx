@@ -18,7 +18,7 @@ export const Carosuel = () => {
       dotsClass='slick-my-dots'
       customPaging={() => {
         return (
-          <button className='w-[2.5rem] h-[1.5rem]'>
+          <button className='w-[2.5rem] h-[1.5rem]' aria-label='button de paginación'>
             <span className='h-[2px] bg-slate-400 block' />
           </button>
         )
