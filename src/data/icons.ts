@@ -2,6 +2,10 @@ export const icons: {
     [key: string]: {
         fill?: string;
         viewBox: string;
+        stroke?: string;
+        strokeWidth?: string;
+        strokeLinecap?: 'round' | 'butt' | 'square' | 'inherit';
+        strokeLinejoin?: 'round' | 'inherit' | 'miter' | 'bevel';
         paths: {
             d: string;
             fill?: string;
@@ -33,6 +37,20 @@ export const icons: {
     paths: [
       {
         d: 'M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z'
+      }
+    ]
+  },
+  play: {
+    viewBox: '0 0 256 256',
+    fill: '#000000',
+    stroke: 'none',
+    strokeWidth: '0',
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    paths: [
+      {
+        d: 'M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z',
+        fill: '#000000'
       }
     ]
   }

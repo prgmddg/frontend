@@ -1,6 +1,5 @@
+import LiteVimeoEmbed from '@/components/LiteVimeo'
 import { MyBlock } from '@/old-components/MyBlock/MyBlock'
-import { Video } from '@/old-components/Video/Video'
-
 export const CentroDeCapacitacion = () => {
   return (
     <MyBlock
@@ -14,7 +13,7 @@ export const CentroDeCapacitacion = () => {
         <span className='text-myYellow'>13 años</span>&nbsp;Capacitando en Gestión Pública
       </span>
       <div className='w-[880px] max-w-[100%] mx-auto h-[500px]'>
-        <Video src='http://player.vimeo.com/video/728721225' styles='w-full h-full' />
+        <LiteVimeoEmbed videoId='728721225' poster='/web/thumb_video_inicio.webp' autoLoad></LiteVimeoEmbed>
       </div>
     </MyBlock>
   )
