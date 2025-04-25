@@ -9,6 +9,7 @@ export const MyPopUp = ({ isOpen, setIsOpen, popUp, button, classNameButtonClose
     <>
       <Transition show={isOpen} as={Fragment}>
         <Dialog
+          aria-label='Pop Up de próximos inicios'
           className='fixed inset-0 z-[9999999] overflow-y-auto bg-black bg-opacity-[.8]'
           onClose={() => setIsOpen(false)}
         >
@@ -42,6 +43,7 @@ export const MyPopUp = ({ isOpen, setIsOpen, popUp, button, classNameButtonClose
               <div className='relative rounded-[.5rem] overflow-hidden'>
                 {popUp}
                 <button
+                  aria-label='botón para cerrar el popup'
                   className={twMerge(classNameButtonClose ? classNameButtonClose : 'absolute top-[1rem] right-[1rem] text-[#858484] hover:text-[#333]', button)}
                   onClick={() => setIsOpen(false)}
                 >
