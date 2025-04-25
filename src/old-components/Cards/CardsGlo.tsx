@@ -33,13 +33,16 @@ export const CardsGlo = (props: programData) => {
           href={`/${tipo}s${tipo_clase === 'GRABADO' ? '/grabados' : ''}/${etiqueta}`}
           className='overflow-hidden rounded-lg'
         >
-          <Image
-            src={imagen}
-            alt={`imagen de ${titulo}`}
-            className='w-full aspect-auto rounded-t-md'
-            width={0}
-            height={0}
-          />
+          <picture>
+            <img
+              src={imagen}
+              alt={`imagen de ${titulo}`}
+              className='w-full aspect-auto rounded-t-md'
+              width={0}
+              height={0}
+              loading='lazy'
+            />
+          </picture>
         </Link>
         <div className='flex flex-col flex-1 px-0 pt-5'>
           <div className='flex flex-col gap-[.3rem] text-[.8rem] mb-[8px]'>
