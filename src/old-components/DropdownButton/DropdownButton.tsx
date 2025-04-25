@@ -52,10 +52,16 @@ export const DropdownButton = (props:props) => {
         </Menu>
       </div>
       <button
+        aria-label={icon === 'bell' ? 'botón de notificaciones' : 'botón de carrito de compras'}
         onClick={() => setShow(true)}
         className='w-[43px] h-[43px] justify-center items-center relative bg-[#F5F5F5] rounded-[100%] hidden 800px:flex'
       >
         { img && (<Image {...img} alt={img.alt} />) }
+        {
+          icon && (
+            <Icon name={icon} className='w-7 h-7 text-[#2A50E8]' /> 
+          )
+        }
         {arr.length > 0 && (
           <span className='bg-red-500 text-[#fff] absolute top-[-.5rem] right-[-.5rem] w-[1.5rem] h-[1.5rem] flex justify-center items-center rounded-[100%] text-[.9rem] font-bold'>
             {arr.length}
