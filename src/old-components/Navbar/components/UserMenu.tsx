@@ -48,9 +48,9 @@ export const UserMenu = () => {
                 <Item {...opt} key={pos} />
               ))}
               {
-                (tipo === 'ADMI' || tipo === 'ASES') && <Item label='Administrador' icon={faCubes} href='https://aula.desarrolloglobal.pe/admin/' />
+                (tipo !== 'ALUM') && <Item label='Administrador' icon={faCubes} href='https://aula.desarrolloglobal.pe/admin/' />
               }
-              <Item label='Cerrar Sesion' icon={faRightFromBracket} />
+              <Item label='Cerrar Sesión' icon={faRightFromBracket} />
             </ul>
           </Menu.Items>
         </MyTransition>
@@ -68,7 +68,7 @@ function Item ({ icon, label, href }:menuOption) {
         <span className='w-[1.5rem] flex justify-start'>
           <FontAwesomeIcon icon={icon} />
         </span>
-        <span className='flex-1 whitespace-nowrap text-left'>{label}</span>
+        <span className='flex-1 text-left whitespace-nowrap'>{label}</span>
       </>
     )
   }
