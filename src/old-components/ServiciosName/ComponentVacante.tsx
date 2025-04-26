@@ -93,7 +93,7 @@ export const ComponentVacante = () => {
                         Precio Normal: S/. {!isConvenio ? precio.normal : precio.normal_convenio}.00
                       </p>
                       <p className='py-1 mt-3 text-center bg-yellow-400 rounded-full'>
-                        Descuento Especial de 25%
+                        Descuento Especial de ${precio?.descuento}%
                       </p>
                     </>
                   )
