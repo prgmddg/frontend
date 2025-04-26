@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useContext } from 'react'
-import Image from 'next/image'
 import { programContext } from '@/context/ProgramContext'
 import programData from '@/types/programData'
 
