@@ -266,6 +266,8 @@ export const Header = ({ programa }: { programa: string }) => {
                   />
                   <div className='flex items-center gap-3 ml-2.5'>
                     <input
+                      id='acept_terms'
+                      name='acept_terms'
                       type='checkbox'
                       className='rounded-full'
                       checked={values.check}
@@ -278,7 +280,7 @@ export const Header = ({ programa }: { programa: string }) => {
                         })}
                       required
                     />
-                    <p className='text-sm'>
+                    <label className='text-sm' htmlFor='acept_terms'>
                       Acepto las&nbsp;
                       <Link
                         href='/politicas-de-privacidad'
@@ -287,7 +289,7 @@ export const Header = ({ programa }: { programa: string }) => {
                       >
                         políticas de privacidad de datos
                       </Link>
-                    </p>
+                    </label>
                   </div>
                   <button
                     className='bg-[#0052CC] hover:bg-[#003399] transition text-white font-semibold text-center rounded-lg w-full p-2.5 flex items-center justify-center gap-2'
