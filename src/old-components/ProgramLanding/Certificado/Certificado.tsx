@@ -27,9 +27,9 @@ export function Certificado() {
           </p>
 
           <div className='grid gap-4'>
-            <div className='border shadow-lg rounded-xl px-8 py-8 flex items-center gap-2 relative border-myBlue3'>
+            <div className='relative flex items-center gap-2 px-8 py-8 border shadow-lg rounded-xl border-myBlue3'>
               <div className='absolute left-0 right-0 -top-4'>
-                <p className='px-10 py-1 mx-auto font-semibold text-white max-w-max md:ml-auto md:mr-20 bg-red-600 rounded-xl'>Mas Solicitado</p>
+                <p className='px-10 py-1 mx-auto font-semibold text-white bg-red-600 max-w-max md:ml-auto md:mr-20 rounded-xl'>Mas Solicitado</p>
               </div>
               <div className='grid flex-1 gap-4'>
                 <div>
@@ -38,7 +38,7 @@ export function Certificado() {
                 </div>
 
                 <div>
-                  <p className='font-semibold'>Derecho de trámite:&nbsp;<span className='font-bold line-through text-red-600 decoration-2'>S/. 77.00</span></p>
+                  <p className='font-semibold'>Derecho de trámite:&nbsp;<span className='font-bold text-red-600 line-through decoration-2'>S/. 77.00</span></p>
                   <p className='text-myBlue3'>Precio incluido en la inversion del programa</p>
                 </div>
 
@@ -75,8 +75,8 @@ export function Certificado() {
               <picture>
                 <img
                   src={program.tipo === 'curso' ? '/curso-certificado.webp' : '/diploma-certificado.webp'}
-                  width='768'
-                  height='465'
+                  width={0}
+                  height={0}
                   alt='certificado'
                   className=' mx-auto hidden aspect-auto w-full max-w-[260px] sm:block lg:mx-w-[260px] mt-10'
                 />
