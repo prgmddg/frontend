@@ -1,23 +1,22 @@
 'use client'
 
-import Image from 'next/image'
-import { Calificaciones } from './components/Calificaciones'
-import React, { InputHTMLAttributes, useContext, useEffect, useState } from 'react'
-import useObserver from '@/hooks/useObserver'
-import { ContadorHeader } from './components/ContadorHeader'
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
-import { faCreditCard, faEnvelope, faMobileScreen, faUser } from '@fortawesome/free-solid-svg-icons'
-import postRequest from '@/helpers/postRequest'
-import { usePathname } from 'next/navigation'
-import { programContext } from '@/context/ProgramContext'
-import programData from '@/types/programData'
-import Link from 'next/link'
-import { twMerge } from 'tailwind-merge'
-import UnderBar from './UnderBar'
-import Swal from 'sweetalert2'
-import useCart from '@/hooks/useCart'
 import VideoPopUp from '@/app/old-components/VideoPopUp'
 import { globalContext } from '@/context/GlobalContext'
+import { programContext } from '@/context/ProgramContext'
+import postRequest from '@/helpers/postRequest'
+import useCart from '@/hooks/useCart'
+import useObserver from '@/hooks/useObserver'
+import programData from '@/types/programData'
+import { faCreditCard, faEnvelope, faMobileScreen, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { InputHTMLAttributes, useContext, useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
+import { twMerge } from 'tailwind-merge'
+import { Calificaciones } from './components/Calificaciones'
+import { ContadorHeader } from './components/ContadorHeader'
+import UnderBar from './UnderBar'
 
 export const Header = ({ programa }: { programa: string }) => {
   const context = useContext(programContext)
@@ -152,23 +151,27 @@ export const Header = ({ programa }: { programa: string }) => {
               {
                 prueba &&
                 (
-                  <Image
-                    src={imagen}
-                    alt={tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo}
-                    width={360}
-                    height={241}
-                    className='hidden 1023px:block w-[100%] h-[234px]'
-                  />
+                  <picture>
+                    <img
+                      src={imagen}
+                      alt={tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo}
+                      width={0}
+                      height={0}
+                      className='hidden lg:block w-full max-w-[360px] aspect-auto'
+                    />
+                  </picture>
                 )
               }
 
-              <Image
-                src={imagen}
-                alt={tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo}
-                width={360}
-                height={241}
-                className='block 1023px:hidden w-[100%] h-[234px]'
-              />
+              <picture>
+                <img
+                  src={imagen}
+                  alt={tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo}
+                  width={0}
+                  height={0}
+                  className='block w-full lg:hidden aspect-auto max-w-[360px]'
+                />
+              </picture>
             </div>
             <div className='grid gap-4'>
               <div className='border border-[#0052CC] rounded-lg p-5 bg-blue-50 grid gap-5'>
