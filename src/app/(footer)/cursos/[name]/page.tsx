@@ -1,46 +1,16 @@
-import { Certificado, InversionYFormasDePago, NuestraPropuesta, Teachers } from '@/old-components/ProgramLanding'
-import { ComponentTestimonios, ComponentVacante, ComponentWhats, Contenido, Header, HeaderFound } from '@/old-components/ServiciosName'
-import WhatssAppLink from '@/old-components/WhatssAppLink/WhatssAppLink'
-import { ProgramContext } from '@/context/ProgramContext'
+import ViewProgram from '@/components/ViewProgram'
 import getMetadata from '@/helpers/getMetadata'
-import getRequest from '@/helpers/getRequest'
-import cursos from '@/interfaces/cursos'
 import { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ name :string }> }): Promise<Metadata> {
   const { name } = await params
   return await getMetadata({ name }, 'cursos')
 }
 
-export default async function CursosNombre({ params }: any) {
+export default async function CursosNombre({ params }: { params: Promise<{ name :string }> }) {
   const { name } = await params
-  const { res: curso } = await getRequest('cursos', name)
-  const { sesiones, asesores, titulo, tipo, etiqueta, tipo_clase } = curso as cursos
-  if (curso === 'ERROR 02: $Id de Curso no existe') { notFound() }
 
   return (
-    <ProgramContext program={curso} isConvenio={false}>
-      <WhatssAppLink asesores={asesores} titulo={titulo} tipo_clase={`curso ${tipo_clase === 'GRABADOS' ? 'asincrónico' : ''}`} url={`https://desarrolloglobal.pe/${tipo}s/${etiqueta}`} />
-      {
-        curso.tipo_curso === 'otro'
-          ? (<HeaderFound curso={curso} />)
-          : (
-            <>
-              <Header programa='curso' />
-              <Contenido data={sesiones} />
-              <Certificado />
-              <Teachers />
-              <NuestraPropuesta />
-              <InversionYFormasDePago />
-              <ComponentWhats />
-              <ComponentTestimonios />
-              <ComponentVacante />
-
-            </>
-          )
-      }
-
-    </ProgramContext>
+    <ViewProgram name={name} />
   )
 }

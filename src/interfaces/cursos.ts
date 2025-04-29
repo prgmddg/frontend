@@ -1,4 +1,4 @@
-import { profesor, asesor } from '@/types/programData'
+import { asesor, profesor } from '@/types/programData'
 
 export default interface cursos
 {
@@ -46,6 +46,7 @@ export default interface cursos
     totales: number;
     porcentaje: number;
   };
+  tipo_curso: string;
   tipo_clase: string;
   tipo:string;
   seo:string;

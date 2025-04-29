@@ -1,17 +1,18 @@
+import { GlobalContext } from '@/context/GlobalContext'
+import { ReactQueryProvider } from '@/context/ReactQueryContext'
+import getRequest from '@/helpers/getRequest'
+import cursos from '@/interfaces/cursos'
+import diplomados from '@/interfaces/diplomados'
+import diplomas from '@/interfaces/diplomas'
+import seminarios from '@/interfaces/seminarios'
+import { Navbar } from '@/old-components/Navbar/Navbar'
 import '@/styles/globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import { GlobalContext } from '@/context/GlobalContext'
-import { TheMsg } from '.'
-import getRequest from '@/helpers/getRequest'
-import Script from 'next/script'
 import { Metadata } from 'next'
-import cursos from '@/interfaces/cursos'
-import diplomas from '@/interfaces/diplomas'
-import seminarios from '@/interfaces/seminarios'
-import diplomados from '@/interfaces/diplomados'
-import { Navbar } from '@/old-components/Navbar/Navbar'
 import { Open_Sans } from 'next/font/google'
+import Script from 'next/script'
+import { TheMsg } from '.'
 import { ProviderMyProgram } from './contextMyProgram'
 import BannerStripe from './old-components/BannerStripe/BannerStripe'
 const title = 'Desarrollo Global | Cursos y Diplomados en Gestión Pública en Línea'
@@ -69,23 +70,25 @@ export default async function RootLayout ({
         <Script src='//code.jivosite.com/widget/5kqbbZ9lmq' async />
         <Script src='https://api.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js' /> 
       </head>
-      <GlobalContext
-        cursos={errC ? [] : cursos}
-        diplomas={errD ? [] : diplomas}
-        seminarios={errS ? [] : seminarios}
-        diplomados={errDi ? [] : diplomados}
-      >
-        <ProviderMyProgram>
-          <body className={inter.className}>
-            <TheMsg />
-            <header className='z-[9999] relative bg-white my-shadow'>
-              <BannerStripe />
-              <Navbar />
-            </header>
-            {children}
-          </body>
-        </ProviderMyProgram>
-      </GlobalContext>
+      <ReactQueryProvider>
+        <GlobalContext
+          cursos={errC ? [] : cursos}
+          diplomas={errD ? [] : diplomas}
+          seminarios={errS ? [] : seminarios}
+          diplomados={errDi ? [] : diplomados}
+        >
+          <ProviderMyProgram>
+            <body className={inter.className}>
+              <TheMsg />
+              <header className='z-[9999] relative bg-white my-shadow'>
+                <BannerStripe />
+                <Navbar />
+              </header>
+              {children}
+            </body>
+          </ProviderMyProgram>
+        </GlobalContext>
+      </ReactQueryProvider>
       <GoogleAnalytics gaId='G-V810B1M8GG' />
     </html>
   )
