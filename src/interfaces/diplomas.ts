@@ -55,6 +55,7 @@ export default interface diplomas
   tipo_clase: string;
   tipo: string;
   seo: string;
+  tipo_diploma: string;
   nuevo_seos: {
     titulo: string;
     descripcion: string;

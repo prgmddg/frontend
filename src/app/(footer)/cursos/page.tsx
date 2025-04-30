@@ -1,4 +1,5 @@
-import { Banner, MostrarCards, Stripe } from '@/old-components/Servicios'
+import ViewCourses from '@/components/ViewCourses'
+import { Banner, Stripe } from '@/old-components/Servicios'
 import { Metadata } from 'next'
 
 export async function generateMetadata (): Promise<Metadata> {
@@ -14,7 +15,7 @@ export default function Cursos () {
     <>
       <Banner tipo='Cursos' />
       <Stripe />
-      <MostrarCards program='cursos' />
+      <ViewCourses />
     </>
   )
 }

@@ -1,7 +1,8 @@
-import { Banner, MostrarCards, Stripe } from '@/old-components/Servicios'
+import { Banner, Stripe } from '@/old-components/Servicios'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Metadata } from 'next'
+import ViewDiplomas from '@/components/ViewDiplomas'
 
 export async function generateMetadata (): Promise<Metadata> {
   return {
@@ -16,7 +17,7 @@ export default function Driplomas () {
     <>
       <Banner tipo='Diplomas' />
       <Stripe />
-      <MostrarCards program='diplomas' />
+      <ViewDiplomas />
     </>
   )
 }

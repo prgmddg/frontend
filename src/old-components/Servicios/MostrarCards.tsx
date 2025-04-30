@@ -2,10 +2,11 @@
 
 import { Categoria } from '@/app/old-components/Categoria'
 import { MyProgramContext } from '@/app/contextMyProgram'
-import getRequest from '@/helpers/getRequest'
 import program from '@/types/program'
 import { ReactNode, useContext, useEffect, useState } from 'react'
 import { CardsGlo } from '../Cards'
+import { useCourses } from '@/hooks/useCourse'
+import { useDiplomas } from '@/hooks/useDiploma'
 
 interface props {
   program: program,
@@ -25,6 +26,9 @@ export const MostrarCards = (props: props) => {
       p: 'Mas de 50,000 alumnos capacitados'
     }
   } = props
+  const { data: cursos } = useCourses()
+  const { data: diplomas } = useDiplomas()
+  
   if (MyProgramContext === null) throw new Error('MyProgramContext is null')
   const cn = useContext(MyProgramContext)
   if (cn === null) throw new Error('Error')
@@ -37,32 +41,29 @@ export const MostrarCards = (props: props) => {
   useEffect(() => {
     async function myGetting () {
       setLoading(true)
-      const { res: cursos } = await getRequest('cursos')
-      const { res: diplomas } = await getRequest('diplomas')
-      const { res: diplomados } = await getRequest('diplomados')
 
-      const proximos = [...cursos.envivo, ...diplomas.envivo]
+      const proximos = [...cursos ? cursos.envivo : [], ...diplomas? diplomas.envivo : []]
 
       const poximosInicios = proximos.sort(
         (a, b) => new Date(a.inicio).getTime() - new Date(b.inicio).getTime())
       setAll({
         poximosInicios,
-        grabados: [...cursos?.grabado_web, ...diplomas.grabados_web],
-        cursos: [...cursos.envivo],
-        diplomados: [...diplomados.envivo],
-        diplomas: [...diplomas.envivo]
+        grabados: [...cursos ? cursos.grabado_web : [], ...diplomas? diplomas.grabados_web: []],
+        cursos: [...cursos? cursos.envivo : []],
+        diplomados: [],
+        diplomas: [...diplomas ? diplomas.envivo : []]
       })
       setLoading(false)
       settingData(cn?.pr ?? 'proximos inicios', {
         poximosInicios,
-        grabados: [...cursos?.grabado_web, ...diplomas.grabados_web],
-        cursos: [...cursos.envivo],
-        diplomados: [...diplomados.envivo],
-        diplomas: [...diplomas.envivo]
+        grabados: [...cursos? cursos.grabado_web : [], ...diplomas ? diplomas.grabados_web : []],
+        cursos: [...cursos ? cursos.envivo : []],
+        diplomados: [],
+        diplomas: [...diplomas? diplomas.envivo : []]
       })
     }
     myGetting()
-  }, [cn?.pr])
+  }, [cn?.pr, cursos, diplomas])
 
   useEffect(() => {
     settingData(cn.pr, all)

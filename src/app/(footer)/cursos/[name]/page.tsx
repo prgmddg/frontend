@@ -1,4 +1,4 @@
-import ViewProgram from '@/components/ViewProgram'
+import ViewOneCourse from '@/components/ViewOneCourse'
 import getMetadata from '@/helpers/getMetadata'
 import { Metadata } from 'next'
 
@@ -7,10 +7,10 @@ export async function generateMetadata({ params }: { params: Promise<{ name :str
   return await getMetadata({ name }, 'cursos')
 }
 
-export default async function CursosNombre({ params }: { params: Promise<{ name :string }> }) {
+export default async function CoursePage({ params }: { params: Promise<{ name :string }> }) {
   const { name } = await params
 
   return (
-    <ViewProgram name={name} />
+    <ViewOneCourse name={name} />
   )
 }
