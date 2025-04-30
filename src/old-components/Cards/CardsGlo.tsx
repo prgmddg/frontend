@@ -37,7 +37,7 @@ export const CardsGlo = (props: programData) => {
             <img
               src={imagen}
               alt={`imagen de ${titulo}`}
-              className='w-full aspect-auto rounded-t-md'
+              className='w-full aspect-[3/2] rounded-t-md'
               width={0}
               height={0}
               loading='lazy'
