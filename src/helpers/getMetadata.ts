@@ -8,8 +8,8 @@ export default async function getMetadata (params: any, type: apiurl): Promise<M
   const { res: data } = await getRequest(type, name)
 
   const seo: OpenGraph = {
-    title: type === 'seminarios' ? data.titulo : data.nuevo_seos.titulo,
-    description: data.nuevo_seos?.descripcion.length === 0 ? data.descripcion : data.nuevo_seos?.descripcion,
+    title: data.titulo,
+    description: data.descripcion,
   }
 
   return {
