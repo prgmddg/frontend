@@ -1,5 +1,4 @@
 export { Carosuel } from './old-components/Carosuel/Carosuel'
-export { CentroDeCapacitacion } from './old-components/CentroDeCapacitacion/CentroDeCapacitacion'
 export { CertificiacionIso } from './old-components/CertificiacionIso/CertificiacionIso'
 export { EstamosEnLinea } from './old-components/EstamosEnLinea/EstamosEnLinea'
 export { MobCart } from './old-components/MobCart/MobCart'

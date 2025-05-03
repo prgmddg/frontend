@@ -4,10 +4,11 @@ import WhatsAppIcon from '@/app/old-components/WhatsAppIcon'
 import getRequest from '@/helpers/getRequest'
 import { MostrarCards, Stripe } from '@/old-components/Servicios'
 import { useEffect, useState } from 'react'
-import { CentroDeCapacitacion, CertificiacionIso } from '..'
+import { CertificiacionIso } from '..'
 import InitialPopups from '../old-components/InitialPopups/InitialPopups'
 import CarouselBannerWeb from './_sections/CarouselBannerWeb'
 import OurBenefits from './_sections/OurBenefits'
+import VideoBanner from './_sections/VideoBanner'
 
 export default function Home() {
   const [popups, setPopups] = useState<any>()
@@ -34,7 +35,7 @@ export default function Home() {
       <Stripe />
       <MostrarCards program='proximos inicios' programSelector />
       <OurBenefits />
-      <CentroDeCapacitacion />
+      <VideoBanner />
       <CertificiacionIso />
     </>
   )
