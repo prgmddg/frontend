@@ -4,9 +4,10 @@ import WhatsAppIcon from '@/app/old-components/WhatsAppIcon'
 import getRequest from '@/helpers/getRequest'
 import { MostrarCards, Stripe } from '@/old-components/Servicios'
 import { useEffect, useState } from 'react'
-import { CertificiacionIso } from '..'
 import InitialPopups from '../old-components/InitialPopups/InitialPopups'
 import CarouselBannerWeb from './_sections/CarouselBannerWeb'
+import CompaniesTrusted from './_sections/CompaniesTrusted'
+import ContactUs from './_sections/ContactUs'
 import OurBenefits from './_sections/OurBenefits'
 import VideoBanner from './_sections/VideoBanner'
 
@@ -36,7 +37,8 @@ export default function Home() {
       <MostrarCards program='proximos inicios' programSelector />
       <OurBenefits />
       <VideoBanner />
-      <CertificiacionIso />
+      <CompaniesTrusted />
+      <ContactUs />
     </>
   )
 }

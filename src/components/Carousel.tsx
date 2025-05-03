@@ -19,7 +19,7 @@ export default function Carousel ({ children }: { children: ReactNode }) {
         <Icon name='caret-right' className='w-10 h-10 text-gray-400' />
       </button>
       <div className='w-full overflow-x-hidden' ref={emblaRef}>
-        <div className='flex gap-1 '>
+        <div className='flex'>
           {children}
         </div>
       </div>
