@@ -20,6 +20,8 @@
     "@tanstack/react-query": "^5.74.11",
     "axios": "^1.8.4",
     "canvas-confetti": "^1.9.3",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-countdown": "^2.3.6",

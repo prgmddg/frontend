@@ -3,7 +3,7 @@ export const Stripe = () => {
   return (
     <div className='w-full p-4 bg-primary'>
       <section className='grid w-full max-w-screen-xl grid-cols-1 gap-4 mx-auto md:grid-cols-2 xl:grid-cols-4'>
-        <div className='flex items-stretch justify-center w-full bg-[#f2b200] rounded-xl'>
+        <div className='flex items-stretch justify-center w-full bg-[#f2b200] rounded-xl border-2'>
           <picture>
             <img className='w-full aspect-auto rounded-xl' src='/13anios.webp' width={0} height={0} alt='icono de escudo' />
           </picture>

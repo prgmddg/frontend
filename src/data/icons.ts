@@ -45,12 +45,40 @@ export const icons: {
     fill: '#000000',
     stroke: 'none',
     strokeWidth: '0',
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
     paths: [
       {
         d: 'M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z',
         fill: '#000000'
+      }
+    ]
+  },
+  'caret-left': {
+    viewBox: '0 0 256 256',
+    fill: 'currentColor',
+    stroke: 'none',
+    strokeWidth: '0',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    paths: [
+      {
+        d: 'M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z',
+        fill: 'currentColor'
+      }
+    ]
+  },
+  'caret-right': {
+    viewBox: '0 0 256 256',
+    fill: 'currentColor',
+    stroke: 'none',
+    strokeWidth: '0',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    paths: [
+      {
+        d: 'M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z',
+        fill: 'currentColor'
       }
     ]
   }
