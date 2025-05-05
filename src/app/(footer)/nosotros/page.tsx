@@ -1,14 +1,12 @@
-import React from 'react'
 import {
+  AcercaDeNosotros,
   ContactenosBanner,
   ContactenosStripe,
-  AcercaDeNosotros,
-  GarantiaDeCalidad,
   DondeEstamos,
-  CentroDeCapacitacion
+  GarantiaDeCalidad
 } from '.'
-import { MyBlock } from '@/old-components/MyBlock/MyBlock'
-import { EntidadesQueConfiarion } from '@/old-components/EntidadesQueConfiarion/EntidadesQueConfiarion'
+import CompaniesTrusted from '../_sections/CompaniesTrusted'
+import VideoBanner from './components/VideoBanner'
 
 export default function page () {
   return (
@@ -18,10 +16,8 @@ export default function page () {
       <AcercaDeNosotros />
       <GarantiaDeCalidad />
       <DondeEstamos />
-      <CentroDeCapacitacion />
-      <MyBlock>
-        <EntidadesQueConfiarion />
-      </MyBlock>
+      <VideoBanner />
+      <CompaniesTrusted />
     </>
   )
 }

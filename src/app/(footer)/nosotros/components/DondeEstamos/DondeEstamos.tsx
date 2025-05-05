@@ -1,6 +1,5 @@
 import { MyBlock } from '@/old-components/MyBlock/MyBlock'
 import Image from 'next/image'
-import React from 'react'
 
 export const DondeEstamos = () => {
   let myBoxes:Array<number> = []
@@ -23,7 +22,7 @@ export const DondeEstamos = () => {
       <span className='text-myLightBlue my-[2rem] font-bold'>
         Av. Julio Cesar Tello 741 - Lince, Lima Perú
       </span>
-      <div className='grid grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] dondeEstamos:grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-[1rem] w-[100%]'>
+      <div className='grid w-full max-w-screen-xl grid-cols-1 gap-4 md:grid-cols-2'>
         {myBoxes.map((num, pos) => (
           <Box key={pos} num={num} />
         ))}
