@@ -63,66 +63,69 @@ export const CardsGlo = (props: programData) => {
               <span className=' line-clamp-3'>{tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo}</span>
             </span>
             <div className={`border-b-[1px] ${tipo_clase === 'GRABADO' ? 'border-primary/25' : 'border-myGray'} mb-[1rem] block`} />
-            <div className='flex justify-between mb-[1.5rem] flex-wrap gap-y-[15px]'>
-              <Box
-                img={{ src: '/img/cardCalendar.webp', width: 25, height: 25, alt: 'icono de calendario' }}
-                label={
-                  <>
-                    {
-                      tipo_clase === 'GRABADO'
-                        ? '!Inicia Ahora!'
-                        : (
-                          <>
+            <div className='flex justify-between mb-[1.5rem] flex-wrap gap-4'>
+              <div className='grid gap-4'>
+                <Box
+                  img={{ src: '/img/cardCalendar.webp', width: 25, height: 25, alt: 'icono de calendario' }}
+                  label={
+                    <>
+                      {
+                        tipo_clase === 'GRABADO'
+                          ? '!Inicia Ahora!'
+                          : (
+                            <>
                             Inicio:
-                            <br />
-                            {inicio?.split('-')[2]}&nbsp;de&nbsp;{parsearFecha(inicio)}
-                          </>
-                        )
-                    }
-                  </>
-                }
-              />
-              <Box
-                img={{ src: '/img/signal-stream.webp', width: 26, height: 19, alt: 'icono de señal' }}
-                className='text-red-600 w-[117px]'
-                label={
-                  <>
+                              <br />
+                              {inicio?.split('-')[2]}&nbsp;de&nbsp;{parsearFecha(inicio)}
+                            </>
+                          )
+                      }
+                    </>
+                  }
+                />
+                <Box
+                  img={{ src: '/img/signal-stream.webp', width: 26, height: 19, alt: 'icono de señal' }}
+                  className='text-red-600 w-[117px]'
+                  label={
+                    <>
                     Modalidad
-                    <br />
-                    {tipo_clase === 'GRABADO' ? 'Asincrónico' : 'en vivo'}
-                  </>
-                }
-              />
-              <Box
-                img={{ src: '/img/reloj.webp', width: 25, height: 25, alt: 'icono de reloj' }}
-                label={
-                  <>
+                      <br />
+                      {tipo_clase === 'GRABADO' ? 'Asincrónico' : 'en vivo'}
+                    </>
+                  }
+                />
+              </div>
+              <div className='grid gap-4'>
+                <Box
+                  img={{ src: '/img/reloj.webp', width: 25, height: 25, alt: 'icono de reloj' }}
+                  label={
+                    <>
                     Duración
-                    <br />
-                    {`${total_sesiones}`.length === 1
-                      ? `0${total_sesiones}`
-                      : total_sesiones}
+                      <br />
+                      {`${total_sesiones}`.length === 1
+                        ? `0${total_sesiones}`
+                        : total_sesiones}
                     &nbsp;Clases
-                  </>
-                }
-              />
-              <Box
-                img={{
-                  src: '/img/certiIcon.webp',
-                  width: 26,
-                  height: 23,
-                  alt: 'icono de calendario'
-                }}
-                className='w-[117px]'
-                label={
-                  <>
-                    {certificados}&nbsp;Horas
-                    <br />
+                    </>
+                  }
+                />
+                <Box
+                  img={{
+                    src: '/img/certiIcon.webp',
+                    width: 26,
+                    height: 23,
+                    alt: 'icono de calendario'
+                  }}
+                  className='w-[117px]'
+                  label={
+                    <>
+                      {certificados}&nbsp;Horas
+                      <br />
                     Certificadas
-                  </>
-                }
-              />
-
+                    </>
+                  }
+                />
+              </div>
             </div>
             {
               tipo_clase === 'GRABADO'
