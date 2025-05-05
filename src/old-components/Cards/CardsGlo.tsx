@@ -25,7 +25,7 @@ export const CardsGlo = (props: programData) => {
   return (
     <>
       <div
-        className={`w-[380px] my-shadow2 pb-[18px] 430px:w-[initial] rounded-lg mx-auto flex flex-col border-[4px] p-[.4rem] border-[transparent] hover:border-primary hover:translate-y-[-1rem] duration-[400ms] ease-in-out h-[632px] ${tipo_clase === 'GRABADO' ? 'bg-[#e2dff6]' : 'bg-white'}`}
+        className={`w-full my-shadow2 pb-[18px] 430px:w-[initial] rounded-lg mx-auto flex flex-col border-[4px] p-[.4rem] border-[transparent] hover:border-primary hover:translate-y-[-1rem] duration-[400ms] ease-in-out h-[632px] ${tipo_clase === 'GRABADO' ? 'bg-[#e2dff6]' : 'bg-white'}`}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >

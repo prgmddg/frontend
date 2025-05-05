@@ -1,12 +1,12 @@
 'use client'
 
-import { Categoria } from '@/app/old-components/Categoria'
 import { MyProgramContext } from '@/app/contextMyProgram'
+import { Categoria } from '@/app/old-components/Categoria'
+import { useCourses } from '@/hooks/useCourse'
+import { useDiplomas } from '@/hooks/useDiploma'
 import program from '@/types/program'
 import { ReactNode, useContext, useEffect, useState } from 'react'
 import { CardsGlo } from '../Cards'
-import { useCourses } from '@/hooks/useCourse'
-import { useDiplomas } from '@/hooks/useDiploma'
 
 interface props {
   program: program,
@@ -90,7 +90,7 @@ export const MostrarCards = (props: props) => {
 
   return (
     <section className='pb-[1.5rem] px-[1rem]' id='programas'>
-      <article className={`${program === 'inHouse' ? 'container' : 'max-w-[100%] w-[1200px]'} mx-auto flex flex-col items-center`}>
+      <article className={`${program === 'inHouse' ? 'container' : 'w-full max-w-screen-xl'} mx-auto flex flex-col items-center`}>
         {!programSelector && (
           <>
             <h2 className='text-center font-bold text-4xl mt-10 text-[#0E2FAA]'>
@@ -107,7 +107,7 @@ export const MostrarCards = (props: props) => {
             <Categoria myProgram={myProgram} setMyProgram={setMyProgram} />
           </div>
         )}
-        <div className={`grid w-[100%] mt-10 gap-5 ${program === 'inHouse' ? 'grid-cols-[repeat(auto-fill,minmax(17.3rem,1fr))]' : 'grid-cols-[repeat(auto-fill,minmax(20.3rem,1fr))]'}`}>
+        <div className={`grid w-full mt-10 gap-5 ${program === 'inHouse' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' : 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3'}`}>
           {!children && data && !loading && (
             <>
               {data.map((d: any, index: any) => (
