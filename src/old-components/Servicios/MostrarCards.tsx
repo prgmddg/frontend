@@ -22,7 +22,7 @@ export const MostrarCards = (props: props) => {
     programSelector = false,
     children,
     header = {
-      h2: '¿En que curso deseas capacitarte?',
+      h2: '¿En que ${p} deseas capacitarte?',
       p: 'Mas de 50,000 alumnos capacitados'
     }
   } = props
@@ -94,7 +94,7 @@ export const MostrarCards = (props: props) => {
         {!programSelector && (
           <>
             <h2 className='text-center font-bold text-4xl mt-10 text-[#0E2FAA]'>
-              {header.h2}
+              {header.h2.replace('${p}', cn.pr ?? 'proximos inicios')}
             </h2>
             <p className='mt-2 text-xl font-normal text-center'>{header.p}</p>
           </>

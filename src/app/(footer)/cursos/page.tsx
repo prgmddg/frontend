@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 
 export async function generateMetadata (): Promise<Metadata> {
   return {
+    title: 'Desarrollo Global | Cursos',
     alternates: {
       canonical: 'https://desarrolloglobal.pe/cursos'
     }
