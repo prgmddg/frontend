@@ -1,6 +1,7 @@
+import podcasts from '@/app/podcasts/_data/podcasts.json'
 import { BASE_URL } from '@/lib/const'
 import type { MetadataRoute } from 'next'
- 
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const sitemapEntries: MetadataRoute.Sitemap = [
     {
@@ -255,6 +256,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     }
   )
+
+  //PODCASTS
+  sitemapEntries.push({
+    url: `${BASE_URL}/podcasts`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 1,
+  })
+
+  podcasts.forEach((podcast) => {
+    sitemapEntries.push({
+      url: `${BASE_URL}/podcasts/${podcast.etiqueta}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1,
+    })
+  })
 
   return sitemapEntries
 }
