@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 export async function generateMetadata (): Promise<Metadata> {
   return {
-    title: 'Desarrollo Global | In Houses',
+    title: 'Desarrollo Global | In Houses en Gestión Pública en Línea',
     alternates: {
       canonical: 'https://desarrolloglobal.pe/inhouse'
     }

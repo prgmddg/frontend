@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick.css'
 
 export async function generateMetadata (): Promise<Metadata> {
   return {
-    title: 'Desarrollo Global | Diplomas',
+    title: 'Desarrollo Global | Diplomas en Gestión Pública en Línea',
     alternates: {
       canonical: 'https://desarrolloglobal.pe/diplomas'
     }
