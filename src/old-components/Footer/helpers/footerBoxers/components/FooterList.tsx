@@ -1,5 +1,4 @@
 import { LinkItems } from '@/old-components/LinkItems/LinkItems'
-import React from 'react'
 
 export const FooterList = ({ list }:{list?:Array<string>}) => {
   return (
@@ -20,7 +19,7 @@ export const FooterList = ({ list }:{list?:Array<string>}) => {
           </>
       }
       {
-        !list && <LinkItems target />
+        !list && <LinkItems />
       }
     </ul>
   )

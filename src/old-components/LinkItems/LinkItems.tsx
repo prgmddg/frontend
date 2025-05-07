@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 const list = [
@@ -8,19 +7,19 @@ const list = [
   'Política de la Calidad'
 ]
 
-export const LinkItems = ({ styles = '', target = false }:{styles?:string, target?:boolean}) => {
+export const LinkItems = ({ styles = '' }:{styles?:string}) => {
   return (
     <>
       {list.map((lis, pos) => (
         <li key={pos} className={styles}>
-          <Item lis={lis} pos={pos} target={target} />
+          <Item lis={lis} pos={pos} />
         </li>
       ))}
     </>
   )
 }
 
-function Item ({ pos, lis, target }:{pos:number, lis:string, target:boolean}) {
+function Item ({ pos, lis }:{pos:number, lis:string}) {
   const sinTildes = lis.replace(/[áéíóú]/gi, (match) => {
     return match.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   })
@@ -31,6 +30,6 @@ function Item ({ pos, lis, target }:{pos:number, lis:string, target:boolean}) {
   }
 
   return (
-    <Link href={`/politicas-de-privacidad/${getLink()}`} target={target ? '_blank' : ''} rel='noreferrer'>{lis}</Link>
+    <Link href={`/politicas-de-privacidad/${getLink()}`} rel='noreferrer'>{lis}</Link>
   )
 }

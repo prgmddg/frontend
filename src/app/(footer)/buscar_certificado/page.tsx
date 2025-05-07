@@ -1,12 +1,11 @@
-
 import { Metadata } from 'next'
 import ClientContent from './component/ClientContent'
 
 export const metadata:Metadata =
 {
-  robots:
-  {
-    nocache: true
+  title: 'Desarrollo Global | Buscar Certificado',
+  alternates: {
+    canonical: 'https://desarrolloglobal.pe/buscar_certificado'
   }
 }
 

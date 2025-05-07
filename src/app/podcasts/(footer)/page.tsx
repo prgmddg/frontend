@@ -1,7 +1,17 @@
 
+import { Metadata } from 'next'
+import podcasts from '../_data/podcasts.json'
 import { Banner } from '../components/Banner'
 import { MostrarCardsSemina } from '../components/MostrarCardsSemina'
-import podcasts from '../_data/podcasts.json'
+
+export async function generateMetadata (): Promise<Metadata> {
+  return {
+    title: 'Desarrollo Global | Podcasts',
+    alternates: {
+      canonical: 'https://desarrolloglobal.pe/podcasts'
+    }
+  }
+}
 
 export default async function Seminarios () {
   const format = podcasts.sort((a, b) => b.id - a.id)

@@ -1,13 +1,12 @@
-import React from 'react'
-import { PoliticaBlock } from './components/PoliticaBlock/PoliticaBlock'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { PoliticaBlock } from './components/PoliticaBlock/PoliticaBlock'
 
 export const metadata: Metadata =
 {
-  robots:
-  {
-    nocache: true
+  title: 'Desarrollo Global | Política de Protección de Datos Personales',
+  alternates: {
+    canonical: 'https://desarrolloglobal.pe/politicas-de-privacidad'
   }
 }
 

@@ -1,19 +1,27 @@
-import React from 'react'
-import VideoSemi from './components/VideoSemi'
-import Chat from './components/Chat/Chat'
-import SeminarioContext from './context/SeminarioContext'
-import { notFound } from 'next/navigation'
-import getMetadata from '@/helpers/getMetadata'
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import podcasts from '../_data/podcasts.json'
+import Chat from './components/Chat/Chat'
+import VideoSemi from './components/VideoSemi'
+import SeminarioContext from './context/SeminarioContext'
 
-export async function generateMetadata ({ params }: any): Promise<Metadata> {
+export async function generateMetadata ({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
   const { name } = await params
-  return await getMetadata({ name }, 'seminarios')
+
+  const podcast = podcasts.find(podcast => podcast.etiqueta === name)
+
+  if (!podcast) return notFound()
+
+  return {
+    title: `Desarrollo Global | ${podcast.titulo}`,
+    alternates: {
+      canonical: `https://desarrolloglobal.pe/podcasts/${podcast.etiqueta}`
+    },
+  }
 }
 
-export default async function Page ({ params }: any) {
-  const { name } = await params // Desestructuramos primero
+export default async function Page ({ params }: { params: Promise<{ name: string }> }) {
+  const { name } = await params
 
   const podcast = podcasts.find(podcast => podcast.etiqueta === name)
 
