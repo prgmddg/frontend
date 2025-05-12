@@ -7,15 +7,16 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faDollar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function RiteBox () {
+  const { auth } = useAuth()
   const context = useContext(programContext)
   const userContext = useContext(globalContext)
 
   if (context === undefined || userContext === undefined) return (<></>)
 
   const { program, isConvenio } = context.values
-  const { user } = userContext
   const { precio, titulo, asesores, tipo, inicio, tipo_clase, etiqueta } = program as programData
   const meses = [
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
@@ -95,7 +96,7 @@ export default function RiteBox () {
       <a
         target='_blank'
         href={whatLinkText({
-          email: user?.correo,
+          email: auth?.correo,
           asesor: asesores[0],
           subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`,
           program: titulo,

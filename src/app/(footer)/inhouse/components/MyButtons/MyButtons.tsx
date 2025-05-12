@@ -1,14 +1,15 @@
 'use client'
-import React, { useState, useContext } from 'react'
+
+import React, { useState } from 'react'
 import { ClassicButton } from '@/old-components/ClassicButton/ClassicButton'
 import Image from 'next/image'
 import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import { SolicitaloAqui } from '@/old-components/SolicitaloAqui/SolicitaloAqui'
-import { globalContext } from '@/context/GlobalContext'
+import { useAuth } from '@/hooks/useAuth'
 
 export const MyButtons = ({ styles }:{styles?:string}) => {
   const [show, setShow] = useState<boolean>(false)
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <>
@@ -31,7 +32,7 @@ export const MyButtons = ({ styles }:{styles?:string}) => {
             </p>
           }
           styles='!bg-green-500 myButtons:!flex-1 flex justify-center'
-          href={`https://api.whatsapp.com/send?phone=51993403219&text=Hola, solicito información de los cursos In-House, mi correo es:%20${user?.correo || ''}`}
+          href={`https://api.whatsapp.com/send?phone=51993403219&text=Hola, solicito información de los cursos In-House, mi correo es:%20${auth?.correo || ''}`}
         />
       </div>
       <MyPopUp

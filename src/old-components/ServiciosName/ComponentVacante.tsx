@@ -11,11 +11,11 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { MyPopUp } from '../MyPopUp/MyPopUp'
 import InHousePopUp from '../InHousePopup/InHousePopUp'
 import whatLinkText from '@/helpers/whatLinkText'
-import { globalContext } from '@/context/GlobalContext'
+import { useAuth } from '@/hooks/useAuth'
 
 export const ComponentVacante = () => {
+  const { auth } = useAuth()
   const { updatingCart } = useCart()
-  const { user } = useContext(globalContext)
   const [show, setShow] = useState<boolean>(false)
   const context = useContext(programContext)
 
@@ -135,7 +135,7 @@ export const ComponentVacante = () => {
           </div>
           <a
             href={whatLinkText({
-              email: user?.correo,
+              email: auth?.correo,
               asesor: asesores[0],
               subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`,
               program: titulo,

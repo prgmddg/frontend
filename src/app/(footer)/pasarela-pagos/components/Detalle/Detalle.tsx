@@ -8,10 +8,12 @@ import Success from './components/Success'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function Detalle () {
   const [showSuccess, setShowSuccess] = useState(false)
-  const { user, cart } = useContext(globalContext)
+  const { auth } = useAuth()
+  const { cart } = useContext(globalContext)
 
   const isCart = cart ? cart.length > 0 : false
 
@@ -33,8 +35,8 @@ export default function Detalle () {
               <>
                 {!showSuccess && (
                   <>
-                    {!user && <LoginForm />}
-                    {user && <IziForm setShowSuccess={setShowSuccess} />}
+                    {!auth && <LoginForm />}
+                    {auth && <IziForm setShowSuccess={setShowSuccess} />}
                   </>
                 )}
               </>

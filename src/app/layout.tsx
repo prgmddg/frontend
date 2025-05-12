@@ -15,6 +15,7 @@ import Script from 'next/script'
 import { TheMsg } from '.'
 import { ProviderMyProgram } from './contextMyProgram'
 import BannerStripe from './old-components/BannerStripe/BannerStripe'
+import { AuthProvider } from '@/context/AuthContext'
 const title = 'Desarrollo Global | Cursos y Diplomados en Gestión Pública en Línea'
 const description = '¡Bienvenido a Desarrollo Global, tu fuente confiable para Cursos, Diplomas y Diplomados en Gestión Pública en línea! Explora nuestras opciones de capacitación en SIAF, SIGA, SEACE, Invierte.pe, Contrataciones del Estado, OSCE, y Obras Públicas. Potencia tu carrera en gestión pública de manera conveniente y efectiva.'
 
@@ -71,23 +72,25 @@ export default async function RootLayout ({
         <Script src='https://api.micuentaweb.pe/static/js/krypton-client/V4.0/ext/classic.js' /> 
       </head>
       <ReactQueryProvider>
-        <GlobalContext
-          cursos={errC ? [] : cursos}
-          diplomas={errD ? [] : diplomas}
-          seminarios={errS ? [] : seminarios}
-          diplomados={errDi ? [] : diplomados}
-        >
-          <ProviderMyProgram>
-            <body className={inter.className}>
-              <TheMsg />
-              <header className='z-[9999] relative bg-white my-shadow'>
-                <BannerStripe />
-                <Navbar />
-              </header>
-              {children}
-            </body>
-          </ProviderMyProgram>
-        </GlobalContext>
+        <AuthProvider>
+          <GlobalContext
+            cursos={errC ? [] : cursos}
+            diplomas={errD ? [] : diplomas}
+            seminarios={errS ? [] : seminarios}
+            diplomados={errDi ? [] : diplomados}
+          >
+            <ProviderMyProgram>
+              <body className={inter.className}>
+                <TheMsg />
+                <header className='z-[9999] relative bg-white my-shadow'>
+                  <BannerStripe />
+                  <Navbar />
+                </header>
+                {children}
+              </body>
+            </ProviderMyProgram>
+          </GlobalContext>
+        </AuthProvider>
       </ReactQueryProvider>
       <GoogleAnalytics gaId='G-V810B1M8GG' />
     </html>

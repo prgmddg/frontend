@@ -10,9 +10,11 @@ import DepositoForm from './DepositoForm'
 import LoadFormMsg from './LoadFormMsg'
 import Spinner from '@/old-components/Spinner/Spinner'
 import { globalContext } from '@/context/GlobalContext'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
-  const { cart, user, setCart } = useContext(globalContext)
+  const { auth } = useAuth()
+  const { cart, setCart } = useContext(globalContext)
   const [load, setLoad] = useState(false)
   const [payType, setPayType] = useState('card')
 
@@ -27,7 +29,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
     }, 0)
 
     formData.append('amount', `${amount}`)
-    formData.append('idUser', `${user?.id}`)
+    formData.append('idUser', `${auth?.id}`)
     formData.append('productsArr', JSON.stringify(productsArr))
 
     /* 97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA */
@@ -57,7 +59,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       )
       .then(({ KR }) =>
         KR.onSubmit((paymentData:any) => {
-          paymentData.pago = { idUser: user?.id, productsArr }
+          paymentData.pago = { idUser: auth?.id, productsArr }
 
           axios
             .post('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', paymentData)
@@ -78,7 +80,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
         KR.showForm(result.formId)
       ) /* show the payment form */
       .catch((error) => console.log(error))
-  }, [cart, setCart, setShowSuccess, user?.id])
+  }, [cart, setCart, setShowSuccess, auth?.id])
 
   useEffect(() => {
     setLoad(true)

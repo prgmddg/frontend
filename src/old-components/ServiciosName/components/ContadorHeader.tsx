@@ -8,15 +8,16 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import { useContext } from 'react'
+import { useAuth } from '@/hooks/useAuth'
 
 export const ContadorHeader = () => {
+  const { auth } = useAuth()
   const context = useContext(programContext)
   const userContext = useContext(globalContext)
 
   if (context === undefined || userContext === undefined) return (<></>)
 
   const { program: curso } = context.values
-  const { user } = userContext
   const { titulo, asesores, tipo, etiqueta, tipo_clase } = curso as programData
 
   return (
@@ -37,7 +38,7 @@ export const ContadorHeader = () => {
           </div>
           <div className='text-[#FAFAFA] flex flex-col items-center'>
             <span className='text-[16px] font-bold mb-[5px] block'>Contacta con un asesor</span>
-            <a target='_blank' href={whatLinkText({ asesor: asesores[0], subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`, email: user?.correo, program: titulo, phone: asesores[0]?.telefono, url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}` })} className='flex text-[18px] bg-[#25A217] rounded-[9px] py-[10px] w-[220px] max-w-[100%] justify-center gap-[6px] items-center' rel='noreferrer'>
+            <a target='_blank' href={whatLinkText({ asesor: asesores[0], subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`, email: auth?.correo, program: titulo, phone: asesores[0]?.telefono, url: `https://desarrolloglobal.pe/${tipo}s/${etiqueta}` })} className='flex text-[18px] bg-[#25A217] rounded-[9px] py-[10px] w-[220px] max-w-[100%] justify-center gap-[6px] items-center' rel='noreferrer'>
               <FontAwesomeIcon size='xl' icon={faWhatsapp} />
               <span className='font-bold'>WhatsApp</span>
             </a>

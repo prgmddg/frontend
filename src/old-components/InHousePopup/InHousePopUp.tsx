@@ -1,17 +1,16 @@
 'use client'
 
-import React, { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ProgramaInHouse } from '.'
-import { globalContext } from '@/context/GlobalContext'
 import whatLinkText from '@/helpers/whatLinkText'
 import InHouseForm from './components/InHouseForm'
 import inHousePopup from '@/interfaces/inHousePopup'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function InHousePopUp (props:inHousePopup) {
   const { titulo, descripcion, asesores, imagen } = props
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <div className='flex'>
@@ -59,7 +58,7 @@ export default function InHousePopUp (props:inHousePopup) {
             asesoria@desarrolloglobal.pe
           </Link>
           <Link
-            href={whatLinkText({ email: user?.correo, subject: 'programa In House', asesor: asesores[0], program: titulo, phone: asesores[0].telefono })}
+            href={whatLinkText({ email: auth?.correo, subject: 'programa In House', asesor: asesores[0], program: titulo, phone: asesores[0].telefono })}
             target='_blank'
             className='text-[#fff] rounded-[.5rem] items-center py-[6px] px-[12px] gap-[.5rem] bg-[#198754] hover:bg-[#0f5534] flex' rel='noreferrer'
           >

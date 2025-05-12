@@ -1,16 +1,15 @@
 'use client'
 
-import { globalContext } from '@/context/GlobalContext'
+import { useAuth } from '@/hooks/useAuth'
 import { asesor } from '@/types/programData'
 import Image from 'next/image'
-import React, { useContext } from 'react'
 
 export default function WhatssAppLink ({ asesores, titulo, tipo_clase }: { asesores: Array<asesor>, titulo: string, url: string, tipo_clase: string }) {
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
   const telefono = asesores ? asesores[0]?.telefono || asesores[0]?.telefono_2 : 'Error'
 
   return (
-    <a target='_blank' href={`https://api.whatsapp.com/send?phone=51${telefono}&text=Hola solicito informacion del ${tipo_clase.toLowerCase()}: ${titulo},%0D%0Ami correo es: ${user?.correo || ''}`} className='fixed bottom-[2rem] left-[1rem] z-[9999] w-[5rem] max-h-[5rem]' rel='noreferrer'>
+    <a target='_blank' href={`https://api.whatsapp.com/send?phone=51${telefono}&text=Hola solicito informacion del ${tipo_clase.toLowerCase()}: ${titulo},%0D%0Ami correo es: ${auth?.correo || ''}`} className='fixed bottom-[2rem] left-[1rem] z-[9999] w-[5rem] max-h-[5rem]' rel='noreferrer'>
       <div className='whatAnimation flex w-[1.5rem] h-[1.5rem] absolute top-0 left-0 text-white rounded-[100%] justify-center items-center bg-red-500'>
         1
       </div>

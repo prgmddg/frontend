@@ -2,8 +2,6 @@
 
 import React, { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
 import cartItem from '@/interfaces/cartItem'
-import postRequest from '@/helpers/postRequest'
-import user from '@/interfaces/user'
 import cursos from '@/interfaces/cursos'
 import diplomas from '@/interfaces/diplomas'
 import msg from '@/interfaces/msg'
@@ -15,8 +13,6 @@ export const globalContext = React.createContext<values>({
   setCart: () => [],
   showMsg: { show: false },
   setShowMsg: () => null,
-  setUser: () => null,
-  user: undefined,
   cursos: [],
   diplomas: [],
   seminarios: [],
@@ -28,8 +24,6 @@ interface values {
   setCart: Dispatch<SetStateAction<Array<cartItem>>>;
   showMsg: msg;
   setShowMsg:Dispatch<SetStateAction<msg>>
-  user:user|undefined,
-  setUser:Dispatch<SetStateAction<user|undefined>>
   cursos:Array<cursos>|[],
   diplomas:Array<diplomas>|[]
   seminarios:Array<seminarios>|[]
@@ -52,8 +46,6 @@ export const GlobalContext = ({ children, cursos, diplomas, seminarios, diplomad
     type: 'fail',
     content: ''
   })
-  const [user, setUser] = useState<user | undefined>(undefined)
-
   useEffect(() => {
     const dgCart = localStorage.getItem('DG-CART')
     if (dgCart === null) return
@@ -64,26 +56,11 @@ export const GlobalContext = ({ children, cursos, diplomas, seminarios, diplomad
     localStorage.setItem('DG-CART', JSON.stringify(cart))
   }, [cart])
 
-  useEffect(() => {
-    const currentUser = localStorage.getItem('DG-USER')
-    if (currentUser === null) return
-
-    const form = new FormData()
-    form.append('token', JSON.parse(currentUser).token)
-
-    postRequest('validation', form).then(({ res }) => {
-      if (res === false) return
-      setUser(res)
-    })
-  }, [])
-
   const values: values = {
     cart,
     setCart,
     showMsg,
     setShowMsg,
-    setUser,
-    user,
     cursos,
     diplomas,
     seminarios,

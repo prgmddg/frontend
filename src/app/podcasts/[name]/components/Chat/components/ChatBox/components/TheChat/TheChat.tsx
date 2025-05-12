@@ -1,19 +1,19 @@
 'use client'
-import { globalContext } from '@/context/GlobalContext'
-import React, { useContext } from 'react'
+
 import LoginSigIn from '../LoginSigIn'
 import ChatForReal from './components/ChatForReal'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function TheChat () {
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <>
       {
-        !user && <LoginSigIn />
+        !auth && <LoginSigIn />
       }
       {
-        user && <ChatForReal />
+        auth && <ChatForReal />
       }
     </>
   )

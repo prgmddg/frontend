@@ -1,13 +1,13 @@
 'use client'
 
 import { programContext } from '@/context/ProgramContext'
-import { globalContext } from '@/context/GlobalContext'
 import whatLinkText from '@/helpers/whatLinkText'
 import programData, { asesor } from '@/types/programData'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import { useContext } from 'react'
+import { useAuth } from '@/hooks/useAuth'
 
 export const ComponentWhats = () => {
   const context = useContext(programContext)
@@ -41,7 +41,7 @@ function Box (props: asesor) {
   const { avatar, nombre, telefono, telefono_2 } = props
 
   const phomes = [telefono_2, telefono].filter(phone => phone && phone !== '0')
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
   const context = useContext(programContext)
 
   if (context === undefined) return (<></>)
@@ -80,7 +80,7 @@ function Box (props: asesor) {
             target='_blank'
             className='flex w-[202px] mx-auto items-center h-[40px] mt-1 text-green-500 text-2xl gap-3'
             href={whatLinkText({
-              email: user?.correo,
+              email: auth?.correo,
               program: tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo,
               asesor: { telefono, telefono_2 },
               subject: `${tipo} ${tipo_clase === 'GRABADO' ? 'asincrónico' : ''}`,

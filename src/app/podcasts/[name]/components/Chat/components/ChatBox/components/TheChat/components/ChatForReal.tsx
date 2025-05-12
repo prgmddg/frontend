@@ -1,8 +1,7 @@
 'use client'
 import { seminarioContext } from '@/app/podcasts/[name]/context/SeminarioContext'
-import { globalContext } from '@/context/GlobalContext'
+import { useAuth } from '@/hooks/useAuth'
 import comment from '@/interfaces/comment'
-import user from '@/interfaces/user'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
@@ -10,9 +9,8 @@ import React, { FormEvent, useContext, useEffect, useState, useRef } from 'react
 import { io } from 'socket.io-client/debug'
 
 export default function ChatForReal () {
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
   const { id: seminarioId } = useContext(seminarioContext) as { id: number, video: string, titulo: string, fecha: string, hora: string, etiqueta: string, profesor: { imagen: string, nombre: string, descripcion: string } }
-  const { id, nombre, avatar } = user as user
   const [socketState, setSocketState] = useState<any>(null)
   const [comments, setComments] = useState<Array<comment>>([])
   const [text, setText] = useState<string>('')
@@ -20,10 +18,10 @@ export default function ChatForReal () {
   useEffect(() => {
     const socket = io('https://api.desarrolloglobal.pe')
     setSocketState(socket)
-    socket.emit('conectar', seminarioId, { id, nombre, avatar })
+    socket.emit('conectar', seminarioId, { id: auth?.id, nombre: auth?.nombre, avatar: auth?.avatar })
     socket.on('mostrar_total_mensajes', data => setComments(data))
     socket.on('mostrar_mensaje', data => setComments(prev => { return [...prev, data] }))
-  }, [avatar, id, nombre, seminarioId])
+  }, [auth?.avatar, auth?.id, auth?.nombre, seminarioId])
 
   function submittingMsg (e:FormEvent) {
     e.preventDefault()
@@ -46,7 +44,7 @@ export default function ChatForReal () {
           <Comment
             {...comment}
             key={pos}
-            isMine={user?.id === comment.usuario}
+            isMine={auth?.id === comment.usuario}
           />
         ))}
         <div ref={divRef} />

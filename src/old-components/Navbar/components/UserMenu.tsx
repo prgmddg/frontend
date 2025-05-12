@@ -10,36 +10,35 @@ import { Menu } from '@headlessui/react'
 import MyTransition from '@/old-components/MyTransition/MyTransition'
 import { globalContext } from '@/context/GlobalContext'
 import postRequest from '@/helpers/postRequest'
-import user from '@/interfaces/user'
 import { twMerge } from 'tailwind-merge'
+import { useAuth } from '@/hooks/useAuth'
 
 export const UserMenu = () => {
-  const { user } = useContext(globalContext)
-  const { avatar, nombre, correo, tipo } = user as user
+  const { auth } = useAuth()
 
   return (
     <div className='flex relative mx-[.5rem]'>
       <Menu>
-        <Pfp avatar={avatar} className='mr-[1rem] nav-bar:hidden' />
+        <Pfp avatar={auth?.avatar ?? ''} className='mr-[1rem] nav-bar:hidden' />
         <Menu.Button className='flex gap-[.5rem] items-center'>
-          <Pfp avatar={avatar} h={45} w={45} className='hidden nav-bar:block' />
+          <Pfp avatar={auth?.avatar ?? ''} h={45} w={45} className='hidden nav-bar:block' />
           <FontAwesomeIcon icon={faChevronDown} />
         </Menu.Button>
         <MyTransition>
           <Menu.Items>
             <ul className='absolute bottom-0 translate-y-[100%] bg-[#fff] right-0 overflow-hidden rounded-[1rem] pb-[.7rem] border-[1px] border-borderGrey1'>
               <li className='flex p-[.8rem] justify-between'>
-                <Pfp avatar={avatar} />
+                <Pfp avatar={auth?.avatar ?? ''} />
                 <div className='flex-1 pl-[.5rem]'>
                   <span className='block whitespace-nowrap text-ellipsis overflow-hidden max-w-[7.3rem] font-bold'>
-                    {nombre}
+                    {auth?.nombre}
                   </span>
                   <p
                     title='prgmddg1@gmail.com'
                     className='max-w-[7.3rem] block whitespace-nowrap overflow-hidden text-ellipsis'
                   >
                     {
-                      correo
+                      auth?.correo
                     }
                   </p>
                 </div>
@@ -48,7 +47,7 @@ export const UserMenu = () => {
                 <Item {...opt} key={pos} />
               ))}
               {
-                (tipo !== 'ALUM') && <Item label='Administrador' icon={faCubes} href='https://aula.desarrolloglobal.pe/admin/' />
+                (auth?.tipo !== 'ALUM') && <Item label='Administrador' icon={faCubes} href='https://aula.desarrolloglobal.pe/admin/' />
               }
               <Item label='Cerrar Sesión' icon={faRightFromBracket} />
             </ul>
@@ -60,7 +59,8 @@ export const UserMenu = () => {
 }
 
 function Item ({ icon, label, href }:menuOption) {
-  const { user, setUser, setShowMsg } = useContext(globalContext)
+  const { auth, setAuth } = useAuth()
+  const { setShowMsg } = useContext(globalContext)
 
   function Content () {
     return (
@@ -86,16 +86,16 @@ function Item ({ icon, label, href }:menuOption) {
         </a>
       )}
       {
-        !href && user &&
+        !href && auth &&
           <button
             className={styles}
             onClick={async () => {
               const form = new FormData()
-              form.append('token', user.token)
+              form.append('token', auth?.token)
 
               if (await postRequest('logout', form)) {
                 localStorage.removeItem('DG-USER')
-                setUser(undefined)
+                setAuth(null)
                 setShowMsg({ content: 'Se a Cerrado su Sesion', show: true })
               }
             }}

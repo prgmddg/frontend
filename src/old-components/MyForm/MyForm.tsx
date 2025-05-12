@@ -2,6 +2,7 @@
 
 import { globalContext } from '@/context/GlobalContext'
 import postRequest from '@/helpers/postRequest'
+import { useAuth } from '@/hooks/useAuth'
 import user from '@/interfaces/user'
 import React, { ReactNode, useContext } from 'react'
 
@@ -31,7 +32,8 @@ export const MyForm = (props:props) => {
     autoLogin
   } = props
 
-  const { setUser, setShowMsg } = useContext(globalContext)
+  const { setShowMsg } = useContext(globalContext)
+  const { setAuth } = useAuth()
 
   return (
     <form
@@ -55,14 +57,14 @@ export const MyForm = (props:props) => {
               form.append('clave', values.get('clave'))
               const { res } = await postRequest('login', form)
               storing(res)
-              setUser(res)
+              setAuth(res)
               document.cookie = `token=${res.token};domain=.desarrolloglobal.pe`
               setIsOpen(false)
 
               return
             }
             storing(res)
-            setUser(res)
+            setAuth(res)
           }
           setShowMsg({ show: true, type: 'success', content: 'Se han enviado los datos con Exito' })
           setIsOpen(false)

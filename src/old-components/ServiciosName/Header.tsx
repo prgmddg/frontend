@@ -1,7 +1,6 @@
 'use client'
 
 import VideoPopUp from '@/app/old-components/VideoPopUp'
-import { globalContext } from '@/context/GlobalContext'
 import { programContext } from '@/context/ProgramContext'
 import postRequest from '@/helpers/postRequest'
 import useCart from '@/hooks/useCart'
@@ -17,10 +16,11 @@ import { twMerge } from 'tailwind-merge'
 import { Calificaciones } from './components/Calificaciones'
 import { ContadorHeader } from './components/ContadorHeader'
 import UnderBar from './UnderBar'
+import { useAuth } from '@/hooks/useAuth'
 
 export const Header = ({ programa }: { programa: string }) => {
   const context = useContext(programContext)
-  const userContext = useContext(globalContext)
+  const { auth } = useAuth()
   const { updatingCart } = useCart()
   const [values, setValues] = useState<{ nombres: string, telefono: string, email: string, check: boolean }>({ nombres: '', telefono: '', email: '', check: true })
   const pathName = usePathname()
@@ -42,9 +42,7 @@ export const Header = ({ programa }: { programa: string }) => {
     })
   }, [entries, observe])
 
-  if (context === undefined || userContext === undefined) return (<></>)
-
-  const { user } = userContext
+  if (context === undefined) return (<></>)
 
   const { program } = context.values
   const { titulo, tipo, descripcion, imagen, precio, id, total_sesiones, source, video, tipo_clase } = program as programData
@@ -107,7 +105,7 @@ export const Header = ({ programa }: { programa: string }) => {
               {tipo === 'curso' ? 'Especializado' : 'De Alta Especialización'}&nbsp;{tipo_clase === 'GRABADO' ? 'Asincrónico' : ''}
             </span>
             <h1 className='text-white font-bold text-5xl leading-[55px] 900px:text-[32px] 900px:leading-[32px] 900px:mb-[22px] mb-[29px]'>
-              {tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo} {user && user.tipo !== 'ALUM' && `- [${id}]`}
+              {tipo === 'diplomado' ? titulo.replace('Diploma', 'Diplomado') : titulo} {auth && auth.tipo !== 'ALUM' && `- [${id}]`}
             </h1>
             <p className='text-white text-[18px] leading-[30px] 900px:hidden mb-[34px] block'>
               {descripcion}

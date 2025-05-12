@@ -10,9 +10,11 @@ import { globalContext } from '@/context/GlobalContext'
 import { CartItems } from '../CartItems/CartItems'
 import { NotiItems } from '../NotiItems/NotiItems'
 import LoginSignup from '../LoginSignup/LoginSignup'
+import { useAuth } from '@/hooks/useAuth'
 
 export const Navbar = () => {
-  const { cart, user, seminarios } = useContext(globalContext)
+  const { cart, seminarios } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <nav className='justify-between px-[.8rem] flex items-center relative h-[80px] gap-4'>
@@ -82,8 +84,8 @@ export const Navbar = () => {
             }
           />
         </div>
-        {user && <UserMenu />}
-        {!user && <LoginSignup />}
+        {auth && <UserMenu />}
+        {!auth && <LoginSignup />}
         <NavMobMenu />
       </div>
     </nav>

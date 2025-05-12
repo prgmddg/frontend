@@ -1,13 +1,13 @@
 'use client'
 
-import React, { ReactNode, useContext, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import Image, { ImageProps } from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { twMerge } from 'tailwind-merge'
-import { globalContext } from '@/context/GlobalContext'
 import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import { SolicitaloAqui } from '@/old-components/SolicitaloAqui/SolicitaloAqui'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function DejanosAyudarte () {
   const [show, setShow] = useState<boolean>(false)
@@ -98,13 +98,13 @@ function Box (props:props) {
 }
 
 function WhatButton ({ className, num }:{className?:string, num:string}) {
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <a
       className={twMerge('560px:text-[25px] 560px:h-[50px] gap-[21px] px-[1rem] flex justify-center bg-myGreen text-[35px] rounded-[.5rem] border-[4px] border-myGreen items-center text-white w-[100%] h-[70px] hover-animation', className)}
       target='_blank'
-      href={`https://api.whatsapp.com/send?phone=51${num}&text=Hola,%20solicito%20informaci%C3%B3n%20mi%20correo%20es:${user?.correo}`} rel='noreferrer'
+      href={`https://api.whatsapp.com/send?phone=51${num}&text=Hola,%20solicito%20informaci%C3%B3n%20mi%20correo%20es:${auth?.correo}`} rel='noreferrer'
     >
       <FontAwesomeIcon icon={faWhatsapp} />
       <span className='font-bold'>{num}</span>

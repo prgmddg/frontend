@@ -9,12 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext, useState, InputHTMLAttributes } from 'react'
 import Image from 'next/image'
 import postRequest from '@/helpers/postRequest'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function Promocion () {
   const seminario = useContext(seminarioContext) as seminarios
   const { asesor, titulo, tipo_programa } = seminario
   const [show, setShow] = useState<boolean>(false)
-  const { user } = useContext(globalContext)
+  const { auth } = useAuth()
 
   return (
     <>
@@ -29,7 +30,7 @@ export default function Promocion () {
         </p>
         <a
           target='_blank'
-          href={`https://api.whatsapp.com/send?phone=${asesor && asesor[0]?.telefono}&text=Hola,%20solicito%20información%20del%20%20${tipo_programa}: ${titulo},%20mi%20correo%20es: ${user?.correo}`}
+          href={`https://api.whatsapp.com/send?phone=${asesor && asesor[0]?.telefono}&text=Hola,%20solicito%20información%20del%20%20${tipo_programa}: ${titulo},%20mi%20correo%20es: ${auth?.correo}`}
           className='bg-green-500 text-white font-bold text-[1.7rem] w-[100%] px-[1rem] py-[.5rem] flex gap-[1rem] rounded-[.5rem] justify-center items-center mb-[1rem]' rel='noreferrer'
         >
           <FontAwesomeIcon icon={faWhatsapp} />
