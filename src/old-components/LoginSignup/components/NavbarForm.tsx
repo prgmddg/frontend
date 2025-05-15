@@ -9,8 +9,8 @@ export const NavbarForm = ({ type }:{type:Mytype}) => {
     <div className='flex overflow-hidden rounded-[.5rem] bg-[#fff]'>
       <section className='p-[48px] rounded-[.5rem] bg-myLightBlue flex-1 login:hidden'>
         <Image
-          src='/img/nuevo_logo_blanco.webp'
-          width={180}
+          src='/img/logo-nav-bar.webp'
+          width={200}
           height={50}
           alt='desarrollo global logo'
           className='mb-[48px]'
