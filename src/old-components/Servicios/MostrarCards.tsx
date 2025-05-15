@@ -1,6 +1,6 @@
 'use client'
 
-import { MyProgramContext } from '@/app/contextMyProgram'
+import { MyProgramContext } from '@/app/(web)/contextMyProgram'
 import { Categoria } from '@/app/old-components/Categoria'
 import { useCourses } from '@/hooks/useCourse'
 import { useDiplomas } from '@/hooks/useDiploma'

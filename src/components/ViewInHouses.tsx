@@ -1,8 +1,8 @@
 'use client'
 
-import { AcercaDeNosotros, BeneficiosDeLa, Cotizacion, InHouseBanner, InHouseCard, LastBlock, ListaDeProgramas, MyButtons } from '@/app/(footer)/inhouse'
-import AsesoresInHouse from '@/app/(footer)/inhouse/components/AsesoresInHouse'
-import { NavbarInHouse } from '@/app/(footer)/inhouse/components/InHouseBanner/components/NavbarInHouse'
+import { AcercaDeNosotros, BeneficiosDeLa, Cotizacion, InHouseBanner, InHouseCard, LastBlock, ListaDeProgramas, MyButtons } from '@/app/(web)/(footer)/inhouse'
+import AsesoresInHouse from '@/app/(web)/(footer)/inhouse/components/AsesoresInHouse'
+import { NavbarInHouse } from '@/app/(web)/(footer)/inhouse/components/InHouseBanner/components/NavbarInHouse'
 import { InHouseContext } from '@/context/InHouseContext'
 import { useInHouses } from '@/hooks/useInHouses'
 import { MyBannerContainer } from '@/old-components/MyBannerContainer/MyBannerContainer'

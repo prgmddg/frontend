@@ -1,6 +1,6 @@
 'use client'
 
-import { FormInHouse } from '@/app/(footer)/inhouse/[etiqueta]/components/FormInHouse'
+import { FormInHouse } from '@/app/(web)/(footer)/inhouse/[etiqueta]/components/FormInHouse'
 import { useOneInHouse } from '@/hooks/useInHouses'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

@@ -1,7 +1,7 @@
+import { MyProgramContext } from '@/app/(web)/contextMyProgram'
 import program from '@/types/program'
-import { Dispatch, SetStateAction, useContext } from 'react'
 import Link from 'next/link'
-import { MyProgramContext } from '@/app/contextMyProgram'
+import { Dispatch, SetStateAction, useContext } from 'react'
 
 interface props {
   label: program,

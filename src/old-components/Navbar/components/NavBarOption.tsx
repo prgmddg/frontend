@@ -1,10 +1,10 @@
 'use client'
 
-import Link from 'next/link'
-import Options from '../interfaces/options'
-import { useContext, useState } from 'react'
-import { MyProgramContext } from '@/app/contextMyProgram'
+import { MyProgramContext } from '@/app/(web)/contextMyProgram'
 import program from '@/types/program'
+import Link from 'next/link'
+import { useContext, useState } from 'react'
+import Options from '../interfaces/options'
 
 export const NavBarOption = ({ href, label }:Options) => {
   const [hover, setHover] = useState<boolean>(false)

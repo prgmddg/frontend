@@ -1,3 +1,4 @@
+export { Stripe } from '../../app/(web)/(footer)/_sections/Stripe'
 export { Banner } from './Banner'
-export { Stripe } from '../../app/(footer)/_sections/Stripe'
 export { MostrarCards } from './MostrarCards'
+

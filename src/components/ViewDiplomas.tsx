@@ -1,6 +1,6 @@
 'use client'
 
-import { MyProgramContext } from '@/app/contextMyProgram'
+import { MyProgramContext } from '@/app/(web)/contextMyProgram'
 import { MostrarCards } from '@/old-components/Servicios'
 import { useContext, useEffect } from 'react'
 

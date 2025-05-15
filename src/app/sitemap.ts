@@ -1,4 +1,4 @@
-import podcasts from '@/app/podcasts/_data/podcasts.json'
+import podcasts from '@/app/(web)/podcasts/_data/podcasts.json'
 import { BASE_URL } from '@/lib/const'
 import type { MetadataRoute } from 'next'
 

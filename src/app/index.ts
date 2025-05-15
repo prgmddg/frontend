@@ -1,5 +1,0 @@
-export { Carosuel } from './old-components/Carosuel/Carosuel'
-export { EstamosEnLinea } from './old-components/EstamosEnLinea/EstamosEnLinea'
-export { MobCart } from './old-components/MobCart/MobCart'
-export { MobNoti } from './old-components/MobNoti/MobNoti'
-export { TheMsg } from './old-components/TheMsg/TheMsg'
