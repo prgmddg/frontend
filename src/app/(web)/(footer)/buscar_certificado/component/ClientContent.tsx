@@ -183,9 +183,9 @@ function Table({ data }: { data: Array<row> }) {
                       : (
                         data.programa !== 'GESTIÓN DE SUMINISTRO CON ENFOQUE REGULATORIO EN PRODUCTOS FARMACÉUTICOS Y DISPOSITIVOS MÉDICOS EN EL MARCO DE LA LEY Nº 32069 LEY GENERAL DE CONTRATACIONES PÚBLICAS Y SU REGLAMENTO' && (
                           <div className='flex flex-wrap gap-2'>
-                          <p className='font-bold'>Fecha de Capacitacion:</p>
-                          <p>{data.mes}/{data.year}</p>
-                        </div>
+                            <p className='font-bold'>Fecha de Capacitacion:</p>
+                            <p>{data.mes}/{data.year}</p>
+                          </div>
                         )
                       )
                   }
