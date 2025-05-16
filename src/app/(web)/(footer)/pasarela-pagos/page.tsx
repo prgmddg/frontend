@@ -6,10 +6,8 @@ import { Metadata } from 'next'
 
 export const metadata:Metadata =
 {
-  robots:
-  {
-    nocache: true
-  }
+  title: 'Desarrollo Global | Pasarela de Pagos',
+  description: 'Pasarela de pagos para Desarrollo Global',
 }
 
 export default function page () {
