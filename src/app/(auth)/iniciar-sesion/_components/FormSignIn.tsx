@@ -6,13 +6,12 @@ import { useAuth } from '@/hooks/useAuth'
 import { useMutation } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import Swal from 'sweetalert2'
 
 export default function FormSignIn () {
   const route = useRouter()
   const { setAuth } = useAuth()
-  const [mounted, setMounted] = useState(false)
   const [data, setData] = useState<{ email: string, password: string, remember: boolean }>({ email: '', password: '', remember: false })
   const [error, setError] = useState<{ email: string, password: string, general: string }>({ email: '', password: '', general: '' })
   const [viewPassword, setViewPassword] = useState(false)
@@ -100,25 +99,6 @@ export default function FormSignIn () {
     }
 
     mutation.mutate(data)
-  }
-
-  useEffect(() => {
-    const user = localStorage.getItem('DG-USER')
-    if (user) {
-      const { token } = JSON.parse(user)
-      document.cookie = `token=${token};domain=.desarrolloglobal.pe`
-      route.push('/')
-    } else {
-      setMounted(true)
-    }
-  }, [route])
-
-  if (!mounted) {
-    return (
-      <div className='flex items-center justify-center w-full font-semibold h-dvh'>
-        ...cargando
-      </div>
-    )
   }
 
   return (

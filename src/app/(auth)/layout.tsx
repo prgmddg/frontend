@@ -1,8 +1,33 @@
-export default function AuthLayout ({
-  children
-}: {
-  children: React.ReactNode
-}) {
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { ReactNode, useEffect, useState } from 'react'
+
+export default function AuthLayout ({ children }: { children: ReactNode }) {
+  const router = useRouter()
+  const [mounted, setMounted] = useState(false)
+    
+  useEffect(() => {
+    const user = localStorage.getItem('DG-USER')
+    if (user) {
+      const { token } = JSON.parse(user)
+      document.cookie = `token=${token};domain=.desarrolloglobal.pe`
+      router.push('/')
+    } else {
+      setMounted(true)
+    }
+  }, [router])
+    
+  if (!mounted) {
+    return (
+      (
+        <div className='flex items-center justify-center w-full font-semibold h-dvh'>
+            ...cargando
+        </div>
+      )
+    )
+  }
+    
   return (
     <main className='grid w-full h-screen grid-cols-1 lg:grid-cols-2'>
       <section className='relative flex items-center justify-center order-2 p-8 bg-blue-900 lg:order-1'>
