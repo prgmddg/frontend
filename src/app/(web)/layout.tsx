@@ -29,9 +29,7 @@ export default async function WebLayout({ children }: { children: ReactNode }) {
       seminarios={errS ? [] : seminarios}
       diplomados={errDi ? [] : diplomados}
     >
-      <head>
-        <Script src='//code.jivosite.com/widget/5kqbbZ9lmq' async />
-      </head>
+      <Script src='//code.jivosite.com/widget/5kqbbZ9lmq' async />
       <ProviderMyProgram>
         <TheMsg />
         <header className='z-[9999] relative bg-white my-shadow'>

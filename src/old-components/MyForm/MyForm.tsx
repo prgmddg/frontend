@@ -58,7 +58,6 @@ export const MyForm = (props:props) => {
               const { res } = await postRequest('login', form)
               storing(res)
               setAuth(res)
-              document.cookie = `token=${res.token};domain=.desarrolloglobal.pe`
               setIsOpen(false)
 
               return
