@@ -16,7 +16,7 @@ export default function FormSignIn () {
       <InputPassword value={data.password} onChangeAction={handleData} isError={error.password.length > 0 || error.general.length > 0} />
       
       <div className='flex items-center justify-between'>
-        <InputCheckBox label='Recordar Sesión' isChecked={data.remember} onChangeAction={handleData} />
+        <InputCheckBox label='Recordar Sesión' isChecked={data.remember} onChangeAction={handleData} id='remember' />
         <Link href='/recuperar-cuenta' className='text-sm font-bold text-blue-800 transition-all hover:underline'>¿Has Olvidado tu Contraseña?</Link>
       </div>
       

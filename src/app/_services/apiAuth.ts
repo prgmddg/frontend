@@ -24,3 +24,41 @@ export async function signIn ({ email, password }: { email: string, password: st
     
   return result
 }
+
+export async function signUp ({
+  email,
+  names,
+  surnames,
+  document,
+  phone,
+}: { 
+  email: string
+  names: string
+  surnames: string
+  document: string
+  phone: string
+  terms: boolean
+}) {
+  const formData = new FormData()
+    
+  formData.append('correo', email)
+  formData.append('clave', document)
+  formData.append('nombre', names)
+  formData.append('apellido', surnames)
+  formData.append('celular', phone)
+
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}sesiones/registrar`, {
+    method: 'POST',
+    body: formData
+  })
+
+  if (!response.ok) {
+    throw new Error(ErrorCodes.INTERNAL_SERVER_ERROR)
+  }
+    
+  const result = (await response.json()) as user | boolean
+    
+  if (typeof result === 'boolean') {
+    throw new Error(ErrorCodes.INVALID_DATA)
+  }
+}
