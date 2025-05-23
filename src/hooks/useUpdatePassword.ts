@@ -31,6 +31,10 @@ export default function useUpdatePassword () {
         message: 'Contraseña actualizada correctamente 😀',
         isConfirmed: true,
         confirmedAction: () => {
+          setData({
+            password: '',
+            repeatPassword: '',
+          })
           setAuth(data.data)
           saveUserSession(data.data)
           return router.push('/')

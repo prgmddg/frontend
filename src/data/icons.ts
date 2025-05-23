@@ -94,6 +94,18 @@ export const icons: {
         d: 'M21 12a9 9 0 1 1-6.219-8.56'
       }
     ]
+  },
+  'row-left': {
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: '3.6',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    paths: [
+      { d: 'm12 19-7-7 7-7' },
+      { d: 'M19 12H5' }
+    ]
   }
 }
 

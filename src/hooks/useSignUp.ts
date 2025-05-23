@@ -25,7 +25,7 @@ export default function useSignUp () {
     names: '',
     surnames: '',
     phone: '',
-    terms: false,
+    terms: true,
     newsletter: false
   })
 
@@ -34,7 +34,18 @@ export default function useSignUp () {
       ToastSuccess({
         message: '😁 Registro exitoso, hemos enviado un correo para verificar tu cuenta',
         isConfirmed: true,
-        confirmedAction: () => router.push('/iniciar-sesion')
+        confirmedAction: () => {
+          setData({
+            email: '',
+            document: '',
+            names: '',
+            surnames: '',
+            phone: '',
+            terms: true,
+            newsletter: false
+          })
+          router.push('/iniciar-sesion')
+        }
       })
     },
     onError: (error) => {

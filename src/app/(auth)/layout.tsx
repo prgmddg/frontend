@@ -1,5 +1,6 @@
 'use client'
 
+import Icon from '@/components/Icon'
 import { useRouter } from 'next/navigation'
 import { ReactNode, useEffect, useState } from 'react'
 
@@ -43,7 +44,13 @@ export default function AuthLayout ({ children }: { children: ReactNode }) {
         </div>
       </section>
       <section className='flex items-center justify-center order-1 p-8 lg:order-2'>
-        {children}
+        <div className='w-full max-w-[800px] mx-auto grid gap-8'>
+          <button aria-label='volver atrás' onClick={() => router.back()} className='bg-blue-800 hover:bg-blue-900 transition-all text-sm rounded-lg text-white font-semibold p-2.5 max-w-[100px] flex items-center justify-center gap-2'>
+            <Icon name='row-left' className='w-4 h-4' />
+            <span>Volver</span>
+          </button>
+          {children}
+        </div>
       </section>
     </main>
   )

@@ -9,7 +9,6 @@ import { DropdownMenu } from '../DropdownMenu/DropdownMenu'
 import { globalContext } from '@/context/GlobalContext'
 import { CartItems } from '../CartItems/CartItems'
 import { NotiItems } from '../NotiItems/NotiItems'
-import LoginSignup from '../LoginSignup/LoginSignup'
 import { useAuth } from '@/hooks/useAuth'
 
 export const Navbar = () => {
@@ -85,7 +84,9 @@ export const Navbar = () => {
           />
         </div>
         {auth && <UserMenu />}
-        {!auth && <LoginSignup />}
+        {!auth && (
+          <Link href='/iniciar-sesion' className='font-semibold text-white py-2.5 px-5 rounded-lg bg-[#2A50E8] ml-[10px]'>Aula Virtual</Link>
+        )}
         <NavMobMenu />
       </div>
     </nav>

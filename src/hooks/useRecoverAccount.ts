@@ -18,7 +18,10 @@ export default function useRecoverAccount () {
       ToastSuccess({
         message: '😁 Hemos enviado un correo para recuperar tu cuenta',
         isConfirmed: true,
-        confirmedAction: () => router.push('/iniciar-sesion')
+        confirmedAction: () => {
+          setData({ email: '' })
+          router.push('/iniciar-sesion')
+        }
       })
     },
     onError: (error) => {

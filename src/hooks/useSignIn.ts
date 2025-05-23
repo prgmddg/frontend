@@ -18,6 +18,11 @@ export default function useSignIn () {
   
   const mutation = useMutation({
     onSuccess: (data) => {
+      setData({
+        email: '',
+        password: '',
+        remember: false
+      })
       setAuth(data)
       saveUserSession(data)
       route.push('/')

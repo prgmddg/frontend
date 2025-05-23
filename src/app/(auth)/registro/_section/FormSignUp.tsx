@@ -12,10 +12,10 @@ export default function FormSignUp () {
   
   return (
     <form className='grid gap-8' onSubmit={handleSubmit}>
-      <InputEmail value={data.email} onChangeAction={handleData} isError={error.email.length > 0 || error.general.length > 0} />
-      <InputText value={data.document} onChangeAction={handleData} isError={error.document.length > 0 || error.general.length > 0} label='Número de Documento' id='document' placeholder='11111111' />
       <InputText value={data.names} onChangeAction={handleData} isError={error.names.length > 0 || error.general.length > 0} label='Nombres' id='names' placeholder='Joe' />
       <InputText value={data.surnames} onChangeAction={handleData} isError={error.surnames.length > 0 || error.general.length > 0} label='Apellidos' id='surnames' placeholder='Doe' />
+      <InputEmail value={data.email} onChangeAction={handleData} isError={error.email.length > 0 || error.general.length > 0} />
+      <InputText value={data.document} onChangeAction={handleData} isError={error.document.length > 0 || error.general.length > 0} label='Número de Documento' id='document' placeholder='11111111' />
       <InputText value={data.phone} onChangeAction={handleData} isError={error.phone.length > 0 || error.general.length > 0} label='Teléfono' id='phone' placeholder='999999999' />
 
       <div className='grid gap-4'>
