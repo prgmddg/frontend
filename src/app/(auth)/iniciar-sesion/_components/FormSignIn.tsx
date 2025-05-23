@@ -13,7 +13,7 @@ export default function FormSignIn () {
   return (
     <form className='grid gap-8' onSubmit={handleSubmit}>
       <InputEmail value={data.email} onChangeAction={handleData} isError={error.email.length > 0 || error.general.length > 0} />
-      <InputPassword value={data.password} onChangeAction={handleData} isError={error.password.length > 0 || error.general.length > 0} />
+      <InputPassword id='password' label='Contraseña' value={data.password} onChangeAction={handleData} isError={error.password.length > 0 || error.general.length > 0} />
       
       <div className='flex items-center justify-between'>
         <InputCheckBox label='Recordar Sesión' isChecked={data.remember} onChangeAction={handleData} id='remember' />

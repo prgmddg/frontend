@@ -33,6 +33,7 @@ export default function useSignUp () {
     onSuccess: () => {
       ToastSuccess({
         message: '😁 Registro exitoso, hemos enviado un correo para verificar tu cuenta',
+        isConfirmed: true,
         confirmedAction: () => router.push('/iniciar-sesion')
       })
     },

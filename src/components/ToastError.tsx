@@ -9,6 +9,6 @@ export default function ToastError ({ error }: { error: ErrorCodes }) {
     text: errorMessages[error],
     position: 'top-end',
     showConfirmButton: false,
-    timer: 1200
+    timer: 3000
   })
 }

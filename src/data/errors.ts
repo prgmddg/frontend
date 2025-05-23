@@ -11,6 +11,7 @@ export const errorMessages: Record<ErrorCodes, string> = {
   [ErrorCodes.INVALID_SURNAMES]: 'Los apellidos no son válidos',
   [ErrorCodes.INVALID_PHONE]: 'El teléfono no es válido',
   [ErrorCodes.INVALID_TERMS]: 'Debes aceptar los términos y condiciones',
+  [ErrorCodes.INVALID_TOKEN]: 'El token no es válido',
 }
 
 export default errorMessages
