@@ -85,7 +85,7 @@ export const Navbar = () => {
         </div>
         {auth && <UserMenu />}
         {!auth && (
-          <Link href='/iniciar-sesion' className='font-semibold text-white py-2.5 px-5 rounded-lg bg-[#2A50E8] ml-[10px]'>Aula Virtual</Link>
+          <Link href='/iniciar-sesion' className='font-bold text-white py-2.5 px-5 text-center rounded-lg bg-[#2A50E8] ml-[10px]'>Aula Virtual</Link>
         )}
         <NavMobMenu />
       </div>

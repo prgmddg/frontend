@@ -17,7 +17,7 @@ export default function FormSignIn () {
       
       <div className='flex items-center justify-between'>
         <InputCheckBox label='Recordar Sesión' isChecked={data.remember} onChangeAction={handleData} id='remember' />
-        <Link href='/recuperar-cuenta' className='text-sm font-bold text-blue-800 transition-all hover:underline'>¿Has Olvidado tu Contraseña?</Link>
+        <Link href='/recuperar-cuenta' className='text-sm font-bold text-right text-blue-800 transition-all hover:underline'>¿Has Olvidado tu Contraseña?</Link>
       </div>
       
       <button type='submit' className='py-2.5 px-5 w-full font-medium text-sm rounded-lg bg-blue-800 hover:bg-blue-900 text-white transition-all'>{
