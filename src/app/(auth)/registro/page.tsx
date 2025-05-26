@@ -3,10 +3,10 @@ import { Metadata } from 'next'
 import FormSignUp from './_section/FormSignUp'
 
 export const metadata: Metadata = {
-  title: 'Desarrollo Global | Iniciar Sesión',
-  description: 'Inicia sesión en tu cuenta de Desarrollo Global y accede a nuestros cursos y capacitaciones en gestión pública.',
+  title: 'Desarrollo Global | Registro',
+  description: 'Regístrate en Desarrollo Global y accede a nuestros cursos y capacitaciones en gestión pública.',
   alternates: {
-    canonical: 'https://desarrolloglobal.pe/iniciar-sesion'
+    canonical: 'https://desarrolloglobal.pe/registro'
   },
 }
 
