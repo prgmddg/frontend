@@ -10,7 +10,7 @@ export function NuestraPropuesta () {
   return (
     <Block
       invert
-      title='Nuestro Propuesta de Valor'
+      title='Nuestra Propuesta de Valor'
       id='Beneficios'
       subtitle='¿Que nos diferencia?'
     >
