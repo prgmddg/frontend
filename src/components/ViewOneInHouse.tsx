@@ -24,35 +24,30 @@ export default function ViewOneInHouse ({ tag }: { tag: string }) {
           <p className='text-white text-[18px] leading-[30px] 900px:hidden mb-[34px] block'>{inHouse.descripcion}</p>
           <p className='text-lg font-bold text-white'>Para obtener más información, contacta a nuestra asesora</p>
           <div className='grid grid-cols-2'>
-            {
-              inHouse.asesores.map((ase: any) => (
-                <div key={ase.id} className='bg-white w-[380px] rounded-md p-3 lg:p-5 mt-5 flex justify-between items-center'>
-                  <Image
-                    src={ase.avatar}
-                    alt='imagen de asesor'
-                    width={120}
-                    height={120}
-                    className='h-[120px] w-[120px] rounded-[100%] border-[5px] border-[#00c9a2]'
-                  />
-                  <div>
-                    <p className='text-center font-bold bg-[#003399] rounded-full text-white'>{ase.nombre}</p>
-                    <p className='mt-2 font-bold text-center'>{ase.nombre.toLowerCase() === 'joan' ? 'Asesor' : 'Asesora'} Académica</p>
+            <div className='bg-white w-[380px] rounded-md p-3 lg:p-5 mt-5 flex justify-between items-center'>
+              <Image
+                src='https://desarrollo-global.s3.amazonaws.com/images/users/milagros_mejia.webp'
+                alt='imagen de asesor'
+                width={120}
+                height={120}
+                className='h-[120px] w-[120px] rounded-[100%] border-[5px] border-[#00c9a2]'
+              />
+              <div>
+                <p className='text-center font-bold bg-[#003399] rounded-full text-white'>Milagros Mejía</p>
+                <p className='mt-2 font-bold text-center'>Asesora Académica</p>
     
-                    <a
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      className='flex w-[202px] mx-auto items-center h-[40px] mt-1 text-green-500 text-2xl gap-3'
-                      href={`https://api.whatsapp.com/send?phone=51${ase.telefono}&text=Solicito información del programa InHouse ${inHouse.titulo}`}
-                    >
-                      <FontAwesomeIcon icon={faWhatsapp} className='text-3xl' />
-                      <p className='font-bold'>{ase.telefono}</p>
-                    </a>
+                <a
+                  rel='noopener noreferrer'
+                  target='_blank'
+                  className='flex w-[202px] mx-auto items-center h-[40px] mt-1 text-green-500 text-2xl gap-3'
+                  href={`https://api.whatsapp.com/send?phone=51949642410&text=Solicito información del programa InHouse ${inHouse.titulo}`}
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} className='text-3xl' />
+                  <p className='font-bold'>949642410</p>
+                </a>
     
-                  </div>
-                </div>
-    
-              ))
-            }
+              </div>
+            </div>
           </div>
         </div>
         <div>
