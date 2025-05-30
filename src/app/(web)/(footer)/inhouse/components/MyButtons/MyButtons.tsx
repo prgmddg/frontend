@@ -32,7 +32,7 @@ export const MyButtons = ({ styles }:{styles?:string}) => {
             </p>
           }
           styles='!bg-green-500 myButtons:!flex-1 flex justify-center'
-          href={`https://api.whatsapp.com/send?phone=51993403219&text=Hola, solicito información de los cursos In-House, mi correo es:%20${auth?.correo || ''}`}
+          href={`https://api.whatsapp.com/send?phone=51949642410&text=Hola, solicito información de los cursos In-House, mi correo es:%20${auth?.correo || ''}`}
         />
       </div>
       <MyPopUp
