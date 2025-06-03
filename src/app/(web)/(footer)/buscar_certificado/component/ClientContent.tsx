@@ -170,7 +170,10 @@ function Table({ data }: { data: Array<row> }) {
                       ? (
                         <>
                           {
-                            data.programa !== 'GESTIÓN DE SUMINISTRO CON ENFOQUE REGULATORIO EN PRODUCTOS FARMACÉUTICOS Y DISPOSITIVOS MÉDICOS EN EL MARCO DE LA LEY Nº 32069 LEY GENERAL DE CONTRATACIONES PÚBLICAS Y SU REGLAMENTO' && (
+                            (
+                              data.programa !== 'GESTIÓN DE SUMINISTRO CON ENFOQUE REGULATORIO EN PRODUCTOS FARMACÉUTICOS Y DISPOSITIVOS MÉDICOS EN EL MARCO DE LA LEY Nº 32069 LEY GENERAL DE CONTRATACIONES PÚBLICAS Y SU REGLAMENTO' &&
+                              data.programa !== 'INNOVACIONES DE LA REFORMA EN LA CONTRATACION PÚBLICA DE LA NUEVA LEY N° 32069 – LEY GENERAL DE CONTRATACIONES PUBLICAS Y SU REGLAMENTO APROBADO CON DECRETO SUPREMO N° 009-2025-EF'
+                            ) && (
                               <div className='flex flex-wrap gap-2'>
                                 <p className='font-bold'>Fecha de Capacitacion:</p>
                                 <p>{data.fecha_inicio}</p>
