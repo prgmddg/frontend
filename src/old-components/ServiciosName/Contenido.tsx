@@ -50,14 +50,14 @@ export const Contenido = ({ data }: { data: any }) => {
               className='bg-[#f4f5f7] shadow-lg rounded-t-lg px-10 py-5 font-bold text-[#003399] text-xl w-full flex items-center justify-between'
               onClick={handleAbrirSub}
             >
-              <span className='block text-left whitespace-nowrap overflow-hidden text-ellipsis'>Objetivo</span>
+              <span className='block overflow-hidden text-left whitespace-nowrap text-ellipsis'>Objetivo</span>
               <span className=' leading-[1.5rem] font-bold'>{abrirSub ? '+' : '-'}</span>
             </button>
             <section
               ref={contenidoRef} style={{ height: !abrirSub ? 'auto' : 0 }}
               className='overflow-hidden transition-all duration-200 h-fit w-[100%]'
             >
-              <div className='shadow-lg rounded-b-lg px-10 py-5 text-justify list-disc '>
+              <div className='px-10 py-5 text-justify list-disc rounded-b-lg shadow-lg '>
                 <div className='listing-container' dangerouslySetInnerHTML={{ __html: objetivos_curso }} />
               </div>
             </section>
@@ -68,15 +68,17 @@ export const Contenido = ({ data }: { data: any }) => {
               className='bg-[#f4f5f7] shadow-lg rounded-t-lg px-10 py-5 font-bold text-[#003399] text-xl w-full flex items-center justify-between'
               onClick={handleAbrirSub}
             >
-              <span className='block text-left whitespace-nowrap overflow-hidden text-ellipsis'>Dirigido a</span>
+              <span className='block overflow-hidden text-left whitespace-nowrap text-ellipsis'>Dirigido a</span>
               <span className=' leading-[1.5rem] font-bold'>{abrirSub ? '+' : '-'}</span>
             </button>
             <section
               ref={contenidoRef} style={{ height: !abrirSub ? 'auto' : 0 }}
               className='overflow-hidden transition-all duration-200 h-fit w-[100%]'
             >
-              <div className='shadow-lg rounded-b-lg px-10 py-5 text-justify'>
-                {dirigido}
+              <div className='px-10 py-5 text-justify rounded-b-lg shadow-lg'>
+                {dirigido.split('\n').map((l, index) => (
+                  <span key={index}>{l}<br/><br/> </span>
+                ))}
               </div>
             </section>
           </div>
