@@ -76,9 +76,11 @@ export const Contenido = ({ data }: { data: any }) => {
               className='overflow-hidden transition-all duration-200 h-fit w-[100%]'
             >
               <div className='px-10 py-5 text-justify rounded-b-lg shadow-lg'>
-                {dirigido.split('\n').map((l, index) => (
-                  <span key={index}>{l}<br/><br/> </span>
-                ))}
+                <ul className='list-["✅"]'>
+                  {dirigido.split('\n').map((l, index) => (
+                    <li className='ps-2' key={index}>{l}</li>
+                  ))}
+                </ul>
               </div>
             </section>
           </div>
