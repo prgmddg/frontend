@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback, useEffect } from 'react'
 
-export default function VerifyTokenPage () {
+export default function VerifyTokenPage() {
   const { setAuth } = useAuth()
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -17,6 +17,7 @@ export default function VerifyTokenPage () {
   }, [setAuth])
 
   const token = searchParams.get('token')
+
   const { data } = useQuery({
     queryKey: ['verify'],
     enabled: !!token,

@@ -11,6 +11,8 @@ import LoadFormMsg from './LoadFormMsg'
 import Spinner from '@/old-components/Spinner/Spinner'
 import { globalContext } from '@/context/GlobalContext'
 import { useAuth } from '@/hooks/useAuth'
+import { useMutation } from '@tanstack/react-query'
+import { ErrorCodes } from '@/types/errors'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const { auth } = useAuth()
@@ -18,69 +20,92 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const [load, setLoad] = useState(false)
   const [payType, setPayType] = useState('card')
 
-  const izi = useCallback(() => {
-    const formData = new FormData()
+  const { mutate: izi } = useMutation({
+    mutationKey: ['izi-pay'],
+    mutationFn: async ({
+      user,
+      products,
+      amount
+    }: {
+      user?: string,
+      products: {
+        id: string
+        tipo: string
+        convenio?: boolean
+      }[],
+      amount: number
+    }) => {
+      const body = new FormData()
+        
+      body.append('amount', `${amount}`)
+      body.append('idUser', `${user}`)
+      body.append('productsArr', JSON.stringify(products))
 
-    const productsArr = cart.map(pro => { return { id: pro.id, tipo: pro.tipo, convenio: pro.isConvenio } })
-    const prices = cart.map(pro => { return !pro.isConvenio ? pro.precio.final : pro.precio.final_convenio })
+      /*
+        97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA
+        97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX
+      */
 
-    const amount = prices.reduce((sum, current) => {
-      return sum + current
-    }, 0)
+      const endpoint = 'https://api.micuentaweb.pe'
+      const publicKey = '97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX'
 
-    formData.append('amount', `${amount}`)
-    formData.append('idUser', `${auth?.id}`)
-    formData.append('productsArr', JSON.stringify(productsArr))
-
-    /* 97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA */
-    /* 97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX */
-
-    const endpoint = 'https://api.micuentaweb.pe'
-    const publicKey = '97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA'
-    let formToken = ''
-
-    axios
-      .post(
-        'https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token',
-        formData
-      )
-      .then((resp) => {
-        formToken = resp.data.token
-        return KRGlue.loadLibrary(
-          endpoint,
-          publicKey
-        )
+      const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
+        method: 'POST',
+        body,
       })
-      .then(({ KR }) =>
-        KR.setFormConfig({
-          formToken,
-          'kr-language': 'en-US'
-        })
-      )
-      .then(({ KR }) =>
-        KR.onSubmit((paymentData:any) => {
-          paymentData.pago = { idUser: auth?.id, productsArr }
 
-          axios
-            .post('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', paymentData)
-            .then((response) => {
-              if (response.status) {
-                setShowSuccess('success')
-                setCart([])
-                localStorage.removeItem('DG-CART')
-              }
-            })
-          return false
+      if (!response.ok) {
+        throw new Error(ErrorCodes.INVALID_DATA)
+      }
+
+      const { error, token } = (await response.json()) as { error: string, token: string }
+
+      if (error.length > 0) {
+        throw new Error(ErrorCodes.INVALID_DATA)
+      }
+
+      const { KR } = await KRGlue.loadLibrary(
+        endpoint,
+        publicKey
+      )
+
+      const { KR: KRConfig } = await KR.setFormConfig({
+        formToken: token,
+        'kr-language': 'en-US'
+      })
+
+      const { KR: KRSubmit } = await KRConfig.onSubmit(async (paymentData: any) => {
+        console.log({ paymentData })
+        const data = new FormData()
+
+        data.append('kr-hash', paymentData.hash)
+        data.append('kr-hash-key', paymentData.hashKey)
+        data.append('kr-hash-algorithm', paymentData.hashAlgorithm)
+        data.append('kr-answer-type', paymentData._type)
+        data.append('kr-answer', paymentData.rawClientAnswer)
+        data.append('pago', JSON.stringify({ idUser: user, products }))
+
+        const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', {
+          method: 'POST',
+          body: data
         })
-      ) // Custom payment callback
-      .then(({ KR }) =>
-        KR.attachForm('#myPaymentForm')
-      ) /* add a payment form  to myPaymentForm div */
-      .then(({ KR, result }) =>
-        KR.showForm(result.formId)
-      ) /* show the payment form */
-      .catch((error) => console.log(error))
-  }, [cart, setCart, setShowSuccess, auth?.id])
+
+        if (!response.ok) {
+          throw new Error(ErrorCodes.INVALID_DATA)
+        }
+
+        setShowSuccess('success')
+        setCart([])
+        localStorage.removeItem('DG-CART')
+
+        return false
+      })
+
+      const { result } = await KRSubmit.attachForm('#myPaymentForm')
+
+      KR.showForm(result.formId)
+    }
+  })
 
   useEffect(() => {
     setLoad(true)
@@ -90,8 +115,15 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   }, [cart])
 
   useEffect(() => {
-    izi()
-  }, [cart, izi])
+    const products = cart.map(pro => { return { id: pro.id, tipo: pro.tipo, convenio: pro.isConvenio } })
+    const amount = cart
+      .map(pro => { return !pro.isConvenio ? pro.precio.final : pro.precio.final_convenio })
+      .reduce((sum, current) => {
+        return sum + current
+      }, 0)
+
+    izi({ amount, products, user: auth?.id })
+  }, [auth?.id, cart, izi])
 
   return (
     <>

@@ -1,10 +1,11 @@
 'use client'
 
-import { globalContext } from '@/context/GlobalContext'
-import React, { useState, useContext, useEffect, useCallback } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'
 import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Image from 'next/image'
+import { useMutation } from '@tanstack/react-query'
+import ToastError from '@/components/ToastError'
+import { ErrorCodes } from '@/types/errors'
 
 interface row {
   cod_registro_0: string;
@@ -26,35 +27,43 @@ export default function ClientContent({ searchParams }: { searchParams: { search
   const [values, setValues] = useState<string>('')
   const [data, setData] = useState<Array<row>>([])
   const [show, setShow] = useState<boolean>(false)
-  const { search } = searchParams
-  const { c } = searchParams
-  const { setShowMsg } = useContext(globalContext)
-
-  const submitData = useCallback(async (values?: string) => {
-    if (!values) return
-    if (values.length < 4) return setShowMsg({ show: true, type: 'fail', content: 'El DNI o codigo no es correcto' })
-
-    const form = new FormData()
-    form.append('text', values)
-
-    const res = await axios.post('https://aula.desarrolloglobal.pe/v03/api/certificados', form)
-    if (res.data) {
-      setData(res.data)
+  const { search, c } = searchParams
+  
+  const { mutate } = useMutation({
+    mutationKey: ['certificate'],
+    onError: (error) => {
+      ToastError({ error: error.message as ErrorCodes })
+    },
+    onSuccess: (data) => {
+      setData(data)
       setShow(true)
-      return
-    }
+    },
+    mutationFn: async (text: string) => {
+      const data = new FormData()
+      data.append('text', text)
 
-    setShowMsg({ show: true, type: 'fail', content: 'El DNI o codigo no es correcto' })
-  }, [setShowMsg])
+      const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/certificados', {
+        method: 'POST',
+        body: data
+      })
+
+      if (!response.ok) {
+        throw new Error(ErrorCodes.INTERNAL_SERVER_ERROR)
+      }
+
+      const responseData = (await response.json()) as row[] | boolean
+
+      if (typeof responseData === 'boolean') {
+        throw new Error(ErrorCodes.INVALID_DATA)
+      }
+      
+      return responseData
+    }
+  })
 
   useEffect(() => {
-    submitData(search?.includes('EDGG') ? search : c ?? search)
-  }, [c, search, submitData])
-
-  async function submittingForm(e: any) {
-    e.preventDefault()
-    submitData(values)
-  }
+    mutate(search ? search.includes('EDGG') ? search : c ?? search : c ?? '')
+  }, [c, mutate, search])
 
   return (
     <>
@@ -70,7 +79,11 @@ export default function ClientContent({ searchParams }: { searchParams: { search
               <p className='mt-5'>Para tu tranquilidad, nuestro equipo está disponible para verificar la autenticidad de tu certificado en cualquier momento. Cumplimos con las regulaciones y leyes pertinentes para brindarte esta garantía.<br /> <br /> De acuerdo con [leyes y regulaciones aplicables], estamos comprometidos con la transparencia en la educación y la capacitación que proporcionamos. Esto significa que cualquier entidad interesada puede verificar la validez de tu certificado, confirmando así la calidad de tu formación.</p>
             </div>
             <div className='w-full'>
-              <form className='w-full p-5 mx-auto mt-5 space-y-5 bg-white rounded-md shadow-lg md:mt-0 lg:w-4/5' onSubmit={submittingForm}>
+              <form className='w-full p-5 mx-auto mt-5 space-y-5 bg-white rounded-md shadow-lg md:mt-0 lg:w-4/5' onSubmit={(e) => {
+                e.preventDefault()
+
+                mutate(values)
+              }}>
                 <h2 className='text-3xl font-bold text-center'>Registro de Certificado</h2>
                 <p className='text-lg text-center'>Escuela &quot;DESARROLLO GLOBAL&quot;</p>
                 <div className='bg-[#FEEFF2] rounded-md text-[#FF0034] p-5'>
