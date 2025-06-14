@@ -170,7 +170,7 @@ function Table({ data }: { data: Array<row> }) {
           {data.map((data, pos) => (
             <div className='grid gap-5 bg-[#c9dcf7] rounded-lg p-5' key={pos}>
               <div className='grid gap-2.5'>
-                <div className='font-bold text-center'>{data.cod_registro_1 === '53111' || data.cod_registro_1 === '53112' ? 'DIPLOMA' : data.categoria.toUpperCase()}</div>
+                <div className='font-bold text-center'>{data.cod_registro_1 === '53111' || data.cod_registro_1 === '53112' ? 'DIPLOMA' : data.cod_registro_1 === '46968' ? 'DIPLOMADO' : data.categoria.toUpperCase()}</div>
                 <p className='font-bold'>Tenor:</p>
                 <div className='text-left'>{data.programa}</div>
                 <div className='flex flex-wrap gap-2'>
