@@ -1,9 +1,7 @@
 'use client'
 
-import React, { useState, useEffect, useContext, useCallback } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import KRGlue from '@lyracom/embedded-form-glue'
-
-import axios from 'axios'
 import Izi from './Izi'
 import PayTypes from './PayTypes'
 import DepositoForm from './DepositoForm'
