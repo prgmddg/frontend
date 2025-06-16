@@ -1,13 +1,12 @@
 'use client'
 import { globalContext } from '@/context/GlobalContext'
 import cartItem from '@/interfaces/cartItem'
-import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
 import { programContext } from '@/context/ProgramContext'
+import ToastSuccess from '@/components/ToastSuccess'
 
 export default function useCart () {
-  const router = useRouter()
-  const { setCart, setShowMsg } = useContext(globalContext)
+  const { setCart } = useContext(globalContext)
   const context = useContext(programContext)
 
   if (context === undefined) return { updatingCart }
@@ -25,7 +24,14 @@ export default function useCart () {
           return prev
         }
 
-        setShowMsg({ show: true, type: 'alert', content: 'Ya se encuentra agregado!' })
+        ToastSuccess({
+          position: 'top-right',
+          isToast: true,
+          isConfirmed: false,
+          timer: 2000,
+          confirmedAction: () => {},
+          message: 'El producto ya se encuentra en el carrito'
+        })
         return prev
       }
 
@@ -33,8 +39,14 @@ export default function useCart () {
         return prev
       }
 
-      setShowMsg({ show: true, content: 'Producto agregado!' })
-      router.push('/pasarela-pagos')
+      ToastSuccess({
+        position: 'top-right',
+        isToast: true,
+        isConfirmed: false,
+        timer: 2000,
+        confirmedAction: () => {},
+        message: 'Producto Agregado'
+      })
 
       return [
         ...prev,

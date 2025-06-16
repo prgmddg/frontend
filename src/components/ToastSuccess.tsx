@@ -1,13 +1,14 @@
-import Swal from 'sweetalert2'
+import Swal, { SweetAlertPosition } from 'sweetalert2'
 
-export default function ToastSuccess ({ message, isConfirmed = false, confirmedAction }: { message: string, isConfirmed: boolean, confirmedAction: () => void }) {
+export default function ToastSuccess ({ message, isConfirmed = false, confirmedAction, isToast = false, position = 'center', timer = 0 }: { message: string, isConfirmed: boolean, confirmedAction: () => void, isToast?: boolean, position?: SweetAlertPosition, timer?: number }) {
   Swal.fire({
+    toast: isToast,
     icon: 'success',
     text: message,
-    position: 'center',
-    showConfirmButton: true,
-    confirmButtonText: 'Aceptar',
-    timer: isConfirmed ? 0 : 12000,
+    position,
+    showConfirmButton: isConfirmed,
+    confirmButtonText: isConfirmed ? 'Aceptar' : undefined,
+    timer,
   })
     .then(({ isConfirmed }) => {
       if (isConfirmed) confirmedAction()

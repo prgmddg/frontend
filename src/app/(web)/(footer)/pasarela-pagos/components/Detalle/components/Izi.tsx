@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import MyIziInput from './MyIziInput'
@@ -6,7 +6,7 @@ import Cvv from './Cvv'
 import { MyPopUp } from '@/old-components/MyPopUp/MyPopUp'
 import Link from 'next/link'
 
-export default function Izi ({ payType, load }:any) {
+export default function Izi ({ payType, load }: { payType: string, load: boolean }) {
   const [show, setShow] = useState(false)
 
   const isLoad = !load ? '' : '!opacity-0 !pointer-events-none'
@@ -22,14 +22,14 @@ export default function Izi ({ payType, load }:any) {
           >
             <FontAwesomeIcon size='xl' icon={faQuestionCircle} />
           </button>
-          <div className='kr-embedded w-[100%]'>
-            <div className='flex flex-col mb-[1rem]'>
+          <div className='grid w-full gap-8 kr-embedded'>
+            <div className='flex flex-col'>
               <label className='font-bold text-[.9rem] mb-[.4rem]'>
                 Número de Tarjeta
               </label>
               <MyIziInput field={<div className='kr-pan' />} />
             </div>
-            <div className='flex gap-[.8rem] mb-[3rem] mob:flex-col'>
+            <div className='flex gap-[.8rem] mob:flex-col'>
               <div className='flex flex-[1.3] items-center gap-[.5rem]'>
                 <label className='font-bold text-[.8rem] flex-[1.3]'>
                   Fecha de Expiracion de tarjeta MM/AA
@@ -43,9 +43,23 @@ export default function Izi ({ payType, load }:any) {
                 <MyIziInput field={<div className='kr-security-code' />} />
               </div>
             </div>
+            <div className='grid gap-2'>
+              <label className='font-bold text-[.8rem] flex-[1.3]'>
+                Nombre del Titular
+              </label>
+              <MyIziInput field={<div className='kr-card-holder-name' />} />
+            </div>
+            
+            <div className='grid gap-2'>
+              <label className='font-bold text-[.8rem] flex-[1.3]'>
+                Correo
+              </label>
+              <MyIziInput field={<div className='kr-card-holder-mail' />} />
+            </div>
+            
             <div className='flex gap-[.5rem]'>
-              <input type='checkbox' checked />
-              <label>
+              <input id='private' name='private' type='checkbox' defaultChecked={true} />
+              <label htmlFor='private'>
                 Aceptar Términos, Condiciones y Política de{' '}
                 <Link
                   className='text-[#3F8DFD] hover:underline'
@@ -57,7 +71,7 @@ export default function Izi ({ payType, load }:any) {
               </label>
             </div>
             <div className='kr-form-error w-[100%] text-center border-[1px] border-red-500' />
-            <button className='kr-payment-button' />
+            <button className='kr-payment-button'/>
           </div>
         </div>
       </div>

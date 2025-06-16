@@ -7,52 +7,46 @@ body {
    scroll-behavior: smooth !important;
 }
 
-.container-for-real
-{
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 3rem 4rem;
+.container-for-real {
+   width: 1200px;
+   max-width: 100%;
+   margin: 0 auto;
+   padding: 3rem 4rem;
 }
 
-.my-shadow
-{
-   filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.16 ));
-}
-.my-shadow2
-{
-   filter: drop-shadow(2px 3px 2.5px rgba(0,0,0,0.16 ));
+.my-shadow {
+   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16));
 }
 
-.my-padding
-{
+.my-shadow2 {
+   filter: drop-shadow(2px 3px 2.5px rgba(0, 0, 0, 0.16));
+}
+
+.my-padding {
    padding-left: 1rem;
    padding-right: 1rem;
 }
 
-.hover-animation
-{
+.hover-animation {
    transition: all ease-in-out 200ms;
 }
 
-.header-container
-{
+.header-container {
    width: 1312px;
    margin: 0 auto;
    max-width: 100%;
 }
 
-.listing-container li
-{
+.listing-container li {
    margin: 0 0 3px 0;
    display: block;
 }
-.listing-container li::before
-{
-  content: "✔️ ";
+
+.listing-container li::before {
+   content: "✔️ ";
 }
-.listing-container p
-{
+
+.listing-container p {
    display: block;
    margin: 0 0 28px 0;
 }
@@ -72,26 +66,23 @@ body {
    opacity: 1;
 }
 
-.container
-{
+.container {
    max-width: 100%;
    width: 1320px;
    margin: 0 auto;
 }
 
-.just-stuff
-{
+.just-stuff {
    margin: 0 auto;
    max-width: 100%;
 }
 
-.slick-prev:before, .slick-next:before
-{
-  color: #0d6efd;
+.slick-prev:before,
+.slick-next:before {
+   color: #0d6efd;
 }
 
-.slick-my-dots
-{
+.slick-my-dots {
    position: absolute;
    bottom: 1rem;
    display: flex !important;
@@ -100,14 +91,14 @@ body {
    left: 50%;
 }
 
-.slick-my-dots .slick-active span
-{
-  background-color: #fff;
-} 
+.slick-my-dots .slick-active span {
+   background-color: #fff;
+}
 
-h1,h2,h3
-{
-   font-weight:800;
+h1,
+h2,
+h3 {
+   font-weight: 800;
    color: #212529;
 }
 
@@ -121,42 +112,44 @@ h1,h2,h3
    -moz-animation-duration: 1s;
 }
 
-.kr-installment-number,.kr-first-installment-delay
-{
-  display: none;
+.kr-installment-number,
+.kr-first-installment-delay {
+   display: none;
 }
-.kr-payment-button
-{
-  margin: 3rem 0 0 0;
-  width: 100% !important;
-  color: #b2b9c2 !important;
-  font-weight:bold !important;
-  padding: .8rem 0;
-  border-radius: .5rem;
-  background-color: #e7e9ec !important;
+
+.kr-payment-button {
+   margin: 3rem 0 0 0;
+   width: 100% !important;
+   color: #b2b9c2 !important;
+   font-weight: bold !important;
+   padding: .8rem 0;
+   border-radius: .5rem;
+   background-color: #e7e9ec !important;
 }
-.kr-spinner
-{
-  display: none;
+
+.kr-spinner {
+   display: none;
 }
-.kr-bounce2::after
-{
-  content: "Procesando...";
+
+.kr-bounce2::after {
+   content: "Procesando...";
 }
-.alertSwag
-{
-  background-color: #192677;
+
+.alertSwag {
+   background-color: #192677;
 }
-.chatMedi{
+
+.chatMedi {
    width: 100% !important;
    overflow-y: auto !important;
    overflow-x: hidden !important;
 }
 
-.chatMedi::-webkit-scrollbar{
+.chatMedi::-webkit-scrollbar {
    background-color: #000A48;
 }
-.chatMedi::-webkit-scrollbar-thumb{
+
+.chatMedi::-webkit-scrollbar-thumb {
    background: #192677;
    border-radius: 20px;
 }
@@ -183,32 +176,44 @@ h1,h2,h3
    }
 }
 
-.slick-arrow{
+.slick-arrow {
    display: none !important;
 }
 
-.whatAnimation
-{
-  animation: what 800ms ease-in-out infinite;
+.whatAnimation {
+   animation: what 800ms ease-in-out infinite;
 }
 
-@keyframes what 
-{
-   0%
-   {
+@keyframes what {
+   0% {
       transform: scale(75%);
    }
-   50%
-   {
+
+   50% {
       transform: scale(100%);
-   }  
-   100%
-   {
-      transform:scale(75%);
+   }
+
+   100% {
+      transform: scale(75%);
    }
 }
- .pageNoFound{
+
+.pageNoFound {
    background-image: url("/img/fondonofound.webp");
    background-size: cover;
    background-position: center;
- }
+}
+
+.kr-payment-button {
+   @apply bg-blue-700 !important;
+   color: white !important;
+   margin: 0 !important;
+}
+
+.kr-payment-button:hover {
+   @apply bg-blue-900 transition-all !important
+}
+
+.kr-input-field:focus {
+   @apply outline-none;
+}

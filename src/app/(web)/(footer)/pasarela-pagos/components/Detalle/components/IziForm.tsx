@@ -11,12 +11,21 @@ import { globalContext } from '@/context/GlobalContext'
 import { useAuth } from '@/hooks/useAuth'
 import { useMutation } from '@tanstack/react-query'
 import { ErrorCodes } from '@/types/errors'
+import ToastSuccess from '@/components/ToastSuccess'
+import Alert from '@/components/Alert'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const { auth } = useAuth()
   const { cart, setCart } = useContext(globalContext)
   const [load, setLoad] = useState(false)
+  const [paying, setPaying] = useState(false)
   const [payType, setPayType] = useState('card')
+
+  const loadingPaying = Alert({
+    title: 'Realizando el Pago',
+    text: 'Por favor no cierre ni recargue la página',
+    timerProgressBar: true
+  })
 
   const { mutate: izi } = useMutation({
     mutationKey: ['izi-pay'],
@@ -33,6 +42,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       }[],
       amount: number
     }) => {
+      setLoad(true)
       const body = new FormData()
         
       body.append('amount', `${amount}`)
@@ -67,13 +77,12 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
         publicKey
       )
 
-      const { KR: KRConfig } = await KR.setFormConfig({
+      await KR.setFormConfig({
         formToken: token,
-        'kr-language': 'en-US'
+        'kr-language': 'es-PE'
       })
 
-      const { KR: KRSubmit } = await KRConfig.onSubmit(async (paymentData: any) => {
-        console.log({ paymentData })
+      await KR.onSubmit(async (paymentData: any) => {
         const data = new FormData()
 
         data.append('kr-hash', paymentData.hash)
@@ -92,25 +101,33 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
           throw new Error(ErrorCodes.INVALID_DATA)
         }
 
-        setShowSuccess('success')
         setCart([])
         localStorage.removeItem('DG-CART')
+        setPaying(false)
+        setShowSuccess('success')
 
         return false
       })
 
-      const { result } = await KRSubmit.attachForm('#myPaymentForm')
+      await KR.removeForms()
+      await KR.renderElements('#myPaymentForm')
 
-      KR.showForm(result.formId)
+      await KR.button.onClick(async () => {
+        const a = await loadingPaying
+      })
+      setLoad(false)
     }
   })
 
   useEffect(() => {
-    setLoad(true)
-    setTimeout(() => {
-      setLoad(false)
-    }, 5000)
-  }, [cart])
+    if (paying) {
+      ToastSuccess({
+        isConfirmed: false,
+        message: 'Realizando el pago, no cierre esta ventana',
+        confirmedAction: () => {},
+      })
+    }
+  }, [paying])
 
   useEffect(() => {
     const products = cart.map(pro => { return { id: pro.id, tipo: pro.tipo, convenio: pro.isConvenio } })
@@ -137,8 +154,8 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
           <Spinner />
         </div>
       )}
-      <Izi payType={payType} load={load} />
-      {payType === 'deposito' && <DepositoForm cart={cart} />}
+      <Izi payType={payType} load={load}/>
+      {payType === 'deposito' && <DepositoForm cart={cart}/>}
     </>
   )
 }
