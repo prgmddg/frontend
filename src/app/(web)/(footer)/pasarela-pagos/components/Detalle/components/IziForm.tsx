@@ -12,7 +12,6 @@ import { useAuth } from '@/hooks/useAuth'
 import { useMutation } from '@tanstack/react-query'
 import { ErrorCodes } from '@/types/errors'
 import ToastSuccess from '@/components/ToastSuccess'
-import Alert from '@/components/Alert'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const { auth } = useAuth()
@@ -20,12 +19,6 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const [load, setLoad] = useState(false)
   const [paying, setPaying] = useState(false)
   const [payType, setPayType] = useState('card')
-
-  const loadingPaying = Alert({
-    title: 'Realizando el Pago',
-    text: 'Por favor no cierre ni recargue la página',
-    timerProgressBar: true
-  })
 
   const { mutate: izi } = useMutation({
     mutationKey: ['izi-pay'],
@@ -55,7 +48,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       */
 
       const endpoint = 'https://api.micuentaweb.pe'
-      const publicKey = '97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX'
+      const publicKey = '97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA'
 
       const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
         method: 'POST',
@@ -111,10 +104,6 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
 
       await KR.removeForms()
       await KR.renderElements('#myPaymentForm')
-
-      await KR.button.onClick(async () => {
-        const a = await loadingPaying
-      })
       setLoad(false)
     }
   })
