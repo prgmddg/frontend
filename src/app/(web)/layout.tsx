@@ -10,6 +10,7 @@ import { ReactNode } from 'react'
 import BannerStripe from '../old-components/BannerStripe/BannerStripe'
 import { TheMsg } from '../old-components/TheMsg/TheMsg'
 import { ProviderMyProgram } from './contextMyProgram'
+import BannerWhatsapp from '@/components/BannerWhatsapp'
 
 export default async function WebLayout({ children }: { children: ReactNode }) {
   const { res: resC, err: errC } = await getRequest('cursos')
@@ -36,6 +37,7 @@ export default async function WebLayout({ children }: { children: ReactNode }) {
           <BannerStripe />
           <Navbar />
         </header>
+        <BannerWhatsapp />
         {children}
       </ProviderMyProgram>
     </GlobalContext>
