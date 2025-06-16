@@ -21,7 +21,7 @@ export const ContadorHeader = () => {
   const { titulo, asesores, tipo, etiqueta, tipo_clase } = curso as programData
 
   return (
-    <section className='bg-primary fixed top-0 w-full z-[99] hidden lg:block shadow-lg'>
+    <section className='bg-primary fixed top-0 w-full z-[90] hidden lg:block shadow-lg'>
       <div className='flex justify-start h-[100px] w-[calc(1920px_-_308px_*_2)] max-w-[100%] mx-auto box-content px-[1rem]'>
         <div className='w-[797px] flex items-center justify-between'>
           <div className='flex items-center'>

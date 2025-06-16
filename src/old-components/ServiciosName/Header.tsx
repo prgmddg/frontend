@@ -9,7 +9,7 @@ import programData from '@/types/programData'
 import { faCreditCard, faEnvelope, faMobileScreen, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { InputHTMLAttributes, useContext, useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { twMerge } from 'tailwind-merge'
@@ -19,6 +19,7 @@ import UnderBar from './UnderBar'
 import { useAuth } from '@/hooks/useAuth'
 
 export const Header = ({ programa }: { programa: string }) => {
+  const router = useRouter()
   const context = useContext(programContext)
   const { auth } = useAuth()
   const { updatingCart } = useCart()
@@ -114,7 +115,7 @@ export const Header = ({ programa }: { programa: string }) => {
           </div>
           <UnderBar />
         </div>
-        <div className='w-full lg:w-[30%] relative lg:static lg:px-14 z-[999] 900px:px-[20px] 900px:absolute 900px:bottom-0 900px:left-[50%] 900px:translate-y-[88%] 900px:translate-x-[-50%]'>
+        <div className='w-full lg:w-[30%] relative lg:static lg:px-14 z-[90] 900px:px-[20px] 900px:absolute 900px:bottom-0 900px:left-[50%] 900px:translate-y-[88%] 900px:translate-x-[-50%]'>
           <div
             className={`w-[393px] mob:w-[100%] mob:px-[1rem] mx-auto bg-white p-[20px] rounded-lg block lg:fixed shadow-lg transition-all ease-in-out duration-300 ${!prueba && 'lg:-mt-24'
             }`}
@@ -192,6 +193,7 @@ export const Header = ({ programa }: { programa: string }) => {
                 </div>
                 <button
                   onClick={() =>
+                  {
                     updatingCart({
                       imagen,
                       id,
@@ -199,7 +201,10 @@ export const Header = ({ programa }: { programa: string }) => {
                       precio,
                       total_sesiones,
                       tipo
-                    })}
+                    })
+                    router.push('/pasarela-pagos')
+                  }
+                  }
                   className='border bg-white border-[#0052CC] w-full text-[#0052CC] font-bold flex items-center p-2.5 justify-center gap-2 rounded-lg hover:bg-[#0052CC] transition hover:text-white'
                 >
                   <FontAwesomeIcon icon={faCreditCard} />

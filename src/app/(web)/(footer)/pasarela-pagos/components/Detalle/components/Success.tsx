@@ -6,7 +6,7 @@ export default function Success () {
     <div className='flex flex-col gap-[2rem] items-center'>
       <div className='w-[8rem]'>
         <picture>
-          <img src='/img/dg.png' className='w-[100%]' alt='icono de desarrollo global' />
+          <img src='/web/logo.webp' className='w-full aspect-auto' width={0} height={0} alt='icono de desarrollo global' />
         </picture>
       </div>
       <div className='w-[20rem]'>

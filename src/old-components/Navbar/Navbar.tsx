@@ -16,7 +16,7 @@ export const Navbar = () => {
   const { auth } = useAuth()
 
   return (
-    <nav className='justify-between px-[.8rem] flex items-center relative h-[80px] gap-4'>
+    <nav className='justify-between px-[.8rem] flex items-center relative h-[80px] gap-4 z-[99999999999999]'>
       <Link href='/' className='block 800px:mr-[16px]'>
         <picture>
           <source media='(max-width: 768px)' srcSet='/web/logo-mobile.webp' />

@@ -32,7 +32,7 @@ export default async function WebLayout({ children }: { children: ReactNode }) {
       <Script src='//code.jivosite.com/widget/5kqbbZ9lmq' async />
       <ProviderMyProgram>
         <TheMsg />
-        <header className='relative bg-white my-shadow'>
+        <header className='relative z-[99] bg-white my-shadow'>
           <BannerStripe />
           <Navbar />
         </header>

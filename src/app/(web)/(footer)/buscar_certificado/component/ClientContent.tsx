@@ -62,7 +62,7 @@ export default function ClientContent({ searchParams }: { searchParams: { search
   })
 
   useEffect(() => {
-    mutate(search ? search.includes('EDGG') ? search : c ?? search : c ?? '')
+    if (search || c) mutate(search ? search.includes('EDGG') ? search : c ?? search : c ?? '')
   }, [c, mutate, search])
 
   return (
