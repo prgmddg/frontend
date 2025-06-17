@@ -10,6 +10,7 @@ import CompaniesTrusted from './_sections/CompaniesTrusted'
 import ContactUs from './_sections/ContactUs'
 import OurBenefits from './_sections/OurBenefits'
 import VideoBanner from './_sections/VideoBanner'
+import BannerWhatsapp from '@/components/BannerWhatsapp'
 
 export default function Home() {
   const [popups, setPopups] = useState<any>()
@@ -32,6 +33,7 @@ export default function Home() {
         <InitialPopups initialPopups={popups} />
       )}
       <WhatsAppIcon />
+      <BannerWhatsapp />
       <CarouselBannerWeb />
       <Stripe />
       <MostrarCards program='proximos inicios' programSelector />
