@@ -87,9 +87,9 @@ export const ListaDeProgramas = () => {
       header={{ h: '¿Porque elegirnos?' }}
       styles={{ container: 'bg-white', h: 'soliciteUna1:text-[25px] text-black' }}
     >
-      <p className='font-normal text-xl'>Categorías clave de formación para potenciar el desempeño institucional.</p>
+      <p className='text-xl font-normal'>Categorías clave de formación para potenciar el desempeño institucional.</p>
       <div id='beneficios'>
-        <a className='block text-[#0E30AA] border-2 border-[#0E30AA] rounded-full transition-all p-2 font-semibold relative group hover:bg-[#0E30AA] hover:text-white mt-7' target='_blank' href='BROUCHURE_INHOUSE.pdf' rel='noreferrer'>
+        <a className='block text-[#0E30AA] border-2 border-[#0E30AA] rounded-full transition-all p-2 font-semibold relative group hover:bg-[#0E30AA] hover:text-white mt-7' target='_blank' href='/web/brouchure-inhouse.pdf' rel='noreferrer'>
           <div className='border-2 group-hover:bg-[#0E30AA] border-[#0E30AA] rounded-full h-14 w-14 absolute bg-white left-[-5px] top-[-8px] flex items-center justify-center'>
             <FontAwesomeIcon icon={faCircleDown} className='text-3xl' />
           </div>
@@ -97,7 +97,7 @@ export const ListaDeProgramas = () => {
         </a>
       </div>
 
-      <div className='grid gap-4 w-full mt-5'>
+      <div className='grid w-full gap-4 mt-5'>
         {
           contents.map((item, index) => <ContentBrochure key={index} title={item.title} content={item.content} />)
         }
