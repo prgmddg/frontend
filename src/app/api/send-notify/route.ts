@@ -28,8 +28,8 @@ export async function POST (request: Request) {
             <td>${data.get('nombres')}</td>
             </tr>
             <tr>
-            <td>cantidad</td>
-               <td>${data.get('cantidad')}</td>
+            <td>Requerimiento</td>
+               <td>${data.get('nivel')}</td>
         </tr>
         <tr>
         <td>entidad</td>
@@ -63,7 +63,7 @@ export async function POST (request: Request) {
           Data: 'Solicitud Inhouse'
         }
       },
-      Source: 'noreply@desarrolloglobal.pe'
+      Source: 'no_reply@desarrolloglobal.pe'
     }))
 
     return new Response(null, {
