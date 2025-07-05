@@ -11,7 +11,9 @@ export default function AuthLayout ({ children }: { children: ReactNode }) {
   useEffect(() => {
     const user = localStorage.getItem('DG-USER')
     if (user) {
-      if (user.token) {
+      const u = JSON.parse(user)
+
+      if (u.token) {
         const { token } = JSON.parse(user)
         document.cookie = `token=${token};domain=.desarrolloglobal.pe`
         router.push('/')
