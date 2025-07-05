@@ -19,6 +19,7 @@ export default function AuthLayout ({ children }: { children: ReactNode }) {
         router.push('/')
       } else {
         localStorage.removeItem('DG-USER')
+        setMounted(true)
       }
     } else {
       setMounted(true)
