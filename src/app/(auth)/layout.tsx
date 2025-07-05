@@ -11,9 +11,13 @@ export default function AuthLayout ({ children }: { children: ReactNode }) {
   useEffect(() => {
     const user = localStorage.getItem('DG-USER')
     if (user) {
-      const { token } = JSON.parse(user)
-      document.cookie = `token=${token};domain=.desarrolloglobal.pe`
-      router.push('/')
+      if (user.token) {
+        const { token } = JSON.parse(user)
+        document.cookie = `token=${token};domain=.desarrolloglobal.pe`
+        router.push('/')
+      } else {
+        localStorage.removeItem('DG-USER')
+      }
     } else {
       setMounted(true)
     }
