@@ -1,4 +1,5 @@
 import Carousel from '@/components/Carousel'
+import Link from 'next/link'
 
 export default function CarouselBannerWeb () {
   return (
@@ -10,10 +11,12 @@ export default function CarouselBannerWeb () {
         </picture>
       </div>
       <div className='flex-shrink-0 w-full'>
-        <picture>
-          <source media='(max-width: 1024px)' srcSet='/web/banner-carousel-2-mob.webp' />
-          <img src='/web/b-carousel-2.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
-        </picture>
+        <Link href='/cursos/contratacion-publicas-de-la-nueva-ley-general-32069'>
+          <picture>
+            <source media='(max-width: 1024px)' srcSet='/web/banner-carousel-2-mob.webp' />
+            <img src='/web/b-carousel-2.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
+          </picture>
+        </Link>
       </div>
       <div className='flex-shrink-0 w-full'>
         <picture>
