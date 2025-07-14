@@ -1,5 +1,4 @@
 import Carousel from '@/components/Carousel'
-import Icon from '@/components/Icon'
 
 export default function CarouselBannerWeb () {
   return (
