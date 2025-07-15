@@ -5,10 +5,12 @@ export default function CarouselBannerWeb () {
   return (
     <Carousel>
       <div className='flex-shrink-0 w-full'>
-        <picture>
-          <source media='(max-width: 1024px)' srcSet='/web/b-carousel-1.webp' />
-          <img src='/web/b-carousel-1.webp' className='w-full h-full max-h-[600px]' alt='Banner 1' loading='eager' />
-        </picture>
+        <Link href='/cursos'>
+          <picture>
+            <source media='(max-width: 1024px)' srcSet='/web/b-carousel-1.webp' />
+            <img src='/web/b-carousel-1.webp' className='w-full h-full max-h-[600px]' alt='Banner 1' loading='eager' />
+          </picture>
+        </Link>
       </div>
       <div className='flex-shrink-0 w-full'>
         <Link href='/cursos/contratacion-publicas-de-la-nueva-ley-general-32069'>
@@ -19,16 +21,20 @@ export default function CarouselBannerWeb () {
         </Link>
       </div>
       <div className='flex-shrink-0 w-full'>
-        <picture>
-          <source media='(max-width: 1024px)' srcSet='/web/b-carousel-3.webp' />
-          <img src='/web/b-carousel-3.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
-        </picture>
+        <Link href='/diplomas'>
+          <picture>
+            <source media='(max-width: 1024px)' srcSet='/web/b-carousel-3.webp' />
+            <img src='/web/b-carousel-3.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
+          </picture>
+        </Link>
       </div>
       <div className='flex-shrink-0 w-full'>
-        <picture>
-          <source media='(max-width: 1024px)' srcSet='/web/b-carousel-4.webp' />
-          <img src='/web/b-carousel-4.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
-        </picture>
+        <Link href='/inhouse'>
+          <picture>
+            <source media='(max-width: 1024px)' srcSet='/web/b-carousel-4.webp' />
+            <img src='/web/b-carousel-4.webp' className='w-full h-full max-h-[600px]' alt='Banner 2' loading='eager' />
+          </picture>
+        </Link>
       </div>
     </Carousel>
   )
