@@ -14,7 +14,7 @@ import { ErrorCodes } from '@/types/errors'
 import ToastSuccess from '@/components/ToastSuccess'
 import user from '@/interfaces/user'
 
-export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
+export default function IziForm({ setShowSuccess }: { setShowSuccess: any }) {
   const { auth } = useAuth()
   const { cart, setCart } = useContext(globalContext)
   const [load, setLoad] = useState(false)
@@ -41,7 +41,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
 
       setLoad(true)
       const body = new FormData()
-        
+
       body.append('amount', `${amount}`)
       body.append('idUser', `${u.id}`)
       body.append('productsArr', JSON.stringify(products))
@@ -54,64 +54,64 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       const endpoint = 'https://api.micuentaweb.pe'
       const publicKey = '97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA'
 
-      const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
+      fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
         method: 'POST',
         body,
       })
-
-      if (!response.ok) {
-        throw new Error(ErrorCodes.INVALID_DATA)
-      }
-
-      const { error, token } = (await response.json()) as { error: string, token: string }
-
-      if (error.length > 0) {
-        throw new Error(ErrorCodes.INVALID_DATA)
-      }
-
-      const { KR } = await KRGlue.loadLibrary(
-        endpoint,
-        publicKey
-      )
-
-      await KR.setFormConfig({
-        formToken: token,
-        'kr-language': 'es-PE'
-      })
-
-      await KR.onSubmit(async (paymentData: any) => {
-        const data = new FormData()
-
-        data.append('kr-hash', paymentData.hash)
-        data.append('kr-hash-key', paymentData.hashKey)
-        data.append('kr-hash-algorithm', paymentData.hashAlgorithm)
-        data.append('kr-answer-type', paymentData._type)
-        data.append('kr-answer', paymentData.rawClientAnswer)
-        data.append('pago', JSON.stringify({
-          usuario: u,
-          programas: products
-        }))
-
-        const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', {
-          method: 'POST',
-          body: data
+        .then((res) => {
+          if (!res.ok) throw new Error(ErrorCodes.INVALID_DATA)
+          return res.json()
         })
+        .then((response) => {
+          const { error, token } = response as { error: string, token: string }
 
-        if (!response.ok) {
-          throw new Error(ErrorCodes.INVALID_DATA)
-        }
+          if (error.length > 0) {
+            throw new Error(ErrorCodes.INVALID_DATA)
+          }
 
-        setCart([])
-        localStorage.removeItem('DG-CART')
-        setPaying(false)
-        setShowSuccess('success')
+          return KRGlue.loadLibrary(
+            endpoint,
+            publicKey
+          ).then(({ KR }) => {
+            KR.setFormConfig({
+              formToken: token,
+              'kr-language': 'es-PE'
+            })
 
-        return false
-      })
+            KR.onSubmit(async (paymentData: any) => {
+              const data = new FormData()
 
-      await KR.removeForms()
-      await KR.renderElements('#myPaymentForm')
-      setLoad(false)
+              data.append('kr-hash', paymentData.hash)
+              data.append('kr-hash-key', paymentData.hashKey)
+              data.append('kr-hash-algorithm', paymentData.hashAlgorithm)
+              data.append('kr-answer-type', paymentData._type)
+              data.append('kr-answer', paymentData.rawClientAnswer)
+              data.append('pago', JSON.stringify({
+                usuario: u,
+                programas: products
+              }))
+
+              const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', {
+                method: 'POST',
+                body: data
+              })
+
+              if (!response.ok) {
+                throw new Error(ErrorCodes.INVALID_DATA)
+              }
+
+              setCart([])
+              localStorage.removeItem('DG-CART')
+              setPaying(false)
+              setShowSuccess('success')
+
+              return false
+            })
+
+            KR.removeForms().then(({ KR }) => KR.renderElements('#myPaymentForm'))
+          })
+        })
+        .finally(() => setLoad(false))
     }
   })
 
@@ -120,7 +120,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       ToastSuccess({
         isConfirmed: false,
         message: 'Realizando el pago, no cierre esta ventana',
-        confirmedAction: () => {},
+        confirmedAction: () => { },
       })
     }
   }, [paying])
@@ -150,8 +150,8 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
           <Spinner />
         </div>
       )}
-      <Izi payType={payType} load={load}/>
-      {payType === 'deposito' && <DepositoForm cart={cart}/>}
+      <Izi payType={payType} load={load} />
+      {payType === 'deposito' && <DepositoForm cart={cart} />}
     </>
   )
 }
