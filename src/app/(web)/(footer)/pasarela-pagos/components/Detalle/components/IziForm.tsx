@@ -12,6 +12,7 @@ import { useAuth } from '@/hooks/useAuth'
 import { useMutation } from '@tanstack/react-query'
 import { ErrorCodes } from '@/types/errors'
 import ToastSuccess from '@/components/ToastSuccess'
+import user from '@/interfaces/user'
 
 export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const { auth } = useAuth()
@@ -23,23 +24,26 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   const { mutate: izi } = useMutation({
     mutationKey: ['izi-pay'],
     mutationFn: async ({
-      user,
+      u,
       products,
       amount
     }: {
-      user?: string,
+      u: user | null,
       products: {
         id: string
         tipo: string
+        amount: number
         convenio?: boolean
       }[],
       amount: number
     }) => {
+      if (!u) return
+
       setLoad(true)
       const body = new FormData()
         
       body.append('amount', `${amount}`)
-      body.append('idUser', `${user}`)
+      body.append('idUser', `${u.id}`)
       body.append('productsArr', JSON.stringify(products))
 
       /*
@@ -48,7 +52,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       */
 
       const endpoint = 'https://api.micuentaweb.pe'
-      const publicKey = '97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA'
+      const publicKey = '97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX'
 
       const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
         method: 'POST',
@@ -83,7 +87,10 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
         data.append('kr-hash-algorithm', paymentData.hashAlgorithm)
         data.append('kr-answer-type', paymentData._type)
         data.append('kr-answer', paymentData.rawClientAnswer)
-        data.append('pago', JSON.stringify({ idUser: user, products }))
+        data.append('pago', JSON.stringify({
+          usuario: u,
+          programas: products
+        }))
 
         const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/pago', {
           method: 'POST',
@@ -119,15 +126,15 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
   }, [paying])
 
   useEffect(() => {
-    const products = cart.map(pro => { return { id: pro.id, tipo: pro.tipo, convenio: pro.isConvenio } })
+    const products = cart.map(pro => { return { id: pro.id, amount: !pro.isConvenio ? pro.precio.final : pro.precio.final_convenio, tipo: pro.tipo, convenio: pro.isConvenio } })
     const amount = cart
       .map(pro => { return !pro.isConvenio ? pro.precio.final : pro.precio.final_convenio })
       .reduce((sum, current) => {
         return sum + current
       }, 0)
 
-    izi({ amount, products, user: auth?.id })
-  }, [auth?.id, cart, izi])
+    izi({ amount, products, u: auth })
+  }, [auth, cart, izi])
 
   return (
     <>

@@ -4,6 +4,8 @@ export default interface user
   correo:string;
   id:string;
   nombre:string;
+  apellidos: string;
+  dni: string;
   tipo:string;
   token:string;
 }
