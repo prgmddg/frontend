@@ -52,7 +52,7 @@ export default function IziForm ({ setShowSuccess }:{setShowSuccess:any}) {
       */
 
       const endpoint = 'https://api.micuentaweb.pe'
-      const publicKey = '97649007:testpublickey_UTZAMW5mLnK026AEknrEn6L7WODbX2AllfyAycTISdiUX'
+      const publicKey = '97649007:publickey_7BLQcvuVTHjNDjzzSmiyJM8VnfXpfQX9Li995qHar6NyA'
 
       const response = await fetch('https://aula.desarrolloglobal.pe/v03/api/pasarela/generar-token', {
         method: 'POST',
