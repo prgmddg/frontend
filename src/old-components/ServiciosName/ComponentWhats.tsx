@@ -25,10 +25,9 @@ export const ComponentWhats = () => {
           <p className='text-white mt-5 text-center text-2xl'>Nuestros asesores están disponibles para brindarte asesoría personalizada. ¡Comunicate con nosotros ahora mismo!</p>
           <div className='w-full flex justify-center items-center gap-[1rem] flex-wrap'>
             {
-              asesores.map((asesor, pos) =>
-                (
-                  <Box key={pos} {...asesor} />
-                ))
+              asesores.map((asesor, pos) => (
+                <Box key={pos} {...asesor} />
+              ))
             }
           </div>
         </div>
@@ -37,7 +36,7 @@ export const ComponentWhats = () => {
   )
 }
 
-function Box (props: asesor) {
+function Box(props: asesor) {
   const { avatar, nombre, telefono, telefono_2 } = props
 
   const phomes = [telefono_2, telefono].filter(phone => phone && phone !== '0')
@@ -63,22 +62,22 @@ function Box (props: asesor) {
         <p className='text-center font-bold'>{
           (
             nombre.toLowerCase().includes('rolando') ||
-          nombre.toLowerCase().includes('israel') ||
-          nombre.toLowerCase().includes('joan') ||
-          nombre.toLowerCase().includes('sebastian') ||
-          nombre.toLowerCase().includes('ignacio')
-        )
+            nombre.toLowerCase().includes('israel') ||
+            nombre.toLowerCase().includes('joan') ||
+            nombre.toLowerCase().includes('sebastian') ||
+            nombre.toLowerCase().includes('ignacio')
+          )
             ? 'Asesor'
             : 'Asesora'
         }&nbsp;{
-          (nombre.toLowerCase().includes('rolando') ||
-          nombre.toLowerCase().includes('israel') ||
-          nombre.toLowerCase().includes('joan') ||
-          nombre.toLowerCase().includes('sebastian') ||
-          nombre.toLowerCase().includes('ignacio') )
-            ? 'Académico'
-            : 'Académica'
-        }
+            (nombre.toLowerCase().includes('rolando') ||
+              nombre.toLowerCase().includes('israel') ||
+              nombre.toLowerCase().includes('joan') ||
+              nombre.toLowerCase().includes('sebastian') ||
+              nombre.toLowerCase().includes('ignacio'))
+              ? 'Académico'
+              : 'Académica'
+          }
         </p>
         {phomes.map((phome, pos) => (
           <a
