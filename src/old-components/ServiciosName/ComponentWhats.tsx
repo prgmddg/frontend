@@ -70,14 +70,14 @@ function Box(props: asesor) {
             ? 'Asesor'
             : 'Asesora'
         }&nbsp;{
-            (nombre.toLowerCase().includes('rolando') ||
+          (
+            nombre.toLowerCase().includes('rolando') ||
               nombre.toLowerCase().includes('israel') ||
               nombre.toLowerCase().includes('joan') ||
               nombre.toLowerCase().includes('sebastian') ||
-              nombre.toLowerCase().includes('ignacio'))
-              ? 'Académico'
-              : 'Académica'
-          }
+              nombre.toLowerCase().includes('ignacio')
+          ) ? 'Académico' : 'Académica'
+        }
         </p>
         {phomes.map((phome, pos) => (
           <a
