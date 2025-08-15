@@ -63,13 +63,17 @@ function Box (props: asesor) {
         <p className='text-center font-bold'>{
           nombre.toLowerCase().includes('rolando') ||
           nombre.toLowerCase().includes('israel') ||
-          nombre.toLowerCase().includes('joan')
+          nombre.toLowerCase().includes('joan') ||
+          nombre.toLowerCase().includes('sebastian') ||
+          nombre.toLowerCase().includes('ignacio') 
             ? 'Asesor'
             : 'Asesora'
         }&nbsp;{
           nombre.toLowerCase().includes('rolando') ||
           nombre.toLowerCase().includes('israel') ||
-          nombre.toLowerCase().includes('joan')
+          nombre.toLowerCase().includes('joan') ||
+          nombre.toLowerCase().includes('sebastian') ||
+          nombre.toLowerCase().includes('ignacio') 
             ? 'Académico'
             : 'Académica'
         }
