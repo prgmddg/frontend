@@ -60,7 +60,7 @@ export const SubAcordeonCur = ({ data }:{data:any}) => {
           style={{ maxHeight: abrirSub ? alturaMaxima : 0 }}
         >
           <div
-            className='px-[43px] mob:px-[.8rem] pt-[29px] listing-container'
+            className='px-[43px] mob:px-[.8rem] pt-[29px] grid gap-2 [&>p:not(:first-child)]:pt-4'
             ref={contenidoRef}
             dangerouslySetInnerHTML={{ __html: data.descripcion }}
           />
