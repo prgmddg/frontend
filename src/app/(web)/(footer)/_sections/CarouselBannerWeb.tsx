@@ -7,6 +7,14 @@ export default function CarouselBannerWeb () {
       <div className='flex-shrink-0 w-full'>
         <Link href='/cursos'>
           <picture>
+            <source media='(max-width: 1024px)' srcSet='/web/b-carousel-5.webp' />
+            <img src='/web/b-carousel-5.webp' className='w-full h-full max-h-[600px]' alt='Banner 1' loading='eager' />
+          </picture>
+        </Link>
+      </div>
+      <div className='flex-shrink-0 w-full'>
+        <Link href='/cursos'>
+          <picture>
             <source media='(max-width: 1024px)' srcSet='/web/b-carousel-1.webp' />
             <img src='/web/b-carousel-1.webp' className='w-full h-full max-h-[600px]' alt='Banner 1' loading='eager' />
           </picture>
